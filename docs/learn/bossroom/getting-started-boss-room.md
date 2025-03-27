@@ -9,7 +9,7 @@ description: Learn more about installing and running the Boss Room game sample.
 Boss Room is a fully functional co-op multiplayer RPG made with Unity Netcode. it's an educational sample designed to showcase typical netcode [patterns](https://docs-multiplayer.unity3d.com/netcode/current/learn/bossroom/bossroom-actions/index.html) often featured in similar multiplayer games.
 
 :::note
-**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [2022 LTS](https://unity.com/releases/lts)). Make sure to include standalone support for Windows/Mac in your installation.
+**Note**: Boss Room is compatible with the latest Unity Long Term Support (LTS) Editor version (currently [6000 LTS](https://unity.com/releases). Make sure to include standalone support for Windows/Mac in your installation.
 :::
 
 Boss Room has been developed and tested on the following platforms:
@@ -57,13 +57,13 @@ Boss Room is designed to be used in its entirety to help you explore the concept
 
 You can use the project as a reference starting point for your own Unity game or use elements individually.
 
-This repository also has a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
+This repository also has a [Utilities](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop) package containing reusable sample scripts. You can install it using the following manifest file entry:
 
 ```json
 "com.unity.multiplayer.samples.coop": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop"
 ```
 
-For more information on the art in Boss Room, see [ART_NOTES.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Documentation/ART_NOTES.md).
+For more information on the art in Boss Room, see [ART_NOTES.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Documentation/ART_NOTES.md).
 
 ### Install the Boss Room project
 
@@ -79,7 +79,7 @@ Boss Room uses Git Large Files Support (LFS) to handle all large assets required
 
 You can download the latest version of Boss Room from our [Releases](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/releases) page. Doing so doesn't require you to use Git LFS.
 
-Alternatively, you can click the green **Code** button, then select **Download Zip**. This downloadd the branch that you are currently viewing on Github.
+Alternatively, you can click the green **Code** button on the main "Code" github page, then select **Download Zip**. This downloads the branch that you are currently viewing on Github.
 
 :::note
 **Note for Windows users**: Using Windows' built-in extraction tool may generate an `Error 0x80010135: Path too long` error window which can invalidate the extraction process. A workaround for this is to shorten the zip file to a single character (for example, "`c.zip`") and move it to the shortest path on your computer (most often right at `C:\`) and retry. If that solution fails, another workaround is to extract the downloaded zip file using [7zip](https://www.7-zip.org/).
@@ -93,7 +93,7 @@ Boss Room leverages several services from UGS to ease connectivity between playe
 
 Once you have downloaded the project, follow the steps below to get up and running:
 
-1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/lts).
+1. Check that you have installed the most recent [LTS editor version](https://unity.com/releases/).
     1. Include standalone support for **Windows/Mac** in your Unity Editor installation.
 2. Add the project to the Unity Hub by selecting the **Add** button and pointing it to the root folder of the downloaded project.
     1. Unity imports all the project assets the first time you open the project, which takes longer than usual.
@@ -122,7 +122,7 @@ See [Testing multiplayer games locally](../../tutorials/testing/testing_locally.
 
 #### Local multiplayer setup
 
-First, build an executable by selecting **File** > **Build Settings** > **Build**.
+First, build an executable by selecting **File** > **Build Profiles** > **Build**.
 
 After you have the build, you can launch several instances of the build executable to host or join a game.
 
@@ -157,83 +157,82 @@ The Boss Room sample includes resources for gameplay, game flow, connectivity, U
 
 Boss Room includes the following gameplay resources:
 
-* Action anticipation - AnticipateActionClient() in [Assets/Scripts/Gameplay/Action/Action.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/Action.cs)
-* Object spawning for long actions (archer arrow) - LaunchProjectile() in [Assets/Scripts/Gameplay/Action/ConcreteActions/LaunchProjectileAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/LaunchProjectileAction.cs)
-* Quick actions with RPCs (ex: mage bolt) - [Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs)
-* Teleport - [Assets/Scripts/Gameplay/Action/ConcreteActions/DashAttackAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/DashAttackAction.cs)
-* Client side input tracking before an action (archer AOE) - OnStartClient() in [Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs)
-* Time based action (charged shot) - [Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedLaunchProjectileAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedLaunchProjectileAction.cs)
-* Object parenting to animation - [Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs)
-* Physics object throwing (using NetworkRigidbody) - [Assets/Scripts/Gameplay/Action/ConcreteActions/TossAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/TossAction.cs)
-* NetworkAnimator usage - All actions, in particular [Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedShieldAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedShieldAction.cs)
-* NetworkTransform local space - [Assets/Scripts/Gameplay/GameplayObjects/ServerDisplacerOnParentChange.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/ServerDisplacerOnParentChange.cs)
-* Dynamic imp spawning with portals - [Assets/Scripts/Gameplay/GameplayObjects/ServerWaveSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/ServerWaveSpawner.cs)
-* In scene placed dynamic objects (imps) - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs)
-* Static objects (non-destroyables like doors, switches, etc) - [Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs)
+* Action anticipation - AnticipateActionClient() in [Assets/Scripts/Gameplay/Action/Action.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/Action.cs)
+* Object spawning for long actions (archer arrow) - LaunchProjectile() in [Assets/Scripts/Gameplay/Action/ConcreteActions/LaunchProjectileAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/LaunchProjectileAction.cs)
+* Quick actions with RPCs (ex: mage bolt) - [Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/FXProjectileTargetedAction.cs)
+* Teleport - [Assets/Scripts/Gameplay/Action/ConcreteActions/DashAttackAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/DashAttackAction.cs)
+* Client side input tracking before an action (archer AOE) - OnStartClient() in [Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/AOEAction.cs)
+* Time based action (charged shot) - [Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedLaunchProjectileAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedLaunchProjectileAction.cs)
+* Object parenting to animation - [Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/PickUpAction.cs)
+* Physics object throwing (using NetworkRigidbody) - [Assets/Scripts/Gameplay/Action/ConcreteActions/TossAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/TossAction.cs)
+* NetworkAnimator usage - All actions, in particular [Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedShieldAction.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/Action/ConcreteActions/ChargedShieldAction.cs)
+* NetworkTransform local space - [Assets/Scripts/Gameplay/GameplayObjects/ServerDisplacerOnParentChange.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ServerDisplacerOnParentChange.cs)
+* Dynamic imp spawning with portals - [Assets/Scripts/Gameplay/GameplayObjects/ServerWaveSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/ServerWaveSpawner.cs)
+* In scene placed dynamic objects (imps) - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs)
+* Static objects (non-destroyables like doors, switches, etc) - [Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs)
 * State tracking with breakables, switch, doors
-    * [Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs)
-    * [Assets/Scripts/Gameplay/GameplayObjects/FloorSwitch.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/FloorSwitch.cs)
-    * [Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs)
-* NetworkVariable with Enum - [Assets/Scripts/Gameplay/GameState/NetworkPostGame.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/NetworkPostGame.cs)
-* NetworkVariable with custom serialization (GUID) - [Assets/Scripts/Infrastructure/NetworkGuid.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Infrastructure/NetworkGuid.cs)
-* NetworkVariable with fixed string - [Assets/Scripts/Utils/NetworkNameState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Utils/NetworkNameState.cs)
-* NetworkList with custom serialization (LobbyPlayerState) - [Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs)
-* Persistent player (over multiple scenes) - [Assets/Scripts/Gameplay/GameplayObjects/PersistentPlayer.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/PersistentPlayer.cs)
+    * [Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Breakable.cs)
+    * [Assets/Scripts/Gameplay/GameplayObjects/FloorSwitch.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/FloorSwitch.cs)
+    * [Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/SwitchedDoor.cs)
+* NetworkVariable with Enum - [Assets/Scripts/Gameplay/GameState/NetworkPostGame.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/NetworkPostGame.cs)
+* NetworkVariable with custom serialization (GUID) - [Assets/Scripts/Infrastructure/NetworkGuid.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkGuid.cs)
+* NetworkVariable with fixed string - [Assets/Scripts/Utils/NetworkNameState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkNameState.cs)
+* NetworkList with custom serialization (LobbyPlayerState) - [Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs)
+* Persistent player (over multiple scenes) - [Assets/Scripts/Gameplay/GameplayObjects/PersistentPlayer.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/PersistentPlayer.cs)
 * Character logic (including player's avatar) - [Assets/Scripts/Gameplay/GameplayObjects/Character/ \
-Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacter.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Character)
-* Character movements - [Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs)
-* Client driven movements - Boss Room is server driven with anticipation animation. See [Client Driven bitesize](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/v2.1.0/Basic/ClientDriven) for client driven gameplay
-* Player spawn - SpawnPlayer() in [Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs)
+Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacter.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Character)
+* Character movements - [Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameplayObjects/Character/ServerCharacterMovement.cs)
+* Client driven movements - Boss Room is server driven with anticipation animation. See [Client Driven bitesize](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/ClientDriven) for client driven gameplay
+* Player spawn - SpawnPlayer() in [Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/ServerBossRoomState.cs)
 
 #### Game flow
 
 Boss Room includes the following game flow resources:
 
-* Application Controller - [Assets/Scripts/ApplicationLifecycle/ApplicationController.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)
-* Game flow state machine - All child classes in [Assets/Scripts/Gameplay/GameState/GameStateBehaviour.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/GameStateBehaviour.cs)
-* Scene loading and progress sharing - [ackages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
-* Synced UI with character select - [Assets/Scripts/Gameplay/GameState/ClientCharSelectState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/ClientCharSelectState.cs)
+* Application Controller - [Assets/Scripts/ApplicationLifecycle/ApplicationController.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ApplicationLifecycle/ApplicationController.cs)
+* Game flow state machine - All child classes in [Assets/Scripts/Gameplay/GameState/GameStateBehaviour.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/GameStateBehaviour.cs)
+* Scene loading and progress sharing - [ackages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
+* Synced UI with character select - [Assets/Scripts/Gameplay/GameState/ClientCharSelectState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/ClientCharSelectState.cs)
 * In-game lobby (character selection) - [Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs \
-Assets/Scripts/Gameplay/GameState/ServerCharSelectState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs)
-* Win state - [Assets/Scripts/Gameplay/GameState/PersistentGameState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/GameState/PersistentGameState.cs)
+Assets/Scripts/Gameplay/GameState/ServerCharSelectState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/NetworkCharSelection.cs)
+* Win state - [Assets/Scripts/Gameplay/GameState/PersistentGameState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/GameState/PersistentGameState.cs)
 
 #### Connectivity
 
 Boss Room includes the following connectivity resources:
 
-* Connection approval return value with custom messaging - WaitToDenyApproval() in [Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs)
+* Connection approval return value with custom messaging - WaitToDenyApproval() in [Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/HostingState.cs)
 * Connection state machine - [Assets/Scripts/ConnectionManagement/ConnectionManager.cs \
-Assets/Scripts/ConnectionManagement/ConnectionState/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionManager.cs)
-* Session manager - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)
-* RTT stats - [Assets/Scripts/Utils/NetworkOverlay/NetworkStats.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Utils/NetworkOverlay/NetworkStats.cs)
+Assets/Scripts/ConnectionManagement/ConnectionState/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionManager.cs)
+* Session manager - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)
+* RTT stats - [Assets/Scripts/Utils/NetworkOverlay/NetworkStats.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkOverlay/NetworkStats.cs)
 
 #### Services
 
 Boss Room supports integration with Lobby, Relay, and Authentication (UAS). Boss Room includes the following service resources:
 
-* Lobby and relay - host creation - CreateLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
-* Lobby and relay - client join - JoinLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
-* Relay Join - StartClientLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
-* Relay Create - StartHostLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
-* Authentication - EnsurePlayerIsAuthorized() in [Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs)
+* Lobby and relay - host creation - CreateLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
+* Lobby and relay - client join - JoinLobbyRequest() in [Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Gameplay/UI/Lobby/LobbyUIMediator.cs)
+* Relay Join - StartClientLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
+* Relay Create - StartHostLobby() in [Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/ConnectionManagement/ConnectionState/OfflineState.cs)
+* Authentication - EnsurePlayerIsAuthorized() in [Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/UnityServices/Auth/AuthenticationServiceFacade.cs)
 
 #### Tools and utilities
 
 Boss Room includes the following tools and utilities:
 
-* Networked message channel (inter-class and networked messaging) - [Assets/Scripts/Infrastructure/PubSub/NetworkedMessageChannel.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Infrastructure/PubSub/NetworkedMessageChannel.cs)
-* Simple interpolation - [Assets/Scripts/Utils/PositionLerper.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Utils/PositionLerper.cs)
-* Network Object Pooling - [Assets/Scripts/Infrastructure/NetworkObjectPool.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Infrastructure/NetworkObjectPool.cs)
-* NetworkGuid - [Assets/Scripts/Infrastructure/NetworkGuid.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Infrastructure/NetworkGuid.cs)
-* Netcode hooks - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetcodeHooks.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetcodeHooks.cs)
-* Spawner for in-scene objects - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs)
-* Session manager for reconnection - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)
-* Relay utils - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/UnityRelayUtilities.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/UnityRelayUtilities.cs)
-* Client authority - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs)
-* Scene utils with synced loading screens - [Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
-* RNSM custom config - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset)
-* NetworkSimulator usage through UI - [Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs ](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs)
-* ParrelSync - [Packages/manifest.json](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/Packages/manifest.json)
+* Networked message channel (inter-class and networked messaging) - [Assets/Scripts/Infrastructure/PubSub/NetworkedMessageChannel.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/PubSub/NetworkedMessageChannel.cs)
+* Simple interpolation - [Assets/Scripts/Utils/PositionLerper.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/PositionLerper.cs)
+* Network Object Pooling - [Assets/Scripts/Infrastructure/NetworkObjectPool.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkObjectPool.cs)
+* NetworkGuid - [Assets/Scripts/Infrastructure/NetworkGuid.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Infrastructure/NetworkGuid.cs)
+* Netcode hooks - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetcodeHooks.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetcodeHooks.cs)
+* Spawner for in-scene objects - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/NetworkObjectSpawner.cs)
+* Session manager for reconnection - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/SessionManager.cs)
+* Relay utils - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/UnityRelayUtilities.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/UnityRelayUtilities.cs)
+* Client authority - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/ClientAuthority/ClientNetworkTransform.cs)
+* Scene utils with synced loading screens - [Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
+* RNSM custom config - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset)
+* NetworkSimulator usage through UI - [Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs ](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs)
 
 ### Troubleshooting
 
@@ -245,7 +244,7 @@ Boss Room includes the following tools and utilities:
 
 ### Licence
 
-Boss Room is licenced under the Unity Companion Licence. See [LICENSE.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0/LICENSE.md) for more legal information.
+Boss Room is licenced under the Unity Companion Licence. See [LICENSE.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/LICENSE.md) for more legal information.
 
 Visit the following links to learn more about Unity Netcode and Boss Room.
 
@@ -261,7 +260,7 @@ The [Bitesize Samples](https://github.com/Unity-Technologies/com.unity.multiplay
 
 ### Contributing
 
-Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/v2.2.0p/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
+Please check out [CONTRIBUTING.md](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/CONTRIBUTING.md) for full guidelines on submitting issues and PRs to Boss Room.
 
 Our projects use the `git-flow` branching strategy:
 

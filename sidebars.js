@@ -66,7 +66,15 @@ module.exports = {
                   "items": [
                     {
                         "type": "doc",
+                        "id": "installation/unet-migration-path"
+                    },
+                    {
+                        "type": "doc",
                         "id": "installation/upgrade_from_UNet"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "installation/migrate-from-matchmaker-to-lobby"
                     },
                     {
                         "type": "doc",
@@ -79,8 +87,12 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Configuration",
+            "label": "Networking concepts",
             "items": [
+              {
+                "type": "doc",
+                "id": "terms-concepts/authority"
+              },
               {
                 "collapsed": true,
                 "type": "category",
@@ -104,6 +116,13 @@ module.exports = {
                   },
                 ],
               },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Configuration",
+            "items": [
               {
                 "collapsed": true,
                 "type": "category",

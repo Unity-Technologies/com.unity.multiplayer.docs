@@ -63,7 +63,7 @@ Don't start a `NetworkManager` within any `NetworkBehaviour` component's method;
 
  For more information about player prefabs see:
  - [NetworkObject Player Prefab Documentation](../basics/networkobject.md#player-objects)
- - [Connection Approval](../basics/connection-approval)  
+ - [Connection Approval](../basics/connection-approval.md)  
 :::
 
 ### Connecting
