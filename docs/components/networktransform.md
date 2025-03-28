@@ -138,9 +138,13 @@ Tick Sync Children does not apply to parented NetworkObjects with NetworkTransfo
 
 #### Network Conditions to Consider
 
-Sometimes network conditions are not exactly "optimal" where packets can have both undesirable latency and even the dreaded packet loss. When NetworkTransform interpolation is enabled, packet loss can mean undesirable visual artifacts (_i.e. large visual motion gaps often referred to as "stutter"_). Originally, NetworkTransform sent every state update using reliable fragmented sequenced network delivery. For interpolation, with enough latency and packet loss this could cause a time gap between interpolation points which eventually would lead to the motion "stutter". Fortunately, NetworkTransform has been continually evolving and defaults to sending the more common delta state updates (_i.e. position, rotation, or scale changes_) as unreliable sequenced network delivered messages. If one state is dropped then the `BufferedLinearInterpolator` can recover easily as it doesn't have to wait precisely for the next state update and can just lose a small portion of the over-all interpolated path (_i.e. with a TickRate setting of 30 you could lose 5 to 10% of the over-all state updates over one second and still have a relatively similar interpolated path to that of a perfectly delivered 30 delta state updates generated path_). As such, the UseUnreliableDeltas NetworkTransform property, default to enabled, controls whether you send your delta state updates unreliably or reliably.
+Sometimes network conditions are not exactly "optimal" where packets can have both undesirable latency and even the dreaded packet loss. When NetworkTransform interpolation is enabled, packet loss can mean undesirable visual artifacts (_i.e. large visual motion gaps often referred to as "stutter"_). Originally, NetworkTransform sent every state update using reliable fragmented sequenced network delivery. For interpolation, with enough latency and packet loss this could cause a time gap between interpolation points which eventually would lead to the motion "stutter". Fortunately, NetworkTransform has been continually evolving and defaults to sending the more common delta state updates (_i.e. position, rotation, or scale changes_) as unreliable sequenced network delivered messages. If one state is dropped then the `BufferedLinearInterpolator` can recover easily as it doesn't have to wait precisely for the next state update and can just lose a small portion of the over-all interpolated path (_i.e. with a TickRate setting of 30 you could lose 5 to 10% of the over-all state updates over one second and still have a relatively similar interpolated path to that of a perfectly delivered 30 delta state updates generated path_). As such, the **UseUnreliableDeltas** NetworkTransform property, default to enabled, controls whether you send your delta state updates unreliably or reliably.
 
 Of course, you might wonder what would happen if say 5% of a jumping motion, towards the end of the jumping motion, were dropped how NetworkTransform might recover since each state update sent is only based on axial deltas defined by each axis threshold settings. The answer is that there is a small bandwidth penalty for sending standard delta state updates unreliably: Axial Frame Synchronization.
+
+::: info
+When using a NetworkRigidbody or NetworkRigidbody2D and enabling the **Use Rigidbody for Motion** property, might want to avoid using the **UseUnreliableDeltas** `NetworkTransform` property as it can impact the over-all interpolation result when you have multiple Rigidbody based objects that need to keep relatively synchronized with each other.
+:::
 
 #### Unreliable State Updates
 
@@ -176,14 +180,37 @@ In order to resolve this issue, you can just enable the **Switch Transform Space
 
 Interpolation is enabled by default and is recommended if you desire smooth transitions between transform updates on non-authoritative instances. Interpolation will buffer incoming state updates that can introduce a slight delay between the authority and non-authority instances. When the **Interpolate** property is disabled, changes to the transform are immediately applied on non-authoritative instances which can result in a visual "jitter" and/or seemingly "jumping" to newly applied state updates when latency is high. Changes to the **Interpolation** property during runtime on the authoritative instance will be synchronized with all non-authoritative instances.
 
-There are two types of interpolation to chose when the **Interpolate** property is enabled:
+There are three types of interpolation to chose from when the **Interpolate** property is enabled:
+
+#### Lerp Smoothing
+All interpolation types provide you with the ability to enable or disable lerp smoothing. Lerp smoothing provides you with a finer smoothing pass at the end of an interpolator's update, but this can be at the expense of precision depending upon the value of the relative max interpolation time. In the above image (provided under Interpolation), you can see that the "Position Interpolator Type" is using "Lerp Extrapolate Blend" and has a "Position Max Interpolation Time" set to 0.07 where the "Rotation Interpolation Type" is using "Lerp" and has a "Rotation Max Interpolation Time" of 0.1. 
+
+The max interpolation time determines how quickly the given transform axial values (postion, rotation, or scale) will arrive to the results of the interpolation type. However, the max interpolation time value is inversely proportional to the final arrival time. As such, the above "Position Max Interpolation Time" will yield a faster arrival to the position than that of the "Rotation Max Interpolation Time". So, the rule of thumb here is:
+
+- The lower the max interpolation time the faster the value will be reached but will have less of a "smoothing result".
+- The higher the max interpolation time the slower the value will be reached but will have more of a "smoothing result".
+<br />
+
+:::info
+Be aware that while the max interpolator time values can be set to as high as 0.5 this time could result in a higher loss of precision when interpolating between values.
+
+The formula to use is:
+
+t = delta time / max interpolation time
+
+*(Where t is the lerp "t" parameter)*
+
+If you have a max interpolation time of 0.5 and a delta time of 0.0167777 (i.e. 60fps), then your "t" value would be 0.032 which depending upon how large your state delta value is (i.e. what you are lerping towards) it would take much longer than the typical tick rate (30 or 0.033333ms) to reach the current state's value. As such, the interpolator would have moved on to the next state update (if one was pending and ready to be processed) well before the current state update's value was reached. There are scenarios where you might want this type of behavior where you are adjusting the max interpolation time dynamically during runtime (i.e. the slower something is moving the smoother you might want it to be). 
+
+However, if you are setting it within the editor (i.e. as a default value that never is updated again) then you should stick with values that range between 0.2 and 0.02 (where 0.01 will almost always yield a value higher than 1 which using the clamped lerp will be the same as 1). 
+:::
 
 #### Lerp
 This uses a traditional linear interpolation approach where it applies two layers of lerping between state updates. The upside to this approach is you can be assured that you get a very smooth end result. The downside to this is that you can lose some of the precision when interpolating between two state updates. This typically is most noticeable with position when there is a rapid change in direction (i.e. like a bouncing ball colliding against a floor). When this happens you can end up with the non-authority instances never reaching their final destination before heading towards their new destination (i.e. the ball bounces a bit above the floor for non-authority instances).
 
 For each axis relative interpolator, there is a maximum interpolation threshold value that can be adjusted to help increase the precision of the second lerp. The second lerp pass becomes more precise with a lower threshold value, but the over-all end smoothing result could be impacted (i.e. non-authority instances could have a slight stutter to their motion).
 
-#### Slerp position
+##### Slerp position
 
 ![image](../../static/img/networktransform/PositionSlerp.png)
 
@@ -200,15 +227,23 @@ darkImageSrc="/BufferedTick_Dark.png?text=DarkMode"/>
   <figcaption>Graphic of a buffered tick between the server and a client (that is, interpolation)</figcaption>
 </figure>
 
+#### Lerp, Extrapolate, and Blend
+
+
 #### Smooth Dampening
 The smooth dampening interpolator yields a more precise end result while still keeping the transition between states (position, rotation, or scale) smooth. Smooth dampening is similar to that of lerping with the difference being that it keeps track of the rate of change in the values over time.
 
-This approach uses two smooth dampening calculations:
-- 1st Pass: calculates the smooth dampen result for the current relative local time of the non-authority instance which is based on the `NetworkTimeSystem.TickLatency` calculation performed once per second when the network time is updated.
-- 2nd Pass: does a "micro-predicted" smooth dampen calculation that is projected forward relative to the current `NetworkTimeSystem.TickLatency` value. *Typically this averages around 2-3 frames into the future.*
-- Final Pass: lerps from the 1st calculation's result to the 2nd calculation's result using local system's delta time (or fixed delta time if using NetworkRigidBody and the **Use Rigidbody for Motion** property is enabled) as the lerp's "t" factor.
+This approach always uses three passes:
+- 1st Pass: calculates the smooth dampen result for the current relative local time of the non-authority instance which is based on the `NetworkTimeSystem.TickLatency` calculation performed once per player loop frame update.
+- 2nd Pass: does a "micro-predicted" smooth dampen calculation that is projected forward relative to the current `NetworkTimeSystem.TickLatency` value by a delta time averaged and recalculated each update.
+- 3rd Pass: lerps between the results of the 1st and 2nd passes by an amount (the lerp "t" factor) based on the current frame's delta time. Delta time is dependent upon whether you are using a NetworkRigidBody with the **Use Rigidbody for Motion** property is enabled or not (i.e. Time.deltaTime if not or Time.fixedDeltaTime if it is enabled).
 
-This ends up with a more precise end result while still maintaining a consistently smooth interpolation between state updates. 
+You can get a smooth and precise end result without having to have lerp smoothing enabled.
+
+##### Optional Lerp Smoothing (2 additional passes)
+When enabled, there are two additional passes that will be applied:
+- 4th pass: Lerps up to 1/3rd of the 3rd pass result
+
 
 ::: tip
 You can mix & match the types of interpolators you want to use. For the most part, using the Smooth Dampening interpolator for position and Lerp for rotation and scale will yield very smooth rotations with more precise (yet smooth) motion.
