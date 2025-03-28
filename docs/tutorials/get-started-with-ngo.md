@@ -151,12 +151,12 @@ namespace HelloWorld
     {
         private NetworkManager m_NetworkManager;
 
-        void Awake()
+        private void Awake()
         {
             m_NetworkManager = GetComponent<NetworkManager>();
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
             if (!m_NetworkManager.IsClient && !m_NetworkManager.IsServer)
@@ -173,14 +173,14 @@ namespace HelloWorld
             GUILayout.EndArea();
         }
 
-        static void StartButtons()
+        private void StartButtons()
         {
             if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
             if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
             if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
-        static void StatusLabels()
+        private void StatusLabels()
         {
             var mode = m_NetworkManager.IsHost ?
                 "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
@@ -190,7 +190,7 @@ namespace HelloWorld
             GUILayout.Label("Mode: " + mode);
         }
 
-        static void SubmitNewPosition()
+        private void SubmitNewPosition()
         {
             if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
@@ -220,14 +220,14 @@ In your Hello World project, you created a NetworkManager by adding the pre-crea
 The `HelloWorldManager.cs` script accomplishes this menu within the `StartButtons().` After you select a button, the `StatusLabels()`method adds a label on-screen to display which mode you have selected. This helps distinguish Game view windows from each other when testing your multiplayer game.
 
 ```csharp
-       static void StartButtons()
+       private void StartButtons()
         {
             if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
             if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
             if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
-        static void StatusLabels()
+        private void StatusLabels()
         {
             var mode = m_NetworkManager.IsHost ?
                 "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
@@ -383,7 +383,7 @@ namespace HelloWorld
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+        private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -395,7 +395,7 @@ namespace HelloWorld
             return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
         }
 
-        void Update()
+        private void Update()
         {
             transform.position = Position.Value;
         }
@@ -438,14 +438,14 @@ If the current player is the server, the code determines a random position to sp
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+        private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
             Position.Value = randomPosition;
         }
 
-        void Update()
+        private void Update()
         {
             transform.position = Position.Value;
         }
@@ -467,7 +467,7 @@ The `Rpc` sets the position NetworkVariable on the server's instance of the play
 
 ```csharp
        [Rpc(SendTo.Server)]
-        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+        private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -487,7 +487,7 @@ The server instance of the player modifies the `Position` `NetworkVariable` thro
 Because the `HelloWorldPlayer.cs` script handles the position NetworkVariable, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
 
 ```csharp
-       static void SubmitNewPosition()
+       private void SubmitNewPosition()
         {
             if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
@@ -558,7 +558,7 @@ using UnityEngine;
 
 public class NetworkTransformTest : NetworkBehaviour
 {
-    void Update()
+    private void Update()
     {
         if (IsServer)
         {
