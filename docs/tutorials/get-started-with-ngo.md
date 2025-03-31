@@ -173,14 +173,14 @@ namespace HelloWorld
             GUILayout.EndArea();
         }
 
-        static void StartButtons()
+        void StartButtons()
         {
             if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
             if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
             if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
-        static void StatusLabels()
+        void StatusLabels()
         {
             var mode = m_NetworkManager.IsHost ?
                 "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
@@ -190,7 +190,7 @@ namespace HelloWorld
             GUILayout.Label("Mode: " + mode);
         }
 
-        static void SubmitNewPosition()
+        void SubmitNewPosition()
         {
             if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
@@ -220,14 +220,14 @@ In your Hello World project, you created a NetworkManager by adding the pre-crea
 The `HelloWorldManager.cs` script accomplishes this menu within the `StartButtons().` After you select a button, the `StatusLabels()`method adds a label on-screen to display which mode you have selected. This helps distinguish Game view windows from each other when testing your multiplayer game.
 
 ```csharp
-       static void StartButtons()
+        void StartButtons()
         {
             if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
             if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
             if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
-        static void StatusLabels()
+        void StatusLabels()
         {
             var mode = m_NetworkManager.IsHost ?
                 "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
@@ -390,7 +390,7 @@ namespace HelloWorld
             Position.Value = randomPosition;
         }
 
-        static Vector3 GetRandomPositionOnPlane()
+        Vector3 GetRandomPositionOnPlane()
         {
             return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
         }
@@ -416,7 +416,7 @@ public class HelloWorldPlayer : NetworkBehaviour
 For multiplayer games, every object runs on at least two machines: player one and player two. Because of this, you need to ensure both machines have the same behavior and have the correct information about the object. One of the instances that come into play then is to understand how the Player moves. Only one player controls how the Player object moves. The following code enforces this by validating if the machine running the code is the player's owner.
 
 ```csharp
-       public override void OnNetworkSpawn()
+        public override void OnNetworkSpawn()
         {
             if (IsOwner)
             {
@@ -478,7 +478,7 @@ The `Rpc` sets the position NetworkVariable on the server's instance of the play
 The server instance of the player modifies the `Position` `NetworkVariable` through the `Rpc`. If the player is a client, it must apply the position locally inside the `Update` loop. (Since the two values are the same on the server, the server can run the same logic with no side effects, but you could also add `if(IsClient)` here.)
 
 ```csharp
-       void Update()
+        void Update()
         {
             transform.position = Position.Value;
         }
@@ -487,7 +487,7 @@ The server instance of the player modifies the `Position` `NetworkVariable` thro
 Because the `HelloWorldPlayer.cs` script handles the position NetworkVariable, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
 
 ```csharp
-       static void SubmitNewPosition()
+        void SubmitNewPosition()
         {
             if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
