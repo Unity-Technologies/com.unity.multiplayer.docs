@@ -19,7 +19,7 @@ The tutorials that open with each scene use the [Tutorial Framework package](htt
 
 ## The Anticipation scene
 
-The Anticipation scene provides examples on how to use the Client Anticipation feature of Netcode for GameObjects to implement these use cases: 
+The Anticipation scene demonstrates the Client Anticipation feature of Netcode for GameObjects in the following use cases: 
 - **AnticipatedNetworkVariable:**
   - Altering NetworkVariables responsively by anticipating server actions based on player interaction.
   - Latency compensation for server-controlled values.
