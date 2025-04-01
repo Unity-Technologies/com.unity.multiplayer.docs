@@ -22,7 +22,7 @@ The tutorials that open with each scene use the [Tutorial Framework package](htt
 The Anticipation scene demonstrates the Client Anticipation feature of Netcode for GameObjects in the following use cases: 
 - [`AnticipatedNetworkVariable`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.2/api/Unity.Netcode.AnticipatedNetworkVariable-1.html):
   - Anticipate server actions based on player interaction to change NetworkVariables responsively. 
-  - Latency compensation for server-controlled values.
+  - Compensate for latency that the server causes when it changes a value.
   - Handle incorrect anticipation.
 - [`AnticipatedNetworkTransform`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.2/api/Unity.Netcode.Components.AnticipatedNetworkTransform.html):
   - Responsive server-authoritative player movement.
