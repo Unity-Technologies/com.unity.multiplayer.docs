@@ -30,7 +30,7 @@ You can use `NetworkVariable` [permissions](#permissions) to control read and wr
 
 ### Initializing a NetworkVariable
 
-When the associated NetworkObject of a `NetworkBehaviour` with `NetworkVariable` properties is spawned, the associated `NetworkVariable` will also be spawned.The `NetworkVariable`'s current state (`Value`) is automatically synchronized on the client side. When any new client connects, it's synchronized with the current value of the `NetworkVariable` before the `NetworkBehaviour.OnNetworkSpawn` is invoked.
+When the associated NetworkObject of a `NetworkBehaviour` with `NetworkVariable` properties is spawned, the associated `NetworkVariable` will be initialized and associated with its associated `NetworkBehaviour`. When any new client connects, it's synchronized with the current value of the `NetworkVariable` before the `NetworkBehaviour.OnNetworkSpawn` is invoked.
 
 A `NetworkVariable` will be initialized during the associated `NetworkBehaviour` initialization. The [Start](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.Start.html) and `OnNetworkSpawn` methods are invoked based on the type of NetworkObject the `NetworkBehaviour` is associated with:
 
@@ -164,6 +164,8 @@ This works the same way with dynamically spawned NetworkObjects.
 The [synchronization and notification example](#synchronization-and-notification-example) highlights the differences between synchronizing a `NetworkVariable` with newly-joining clients and notifying connected clients when a `NetworkVariable` changes, but it doesn't provide any concrete example usage.
 
 The `OnValueChanged` example shows a simple server-authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed) using a non-ownership-based server RPC. With `RequireOwnership = false` any client can notify the server that it's performing an action on the door. Each time the door is used by a client, the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. When the `Door.State.Value` changes, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
+
+It is important to note how [RPCs](../advanced-topics/message-system/rpc.md) can be used in tandem with `NetworkVariable` state. An `RPC` call is used in tandem with a `NetworkVariable`. The `RPC` handles instantaneous notification of state, while the `NetworkVariable` handles synchronization across clients of that state.
 
 ```csharp
 public class Door : NetworkBehaviour
