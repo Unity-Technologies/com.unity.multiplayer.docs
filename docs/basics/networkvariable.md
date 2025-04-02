@@ -10,10 +10,10 @@ title: NetworkVariables
 * New clients joining the game (also referred to as late-joining clients)
 * All connected clients during the game
 
-When using a [distributed authority](../terms-concepts/distributed-authority.md) network topology, A `NetworkVariable` will ensure value synchronization is handled during:
+When using a [distributed authority](../terms-concepts/distributed-authority.md) network topology, A `NetworkVariable` ensures value synchronization is handled during:
 
 * Ownership changes of the associated NetworkObject
-* Object redistribution during client connection or disconnection.
+* Object redistribution during client connection or disconnection
 
 You can use `NetworkVariable` [permissions](#permissions) to control read and write access to `NetworkVariable`s. You can also create [custom `NetworkVariable`s](custom-networkvariables.md).
 
@@ -26,13 +26,13 @@ You can use `NetworkVariable` [permissions](#permissions) to control read and wr
 - A `NetworkVariable`'s value can only be set:
     - When initializing the property (either when it's declared or within the Awake method).
     - While the associated NetworkObject is spawned (upon being spawned or any time while it's still spawned).
-- A `NetworkVariable` cannot be defined with the `static` keyword. Variables defined with the static keyword have a lifetime that lasts for the entire runtime of an application, rather than the much shorter lifetime of a `GameObject`. This results in incorrect and invalid state management where a `NetworkVariable` will not behave as expected.
+- A `NetworkVariable` can't be defined with the `static` keyword. Variables defined with the static keyword have a lifetime that lasts for the entire runtime of an application, rather than the much shorter lifetime of a `GameObject`. This results in incorrect and invalid state management where `NetworkVariable`s don't behave as expected.
 
 ### Initializing a NetworkVariable
 
-When the associated NetworkObject of a `NetworkBehaviour` with `NetworkVariable` properties is spawned, the associated `NetworkVariable` will be initialized and associated with its associated `NetworkBehaviour`. When any new client connects, it's synchronized with the current value of the `NetworkVariable` before the `NetworkBehaviour.OnNetworkSpawn` is invoked.
+When a NetworkObject with an associated `NetworkBehaviour` with `NetworkVariable` properties is spawned, the `NetworkVariable` is initialized and associated with its relevant `NetworkBehaviour`. When any new client connects, it's synchronized with the current value of the `NetworkVariable` before the `NetworkBehaviour.OnNetworkSpawn` is invoked.
 
-A `NetworkVariable` will be initialized during the associated `NetworkBehaviour` initialization. The [Start](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.Start.html) and `OnNetworkSpawn` methods are invoked based on the type of NetworkObject the `NetworkBehaviour` is associated with:
+`NetworkVariable`s are initialized during the associated `NetworkBehaviour` initialization. The [Start](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.Start.html) and `OnNetworkSpawn` methods are invoked based on the type of NetworkObject the `NetworkBehaviour` is associated with:
 
 - In-scene placed: Since the instantiation occurs via the scene loading mechanism(s), the `Start` method is invoked before `OnNetworkSpawn`.
 - Dynamically spawned: Since `OnNetworkSpawn` is invoked immediately (that is, within the same relative call-stack) after instantiation, the `Start` method is invoked after `OnNetworkSpawn`.
@@ -49,7 +49,7 @@ You should only set the value of a `NetworkVariable` when first initializing it 
 
 ### Using a NetworkVariable
 
-After initialization, subscribing to the `NetworkVariable.OnValueChanged` event will notify connected clients of value changes. Clients must be subscribed to this event prior to the value being changed. Typically, clients should register for `NetworkVariable.OnValueChanged` within the `OnNetworkSpawn` method.
+After initialization, subscribing to the `NetworkVariable.OnValueChanged` event notifies connected clients of value changes. Clients must be subscribed to this event prior to the value being changed. Typically, clients should register for `NetworkVariable.OnValueChanged` within the `OnNetworkSpawn` method.
 
 Two parameters are passed to any `NetworkVariable.OnValueChanged` subscribed callback method:
 
@@ -165,7 +165,7 @@ The [synchronization and notification example](#synchronization-and-notification
 
 The `OnValueChanged` example shows a simple server-authoritative `NetworkVariable` being used to track the state of a door (that is, open or closed) using a non-ownership-based server RPC. With `RequireOwnership = false` any client can notify the server that it's performing an action on the door. Each time the door is used by a client, the `Door.ToggleServerRpc` is invoked and the server-side toggles the state of the door. When the `Door.State.Value` changes, all connected clients are synchronized to the (new) current `Value` and the `OnStateChanged` method is invoked locally on each client.
 
-It is important to note how [RPCs](../advanced-topics/message-system/rpc.md) can be used in tandem with `NetworkVariable` state. An `RPC` call is used in tandem with a `NetworkVariable`. The `RPC` handles instantaneous notification of state, while the `NetworkVariable` handles synchronization across clients of that state.
+It's important to note how [RPCs](../advanced-topics/message-system/rpc.md) can be used in tandem with `NetworkVariable` state. When an `RPC` call is used in tandem with a `NetworkVariable`, the `RPC` handles instantaneous notification of state, while the `NetworkVariable` handles synchronization across clients of that state.
 
 ```csharp
 public class Door : NetworkBehaviour
