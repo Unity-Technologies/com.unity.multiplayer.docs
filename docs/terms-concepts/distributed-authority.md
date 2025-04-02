@@ -23,9 +23,9 @@ Using a distributed authority topology is typically not suitable for high-perfor
 
 ## Session ownership
 
-When using the distributed authority topology, it is necessary to have a single dedicated client who is responsible for managing and synchronizing global game state-related tasks. This client is referred to as the session owner.
+When using the distributed authority topology, it's necessary to have a single dedicated client that's responsible for managing and synchronizing global game state-related tasks. This client is referred to as the session owner.
 
-The initial session owner is the first client who joins when the session is created. If this client disconnects during the game, a new session owner will be automatically selected and promoted from within all the clients who are currently connected.
+The initial session owner is the first client that joins when the session is created. If this client disconnects during the game, a new session owner is automatically selected and promoted from within the clients that are currently connected.
 
 ## More information about distributed authority
 
