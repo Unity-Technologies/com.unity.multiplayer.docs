@@ -23,12 +23,6 @@ Server authority games can also be resource intensive. The server runs the simul
 
 Server authority is primarily used by performance-sensitive games, such as first-person shooters, or competitive games where having a central server authority is necessary to minimize cheating and the effects of bad actors.
 
-#### Motion model authority
-
-When using a server authority model, it can be useful to assign partial authority of objects to individual clients. Giving clients the ability to move objects locally can allow for more responsive gameplay. These objects are called "client authoritative" objects.
-
-When using client authoritative objects, the ultimate authority of the object remains with the server, however only the client who "owns" the object has the ability to move the object
-
 ### Distributed authority
 
 The distributed authority model shares authority between game instances. Each game instance is the authority for a subdivision of the networked objects in the game and is responsible for running the simulation for their subdivision of objects. Updates are shared from other game instances for the rest of the simulation.
