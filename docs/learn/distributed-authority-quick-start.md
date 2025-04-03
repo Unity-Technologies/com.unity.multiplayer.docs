@@ -37,8 +37,8 @@ Before you begin, you need the following:
 3. Under the Network Settings, set the **Network Topology** property to **Distributed Authority**.
 ![set network topology](/img/learn/distributed-authority-quick-start/network-topology.png)
 
-4. Under **Network Transport**, select **UnityTransport** from the list of options to add.
-![use unity transport](/img/learn/distributed-authority-quick-start/unity-transport.png)
+4. Under **Network Transport**, select **DistributedAuthorityTransport** from the list of options to add.
+![use unity transport](/img/learn/distributed-authority-quick-start/transport.png)
 
 5. Save any changes to your objects and scene.
 

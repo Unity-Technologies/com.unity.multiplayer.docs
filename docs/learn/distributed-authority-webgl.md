@@ -31,6 +31,10 @@ You also need the following packages and minimum versions for a WebGL distribute
 
 Follow the instructions on the [distributed authority general quickstart](distributed-authority-quick-start.md) page.
 
+## Configure the transport to use websockets
+
+Enable the "Use Web Sockets" checkbox on the **DistributedAuthorityTransport** component that was added to the *NetworkManager* object. ![enable web sockets](/img/learn/distributed-authority-quick-start/use-websockets.png)
+
 ## Build and run with WebGL
 
 1. Navigate to __File__ > __Build Profiles__ to open the __Build Profiles__ window. Select WebGL as your target platform.
