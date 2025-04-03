@@ -147,16 +147,20 @@ using UnityEngine;
 
 namespace HelloWorld
 {
+    /// <summary>
+    /// Add this component to the same GameObject as
+    /// the NetworkManager component.
+    /// </summary>
     public class HelloWorldManager : MonoBehaviour
     {
         private NetworkManager m_NetworkManager;
 
-        void Awake()
+        private void Awake()
         {
             m_NetworkManager = GetComponent<NetworkManager>();
         }
 
-        void OnGUI()
+        private void OnGUI()
         {
             GUILayout.BeginArea(new Rect(10, 10, 300, 300));
             if (!m_NetworkManager.IsClient && !m_NetworkManager.IsServer)
@@ -173,14 +177,14 @@ namespace HelloWorld
             GUILayout.EndArea();
         }
 
-        static void StartButtons()
+        private void StartButtons()
         {
             if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
             if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
             if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
-        static void StatusLabels()
+        private void StatusLabels()
         {
             var mode = m_NetworkManager.IsHost ?
                 "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
@@ -190,11 +194,11 @@ namespace HelloWorld
             GUILayout.Label("Mode: " + mode);
         }
 
-        static void SubmitNewPosition()
+        private void SubmitNewPosition()
         {
             if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
             {
-                if (m_NetworkManager.IsServer && !m_NetworkManager.IsClient )
+                if (m_NetworkManager.IsServer && !m_NetworkManager.IsClient)
                 {
                     foreach (ulong uid in m_NetworkManager.ConnectedClientsIds)
                         m_NetworkManager.SpawnManager.GetPlayerNetworkObject(uid).GetComponent<HelloWorldPlayer>().Move();
@@ -220,14 +224,14 @@ In your Hello World project, you created a NetworkManager by adding the pre-crea
 The `HelloWorldManager.cs` script accomplishes this menu within the `StartButtons().` After you select a button, the `StatusLabels()`method adds a label on-screen to display which mode you have selected. This helps distinguish Game view windows from each other when testing your multiplayer game.
 
 ```csharp
-       static void StartButtons()
+       private void StartButtons()
         {
             if (GUILayout.Button("Host")) m_NetworkManager.StartHost();
             if (GUILayout.Button("Client")) m_NetworkManager.StartClient();
             if (GUILayout.Button("Server")) m_NetworkManager.StartServer();
         }
 
-        static void StatusLabels()
+        private void StatusLabels()
         {
             var mode = m_NetworkManager.IsHost ?
                 "Host" : m_NetworkManager.IsServer ? "Server" : "Client";
@@ -279,7 +283,7 @@ public class RpcTest : NetworkBehaviour
     }
 
     [Rpc(SendTo.ClientsAndHost)]
-    void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
+    private void ClientAndHostRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Client Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
         if (IsOwner) //Only send an RPC to the owner of the NetworkObject
@@ -289,7 +293,7 @@ public class RpcTest : NetworkBehaviour
     }
 
     [Rpc(SendTo.Server)]
-    void ServerOnlyRpc(int value, ulong sourceNetworkObjectId)
+    private void ServerOnlyRpc(int value, ulong sourceNetworkObjectId)
     {
         Debug.Log($"Server Received the RPC #{value} on NetworkObject #{sourceNetworkObjectId}");
         ClientAndHostRpc(value, sourceNetworkObjectId);
@@ -383,7 +387,7 @@ namespace HelloWorld
         }
 
         [Rpc(SendTo.Server)]
-        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+        private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
         {
             var randomPosition = GetRandomPositionOnPlane();
             transform.position = randomPosition;
@@ -395,7 +399,7 @@ namespace HelloWorld
             return new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
         }
 
-        void Update()
+        private void Update()
         {
             transform.position = Position.Value;
         }
@@ -432,24 +436,27 @@ Because the server and client can be the same machine and the Player's owner (ak
 If the current player is the server, the code determines a random position to spawn the Player. You can't find the spawn location if the current player is the client. You have to get it from the server.
 
 ```csharp
-        public void Move()
-        {
-            SubmitPositionRequestRpc();
-        }
+    public void Move()
+    {
+        SubmitPositionRequestRpc();
+    }
 
-        [Rpc(SendTo.Server)]
-        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
-        {
-            var randomPosition = GetRandomPositionOnPlane();
-            transform.position = randomPosition;
-            Position.Value = randomPosition;
-        }
+    [Rpc(SendTo.Server)]
+    private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+    {
+        var randomPosition = GetRandomPositionOnPlane();
+        transform.position = randomPosition;
+        Position.Value = randomPosition;
+    }
 
-        void Update()
-        {
-            transform.position = Position.Value;
-        }
+    private void Update()
+    {
+        transform.position = Position.Value;
+    }
 ```
+:::info
+The above is only provided as an example of using RPCs, NetworkBehaviours, and NetworkVariables together. For transform synchronization, using a [NetworkTransform](../components/networktransform.md) component is recommended.
+:::
 
 #### Positioning the player using an RPC
 
@@ -458,7 +465,7 @@ This section walks you through the `HelloWorldPlayer.cs` portion of the script t
 If the player is a server-owned player at `OnNetworkSpawn()`, you can immediately move this player, as suggested in the following code.
 
 ```csharp
-            SubmitPositionRequestRpc();
+    SubmitPositionRequestRpc();
 ```
 
 You can call this `Rpc` when the player is a client or a server. When you call an `Rpc` with `SendTo.Server`  on the server side, it executes in the same way as a local function call by default.
@@ -466,36 +473,36 @@ You can call this `Rpc` when the player is a client or a server. When you call a
 The `Rpc` sets the position NetworkVariable on the server's instance of the player by just picking a random point on the plane.
 
 ```csharp
-       [Rpc(SendTo.Server)]
-        void SubmitPositionRequestRpc(RpcParams rpcParams = default)
-        {
-            var randomPosition = GetRandomPositionOnPlane();
-            transform.position = randomPosition;
-            Position.Value = randomPosition;
-        }
+    [Rpc(SendTo.Server)]
+    private void SubmitPositionRequestRpc(RpcParams rpcParams = default)
+    {
+        var randomPosition = GetRandomPositionOnPlane();
+        transform.position = randomPosition;
+        Position.Value = randomPosition;
+    }
 ```
 
 The server instance of the player modifies the `Position` `NetworkVariable` through the `Rpc`. If the player is a client, it must apply the position locally inside the `Update` loop. (Since the two values are the same on the server, the server can run the same logic with no side effects, but you could also add `if(IsClient)` here.)
 
 ```csharp
-       void Update()
-        {
-            transform.position = Position.Value;
-        }
+    private void Update()
+    {
+        transform.position = Position.Value;
+    }
 ```
 
 Because the `HelloWorldPlayer.cs` script handles the position NetworkVariable, the `HelloWorldManager.cs` script can define the contents of `SubmitNewPosition()`.
 
 ```csharp
-       static void SubmitNewPosition()
+    private void SubmitNewPosition()
+    {
+        if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
         {
-            if (GUILayout.Button(m_NetworkManager.IsServer ? "Move" : "Request Position Change"))
-            {
-                var playerObject = m_NetworkManager.SpawnManager.GetLocalPlayerObject();
-                var player = playerObject.GetComponent<HelloWorldPlayer>();
-                player.Move();
-            }
+            var playerObject = m_NetworkManager.SpawnManager.GetLocalPlayerObject();
+            var player = playerObject.GetComponent<HelloWorldPlayer>();
+            player.Move();
         }
+    }
 ```
 
 The method in the code block above adds a contextual button that changes depending on whether the client is a server or a client. When you press the button this method creates, it finds your local player and calls `Move()`.
@@ -558,7 +565,7 @@ using UnityEngine;
 
 public class NetworkTransformTest : NetworkBehaviour
 {
-    void Update()
+    private void Update()
     {
         if (IsServer)
         {

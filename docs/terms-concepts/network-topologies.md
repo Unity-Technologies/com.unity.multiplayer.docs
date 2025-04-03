@@ -15,7 +15,7 @@ Client-server games use a [server authority model](authority.md#server-authority
 
 Within the client-server network topology there are two main [network architectures](./client-server.md#client-server-network-architectures). These are the dedicated game server (where a dedicated machine runs only the game simulation), and the listen-server architecture (where a single game instance runs both the game simulation and a playing game client).
 
-For more details about client-server topologies, refer to the [Client-Server page](#client-server).
+For more details about client-server topologies, refer to the [Client-server topologies page](client-server.md).
 
 ### Distributed authority
 
