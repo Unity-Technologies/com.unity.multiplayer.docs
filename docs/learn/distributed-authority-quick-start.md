@@ -29,7 +29,7 @@ Before you begin, you need the following:
 
 ## Netcode for GameObjects setup
 
-1.  Using the SampleScene, add a new *Empty* object and name it *NetworkManager*.
+1. Using the SampleScene, add a new **Empty** object and name it **NetworkManager**.
 
 2. Attach a Network Manager component to it.
 ![add network manager](/img/learn/distributed-authority-quick-start/network-manager.png)
@@ -44,7 +44,8 @@ Before you begin, you need the following:
 
 ## Connection setup
 
-1. Create a new script called *ConnectionManager.cs*. This script provides a user interface and the script logic required to connect to a distributed authority service session:
+1. Create a new script called **ConnectionManager.cs**. This script provides a user interface and the script logic required to connect to a distributed authority service session:
+
 ```cs
 using System;
 using System.Threading.Tasks;
@@ -159,12 +160,13 @@ It's important to wait until `OnClientConnectedCallback` has been triggered befo
 
 :::
 
-2. Add the `ConnectionManager` component script you created to the  *NetworkManager* object.
+1. Add the **ConnectionManager** component script you created to the **NetworkManager** object.
 ![add connection manager](/img/learn/distributed-authority-quick-start/create-connection-manager.png)
 
 ## Adding gameplay
 
-1. Create a new Script called *PlayerCubeController.cs*:
+1. Create a new Script called **PlayerCubeController.cs**:
+
 ```cs
 using Unity.Netcode.Components;
 using UnityEngine;
@@ -247,18 +249,19 @@ public class PlayerCubeController : NetworkTransform
     }
 }
 ```
-2. In the open *SampleScene*, create a 3D cube and name it *PlayerCube*.
+
+2. In the open **SampleScene**, create a 3D cube and name it **PlayerCube**.
 ![create PlayerCube object](/img/learn/distributed-authority-quick-start/player-cube.png)
-3. Add a NetworkObject component to the *PlayerCube*.
+3. Add a NetworkObject component to the **PlayerCube**.
 ![add a NetworkObject component](/img/learn/distributed-authority-quick-start/add-networkobject.png)
-4. Set the NetworkObject Ownership to "None".
-5. Add the *PlayerCubeController* to the *PlayerCube*.
+4. Set the NetworkObject Ownership to **None**.
+5. Add the **PlayerCubeController** to the **PlayerCube**.
 ![add the PlayerCubeController component](/img/learn/distributed-authority-quick-start/add-playercubecontroller.png)
 6. Create a Prefabs folder in the root Assets folder.
-7. Drag and drop the *PlayerCube* object into the newly created Prefabs folder.
+7. Drag and drop the **PlayerCube** object into the newly created Prefabs folder.
 ![create the player cube prefab](/img/learn/distributed-authority-quick-start/create-playercube-prefab.png)
-8. Delete the *PlayerCube* object from your scene.
-9. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created *PlayerCube*.
+8. Delete the **PlayerCube** object from your scene.
+9. Open the Network Manager, navigate to **Prefab Settings**, and set the **Default Player Prefab** to be the newly created **PlayerCube**.
 ![set the default player prefab](/img/learn/distributed-authority-quick-start/assign-default-player-prefab.png)
 10. Save all changes to the scene.
 
