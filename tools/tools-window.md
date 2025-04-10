@@ -3,11 +3,11 @@ id: multiplayer-tools-window
 title: Multiplayer Tools Window
 ---
 
-The Multiplayer Tools window provides convenient access to all of the multiplayer tools and their documentation in one place. 
+The Multiplayer Tools window provides convenient access to all of the multiplayer tools and their documentation in one place.
 In the case where some tools are unavailable because of a missing dependency, an explanatory message is displayed and you can open the Package Manager directly from the Multiplayer Tools Window.
 
 
-You can open the window by navigating to **Window** > **Multiplayer Tools**.
+You can open the window by navigating to **Window** > **Multiplayer** > **Multiplayer Tools**.
 
 ![](/img/tools/tools-window-1.png)
 

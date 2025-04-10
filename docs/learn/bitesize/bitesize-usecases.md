@@ -17,6 +17,17 @@ Each scene includes a tutorial to help you locate the scripts and GameObjects it
 
 The tutorials that open with each scene use the [Tutorial Framework package](https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@4.0/manual/index.html). You can open each tutorial at any time from the **Tutorials** menu.
 
+## The Anticipation scene
+
+The Anticipation scene demonstrates the Client Anticipation feature of Netcode for GameObjects in the following use cases: 
+- [`AnticipatedNetworkVariable`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.2/api/Unity.Netcode.AnticipatedNetworkVariable-1.html):
+  - Anticipate server actions based on player interaction to change NetworkVariables responsively. 
+  - Compensate for latency that the server causes when it changes a value.
+  - Handle incorrect anticipation.
+- [`AnticipatedNetworkTransform`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.2/api/Unity.Netcode.Components.AnticipatedNetworkTransform.html):
+  - Responsive server-authoritative player movement.
+  - Smooth player movement across clients.
+
 ## The NetvarVsRpc scene
 
 The NetvarVsRpc scene explains why to use NetworkVariables instead of Remote Procedure Calls (RPCs) to perform state synchronization.
