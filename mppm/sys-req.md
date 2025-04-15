@@ -2,7 +2,7 @@
 id: sys-req
 title: Compatibility
 ---
-Multiplayer Play Mode can be used with any Netcode solutions.
+You can use Multiplayer Play Mode with any Netcode solution.
 Multiplayer Play Mode also contains features that integrate with the following multiplayer packages and services: 
 - [Netcode for GameObjects](https://docs-multiplayer.unity3d.com/netcode/1.6.0/about/)
 - [Netcode for Entities](https://docs.unity3d.com/Packages/com.unity.netcode@1.2/manual/index.html)
