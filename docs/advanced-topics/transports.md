@@ -20,7 +20,7 @@ A transport layer can provide:
 
 ## Unity Transport package
 
-Netcode's default transport Unity Transport is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. See the Transport [documentation](../../../transport/current/about) for more information and how to [install](../../../transport/current/install).
+Netcode's default transport Unity Transport is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. Refer to the [Transport documentation](https://docs-multiplayer.unity3d.com/transport/current/about/) for more information and how to [install the Transport package](https://docs-multiplayer.unity3d.com/transport/current/install/).
 
 ## Unity's UNet Transport Layer API
 
