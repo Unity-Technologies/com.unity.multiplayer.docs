@@ -1,0 +1,575 @@
+{
+  "netcode": [
+    {
+      "type": "doc",
+      "id": "about"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Release notes",
+      "items": [
+        {
+          "type": "doc",
+          "id": "release-notes/ngo-changelog",
+          "label": "Netcode for GameObjects"
+        },
+        {
+          "type": "doc",
+          "id": "samples/release-notes/bossroom-changelog",
+          "label": "Boss Room"
+        },
+        {
+          "type": "doc",
+          "id": "samples/release-notes/bitesize-changelog",
+          "label": "Bitesize"
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "label": "API reference",
+      "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@1.12/api/index.html"
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Get started",
+      "items": [
+        {
+          "type": "doc",
+          "id": "installation/install"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/get-started-ngo"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Migrating",
+          "items": [
+            {
+              "type": "doc",
+              "id": "installation/upgrade_from_UNet"
+            },
+            {
+              "type": "doc",
+              "id": "installation/upgrade_from_mlapi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Configuration",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Network topologies",
+          "items": [
+            {
+              "type": "doc",
+              "id": "terms-concepts/network-topologies"
+            },
+            {
+              "type": "doc",
+              "id": "terms-concepts/client-server"
+            },
+            {
+              "type": "doc",
+              "id": "learn/listen-server-host-architecture"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Configuring connections",
+          "items": [
+            {
+              "type": "doc",
+              "id": "basics/connection-approval"
+            },
+            {
+              "type": "doc",
+              "id": "basics/max-players"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/transports"
+        },
+        {
+          "type": "doc",
+          "id": "relay/relay"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Networking components",
+      "items": [
+        {
+          "type": "doc",
+          "id": "basics/networkobject"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/networkobject-parenting"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "NetworkBehaviour",
+          "items": [
+            {
+              "type": "doc",
+              "id": "basics/networkbehavior"
+            },
+            {
+              "type": "doc",
+              "id": "basics/networkbehavior-synchronize"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/physics"
+        },
+        {
+          "type": "doc",
+          "id": "components/networkmanager"
+        },
+        {
+          "type": "doc",
+          "id": "components/networktransform"
+        },
+        {
+          "type": "doc",
+          "label": "NetworkAnimator",
+          "id": "components/networkanimator"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Ownership and authority",
+      "items": [
+        {
+          "type": "doc",
+          "id": "basics/ownership"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Spawning and despawning",
+      "items": [
+        {
+          "type": "doc",
+          "id": "basics/object-spawning"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/object-pooling"
+        },
+        {
+          "type": "doc",
+          "id": "basics/object-visibility"
+        },
+        {
+          "type": "doc",
+          "id": "basics/spawning-synchronization"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Latency and performance",
+      "items": [
+        {
+          "type": "doc",
+          "id": "learn/lagandpacketloss"
+        },
+        {
+          "type": "doc",
+          "id": "learn/ticks-and-update-rates"
+        },
+        {
+          "type": "doc",
+          "id": "learn/clientside_interpolation"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/client-anticipation"
+        },
+        {
+          "type": "doc",
+          "id": "learn/dealing-with-latency"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Network synchronization",
+      "items": [
+        {
+          "type": "doc",
+          "id": "advanced-topics/ways-synchronize"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "NetworkVariables",
+          "items": [
+            {
+              "type": "doc",
+              "id": "basics/networkvariable"
+            },
+            {
+              "type": "doc",
+              "id": "basics/custom-networkvariables"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Remote procedure calls (RPCs)",
+          "items": [
+            {
+              "type": "doc",
+              "id": "advanced-topics/messaging-system"
+            },
+            {
+              "type": "doc",
+              "id": "advanced-topics/message-system/rpc"
+            },
+            {
+              "type": "doc",
+              "id": "advanced-topics/message-system/reliability"
+            },
+            {
+              "type": "doc",
+              "id": "advanced-topics/message-system/rpc-params"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "RPCs vs NetworkVariables",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "learn/rpcvnetvar"
+                },
+                {
+                  "type": "doc",
+                  "id": "learn/rpcnetvarexamples"
+                }
+              ]
+            },
+            {
+              "type": "doc",
+              "id": "advanced-topics/message-system/rpc-compatibility"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Legacy RPC options",
+              "items": [
+                {
+                  "type": "doc",
+                  "id": "advanced-topics/message-system/clientrpc"
+                },
+                {
+                  "type": "doc",
+                  "id": "advanced-topics/message-system/serverrpc"
+                },
+                {
+                  "type": "doc",
+                  "id": "advanced-topics/message-system/execution-table"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/message-system/custom-messages"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/connection-events"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Network update loop",
+          "items": [
+            {
+              "type": "doc",
+              "id": "advanced-topics/network-update-loop-system/about-network-update-loop"
+            },
+            {
+              "type": "doc",
+              "id": "advanced-topics/network-update-loop-system/network-update-loop-reference"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/networktime-ticks"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Serialization",
+      "items": [
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/serialization-intro"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/cprimitives"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/unity-primitives"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/enum_types"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/arrays"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/inetworkserializable"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/custom-serialization"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/serialization/networkobject-serialization"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/fastbufferwriter-fastbufferreader"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Scene management",
+      "items": [
+        {
+          "type": "doc",
+          "id": "basics/scenemanagement/scene-management-overview"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Integrated management",
+          "items": [
+            {
+              "type": "doc",
+              "id": "basics/scenemanagement/using-networkscenemanager"
+            },
+            {
+              "type": "doc",
+              "id": "basics/scenemanagement/scene-events"
+            },
+            {
+              "type": "doc",
+              "id": "basics/scenemanagement/client-synchronization-mode"
+            },
+            {
+              "type": "doc",
+              "id": "basics/scenemanagement/timing-considerations"
+            },
+            {
+              "type": "doc",
+              "id": "basics/scenemanagement/inscene-placed-networkobjects"
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "id": "basics/scenemanagement/custom-management"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Session management",
+      "items": [
+        {
+          "type": "doc",
+          "id": "advanced-topics/session-management"
+        },
+        {
+          "type": "doc",
+          "id": "advanced-topics/reconnecting-mid-game"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Testing and debugging",
+      "items": [
+        {
+          "type": "doc",
+          "id": "tutorials/testing/testing_locally"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/testing/testing_with_artificial_conditions"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/testing/testing_client_connection_management"
+        },
+        {
+          "type": "doc",
+          "id": "basics/logging"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/testing/techniques_and_tricks_for_debugging_multiplayer_games"
+        },
+        {
+          "type": "doc",
+          "id": "tutorials/command-line-helper"
+        },
+        {
+          "type": "doc",
+          "id": "troubleshooting/troubleshooting"
+        },
+        {
+          "type": "doc",
+          "id": "troubleshooting/errormessages"
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Educational samples",
+      "items": [
+        {
+          "type": "doc",
+          "id": "learn/sample-dedicated-server"
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Boss Room",
+          "items": [
+            {
+              "type": "doc",
+              "id": "learn/bossroom/bossroom"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bossroom/bossroom-architecture"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bossroom/bossroom-actions"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bossroom/networkobject-parenting"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bossroom/optimizing-bossroom"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bossroom/networkrigidbody"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bossroom/spawn-networkobjects"
+            }
+          ]
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Bitesize samples",
+          "items": [
+            {
+              "type": "doc",
+              "id": "learn/bitesize/bitesize-introduction"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bitesize/bitesize-invaders"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bitesize/bitesize-spaceshooter"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bitesize/bitesize-clientdriven"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bitesize/bitesize-dynamicPrefabs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "collapsed": true,
+      "type": "category",
+      "label": "Community contributions",
+      "items": [
+        {
+          "type": "doc",
+          "id": "community-contributions/codemonkey"
+        },
+        {
+          "type": "doc",
+          "id": "community-contributions/dilmer"
+        },
+        {
+          "type": "doc",
+          "id": "community-contributions/dapper"
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "learn/faq"
+    },
+    {
+      "type": "doc",
+      "id": "terms-concepts/mtt-terms"
+    }
+  ]
+}
