@@ -39,7 +39,7 @@ Before you begin, you need the following:
 ![set network topology](/img/learn/distributed-authority-quick-start/network-topology.png)
 
 4. Under **Network Transport**, select **UnityTransport** from the list of options to add.
-![use unity transport](/img/learn/distributed-authority-quick-start/unity-transport.png)
+![use unity transport](/img/learn/distributed-authority-quick-start/transport.png)
 
 5. Save any changes to your objects and scene.
 
