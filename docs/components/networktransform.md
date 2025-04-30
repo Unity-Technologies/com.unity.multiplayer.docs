@@ -72,6 +72,7 @@ Some of the `NetworkTransform` properties are automatically synchronized by the 
 #### Properties that can cause a full state update (i.e. teleport)
 The following are a list of `NetworkTransform` properties that will cause a full state update (*i.e. effectively a teleport*) when changed during runtime by the authority instance: 
 - UseUnreliableDeltas
+- In Local Space
 - Interpolate
 - Slerp Position
 - Use Quaternion Synchronization
