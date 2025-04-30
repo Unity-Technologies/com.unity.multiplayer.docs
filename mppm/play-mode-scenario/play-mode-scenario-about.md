@@ -9,7 +9,7 @@ You can use Play Mode Scenarios to test multiplayer gameplay on different platfo
 
 ## Compatibility
 
-Play Mode Scenareios supports the following platforms: 
+Play Mode Scenarios supports the following platforms: 
 
 * Windows
 * Linux
