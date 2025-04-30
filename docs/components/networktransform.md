@@ -71,13 +71,13 @@ Some of the `NetworkTransform` properties are automatically synchronized by the 
 
 #### Properties that can cause a full state update (i.e. teleport)
 The following are a list of `NetworkTransform` properties that will cause a full state update (*i.e. effectively a teleport*) when changed during runtime by the authority instance: 
-- UseUnreliableDeltas
-- In Local Space
-- Interpolate
-- Slerp Position
-- Use Quaternion Synchronization
-- Use Quaternion Compression
-- Use Half Float Precision
+- [UseUnreliableDeltas](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_UseUnreliableDeltas)
+- [InLocalSpace](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_InLocalSpace)
+- [Interpolate](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_Interpolate)
+- [SlerpPosition](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_SlerpPosition)
+- [UseQuaternionSynchronization](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_UseQuaternionSynchronization)
+- [UseQuaternionCompression](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_UseQuaternionCompression)
+- [UseHalfFloatPrecision](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/Unity.Netcode.Components.NetworkTransform.html#Unity_Netcode_Components_NetworkTransform_UseHalfFloatPrecision)
 
 
 ### Axis to Synchronize
