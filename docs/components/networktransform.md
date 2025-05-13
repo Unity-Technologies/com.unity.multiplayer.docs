@@ -7,6 +7,22 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 [NetworkTransform](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.Components.NetworkTransform.html) is a concrete class that inherits from [NetworkBehaviour](../basics/networkbehaviour.md) and synchronizes [Transform](https://docs.unity3d.com/Manual/class-Transform.html) properties across the network, ensuring that the position, rotation, and scale of a [GameObject](https://docs.unity3d.com/Manual/working-with-gameobjects.html) are replicated to other clients.
 
+The synchronization of a GameObject's Transform is a key netcode task, and usually proceeds in the following order:
+
+1. Determine which Transform axes have changed and need to be synchronized.
+2. Serialize the changed values.
+3. Send the serialized values as messages to all other connected clients.
+4. Process the messages and deserialize the values.
+5. Apply the changed values to the appropriate axis.
+
+There are other considerations when synchronizing Transform values, however, such as:
+
+- Who controls the synchronization: is it the client, server, distributed authority service, or some combination?
+- How often should the values be synchronized?
+- What logic should you use to determine when and which values need to be synchronized?
+- For objects with one or more child objects, should you synchronize world or local space axis values?
+- How can you optimize the bandwidth for a Transform update?
+
 ## Add a NetworkTransform component to a GameObject
 
 Because a NetworkTransform component is derived from the NetworkBehaviour class, it has many of the [same requirements](../basics/networkbehaviour.md#networkbehaviour-requirements). For example, when adding a NetworkTransform component to a GameObject, it should be added to the same or any parent generation of the GameObject.
