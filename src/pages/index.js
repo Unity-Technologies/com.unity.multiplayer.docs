@@ -20,7 +20,7 @@ const features = [
     ),
     link: (
       <>
-        <a href="netcode/current/tutorials/get-started-with-ngo" className="land-link">
+        <a href="netcode/current/about" className="land-link">
           Learn more about Netcode for GameObjects
         </a>
       </>
