@@ -7,8 +7,8 @@ Use this guide to learn how to create your first [distributed authority](../term
 
 This guide is intended as an addition to the [distributed authority general quickstart](distributed-authority-quick-start.md) page, which provides more details about setting up Netcode for GameObjects to use distributed authority.
 
-:::note Beta feature
-Distributed authority is still in beta. During the beta phase, using the distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) is free. When distributed authority is fully released, [using the service will incur a cost](https://unity.com/products/gaming-services/pricing).
+:::note Pricing
+The distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) offers a free tier for bandwidth and connectivity hours, allowing you to develop and test without immediate cost. Refer to the [Unity Gaming Services pricing page](https://unity.com/products/gaming-services/pricing) for complete details.
 :::
 
 ## Prerequisites
