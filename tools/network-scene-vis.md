@@ -10,6 +10,7 @@ The NetSceneVis tool listens to network messages about the game state to visuall
 This tool can help you optimize and debug your network code to ensure that your game runs smoothly for all players.
 
 ## Requirements
+
 - Unity 2023.2.0a11 or higher
 - Multiplayer Tools package 2.0.0-pre.2 or higher, see [Install the Multiplayer Tools Package](./install-tools.md)
 
@@ -43,10 +44,16 @@ Selecting **Ownership Mode** displays the ownership of each object, either by th
 | *Text Overlay* | Visualize the per-object ownership with text labels. |
 | *Shading* | Visualize the per-object ownership with a colored overlay. |
 
-### Settings
+### **MeshShading** settings
 
 These settings are only available when **MeshShading** is enabled.
 
 You can toggle the **Outline** option to display a black outline around networked objects to improve visibility in the scene and distinguish between overlapping networked objects.
 
 The **Saturation (%)** controls the saturation of non-networked objects so networked objects can stand out more. The scale goes from 0 as grayscale to 100 for full color.
+
+### Custom colors
+
+You can assign custom colors to servers or clients in your visualization by clicking on the color field you want to change. Any custom colors you assign are saved with your project and can be reset using the right-click context menu.
+
+Custom colors also synchronize across [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/mppm/1.4.0/about/) players when in Play mode.
