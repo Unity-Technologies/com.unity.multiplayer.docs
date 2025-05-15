@@ -404,9 +404,9 @@ module.exports = {
             label: "1.5.0-exp.1",
             path: "current",
           },
-          "1.4.0": {
-            label: "1.4.0",
-            path: "1.4.0",
+          "1.4.3": {
+            label: "1.4.3",
+            path: "1.4.3",
           },
           "1.3.3": {
             label: "1.3.3",
