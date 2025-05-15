@@ -56,4 +56,4 @@ The **Saturation (%)** controls the saturation of non-networked objects so netwo
 
 You can assign custom colors to servers or clients in your visualization by clicking on the color field you want to change. Any custom colors you assign are saved with your project and can be reset using the right-click context menu.
 
-Custom colors also synchronize across [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/mppm/1.4.0/about/) players when in Play mode.
+Custom colors also synchronize across [Multiplayer Play Mode](https://docs-multiplayer.unity3d.com/mppm/current/about/) players when in Play mode.
