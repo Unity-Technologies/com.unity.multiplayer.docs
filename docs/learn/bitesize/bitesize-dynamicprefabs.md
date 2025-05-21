@@ -4,7 +4,7 @@ title: Dynamic Prefabs sample
 description: Learn more about the dynamic Prefab system, which allows you to add new spawnable Prefabs at runtime.
 ---
 
-# Dynamic Addressables Network Prefabs Sample
+# Dynamic addressables Network Prefabs sample
 
 The [DynamicAddressablesNetworkPrefabs Sample](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.bitesize/tree/main/Basic/DynamicAddressablesNetworkPrefabs) showcases the available ways you can use dynamic Prefabs to dynamically load network Prefabs at runtime, either pre-connection or post-connection. Doing so allows you to add new spawnable NetworkObject Prefabs to Netcode for GameObjects.
 
@@ -22,7 +22,7 @@ There's also the **APIPlayground**, which serves as an API playground that imple
 **Note**: This sample leverages [Addressables](https://docs.unity3d.com/Packages/com.unity.addressables@1.21/manual/index.html) to load dynamic Prefabs.
 :::
 
-### Scene 00_Preloading Dynamic Prefabs
+### Scene 00_Preloading dynamic prefabs
 
 The `00_Preloading Dynamic Prefabs` scene is the simplest implementation of a dynamic Prefab. It instructs all game instances to load a network Prefab (it can be just one, it can also be a set of network Prefabs) and inject them to a NetworkManager's NetworkPrefabs list before starting the server. What's important is that it doesn't matter where the Prefab comes from. It can be a simple Prefab or it can be an Addressable - it's all the same.
 

@@ -20,7 +20,7 @@ Using built-in primitive types is fairly straightforward:
 void HelloServerRpc(int[] scores, Color[] colors) { /* ... */ }
 ```
 
-## INetworkSerializable implementation example
+## `INetworkSerializable` implementation example
 
 There are many ways to handle sending an array of managed types. The following example is a simple `string` container class that implements `INetworkSerializable` and can be used as an array of "StringContainers":
 

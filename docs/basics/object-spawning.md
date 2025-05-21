@@ -29,7 +29,7 @@ There are four steps to registering a network Prefab with a `NetworkManager`:
 3. Add your Network Prefab to the `NetworkPrefabsList`.
 4. Add the `NetworkPrefabsList` to the Network Prefabs Lists that's associated with a `NetworkManager`.
 
-### Spawning a Network Prefab (Overview)
+### Spawning a Network Prefab (overview)
 
 Netcode uses a server authoritative networking model so spawning netcode objects can only be done on a server or host. To spawn a network prefab, you must first create an instance of the network Prefab and then invoke the spawn method on the NetworkObject component of the instance you created.  
 _In most cases, you will want to keep the NetworkObject component attached to the root `GameObject` of the network prefab._
@@ -58,12 +58,14 @@ When you set the destroyWithScene property to `false` it will be treated the sam
 :::caution You might find it useful to add a `GameObject` property in a `NetworkBehaviour`-derived component to use when assigning a network prefab instance for dynamically spawning. You need to make sure to instantiate a new instance **prior** to spawning. If you attempt to just spawn the actual network prefab instance it can result in unexpected results.
 :::
 
-### Taking Prefab Overrides Into Consideration
+### Prefab overrides
+
 Sometimes, you might want to make a simpler prefab instance to be spawned on server version the override for clients. You should take this into consideration when dynamically spawning a network prefab. If you're running as a host, you want the override to spawn since a host is both a server and a client. However, if you also want to have the ability to run as a dedicated server, you might want to spawn the source network prefab.
 
 There are two ways you can accomplish this, as explained below.
 
-#### Get The Network Prefab Override First
+#### Get the Network Prefab override first
+
 This option provides you with the overall view of getting the network prefab override, instantiating it, and then spawning it.
 
 ```csharp
@@ -73,7 +75,8 @@ instanceNetworkObject.Spawn();
 ```
 In the above script, we get the prefab override using the `NetworkManager.GetNetworkPrefabOverride` method. Then we create an instance of the network prefab override, and finally we spawn the network prefab override instance's NetworkObject.
 
-#### Using InstantiateAndSpawn
+#### Using `InstantiateAndSpawn`
+
 The second option is to leverage the `NetworkSpawnManager.InstantiateAndSpawn` method that handles whether or not to spawn an override for you. The below script is written as if it's being invoked within a `NetworkBehaviour`.
 
 ```csharp
@@ -92,7 +95,7 @@ Looking at the parameters, we can see it defaults to the server as the owner, en
 The `forceOverride` parameter, when set to true, will use the override whether you're running as either server or host.
 
 
-## Destroying / Despawning
+## Destroying and despawning
 
 By default, a spawned network Prefab instance that is destroyed on the server/host will be automatically destroyed on all clients.
 
@@ -124,11 +127,11 @@ See: [Object Visibility](object-visibility.md) for more information on this.
 If you have `GameObject` children, with `NetworkBehaviour` components attached, of a parent `GameObject`, with a NetworkObject component attached, you can't disable the `GameObject` children before spawning or despawning. Doing so, in v1.0.0, can cause unexpected results and it's recommended to make sure all children are enabled in the hierarchy before spawning or despawning.
 :::
 
-## Dynamically Spawned Network Prefabs
+## Dynamically spawned Network Prefabs
 
 Netcode for GameObjects uses the term "dynamically spawned" to convey that the NetworkObject is being spawned via user specific code. Whereas a player or in-scene placed NetworkObject (with scene management enabled) is typically spawned by Netcode for GameObjects. There are several ways to spawn a network Prefab via code:
 
-### Dynamic Spawning (non-pooled):
+### Dynamic spawning (non-pooled):
 
 This type of dynamically spawned NetworkObject typically is a simple wrapper class that holds a reference to the Prefab asset. In the example below, the `NonPooledDynamicSpawner.PrefabToSpawn` property holds a reference to the network prefab:
 
@@ -181,7 +184,7 @@ While the NonPooledDynamicSpawner example is one of the simplest ways to spawn a
 Really, when we use the term "non-pooled" more often than not we are referring to the concept that a `GameObject` will be instantiated on both the server and the clients each time an instance is spawned.
 :::
 
-### Pooled Dynamic Spawning
+### Pooled dynamic spawning
 
 Pooled dynamic spawning is when netcode objects (`GameObject` with one NetworkObject component) aren't destroyed on the server or the client when despawned. Instead, specific components are just disabled (or the `GameObject` itself) when a netcode object is despawned. A pooled dynamically spawned netcode object is typically instantiated during an already memory allocation heavy period of time (like when a scene is loaded or even at the start of your application before even establishing a network connection). Pooled dynamically spawned netcode objects are more commonly thought of as more than one netcode object that can be re-used without incurring the memory allocation and initialization costs. However, you might also run into scenarios where you need just one dynamically spawned netcode object to be treated like a pooled dynmically spawned netcode object.
 
@@ -325,7 +328,7 @@ This reduces the complexity down to setting the SpawnedComponents `GameObject` t
 Using this type of a hierarchical separation is useful in many ways (especially when you have a much more complex prefab). For more complex prefabs, you can further expand this pattern into specific categories (that is, visuals, physics, sound, etc) which will provide you with a more macrocosmic way to control enabling or disabling many different components without having to have references to all of them.
 :::
 
-## In-Scene Placed NetworkObject
+## In-scene placed NetworkObject
 
 Any objects in the scene with active and spawned NetworkObject components will get automatically replicated by Netcode. There is no need to manually spawn them when scene management is enabled in the `NetworkManager`. In-scene placed `NetworkObjects` should typically be used like a "static" netcode object, where the netcode object is typically spawned upon the scene being loaded on the server-side and synchronized with clients once they finish loading the same scene.
 
@@ -336,11 +339,11 @@ Generally, there are **two** modes that define how an in-scene placed NetworkObj
 - Soft Synchronization (Scene Management enabled)
 - Prefab Synchronization (Scene Management disabled)
 
-### Soft Synchronization
+### Soft synchronization
 
-`SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties. If you receive a "soft synchronization error", then this typically means that a client can't locate the same in-scene placed NetworkObject after loading a scene.
+`SoftSync` or "Soft Synchronization" is a term you might run across if you run into any issue with in-scene placed `NetworkObjects`. Soft synchronization only occurs if scene management is enabled in the `NetworkManager` properties. If you receive a "soft synchronization error", then this typically means that a client can't locate the same in-scene placed NetworkObject after loading a scene.33
 
-### Prefab Synchronization
+### Prefab synchronization
 
 `PrefabSync` or "Prefab Synchronization" is used if scene management is disabled in the `NetworkManager`. With Prefab synchronization, every in-scene placed NetworkObject has to be a network Prefab and must be registered with `NetworkPrefabs` list. When a client starts, Netcode will destroy all existing in-scene placed NetworkObjects and spawn its corresponding Prefab from the `NetworkPrefabs` list instead. This also means that you will have to implement your own scene manager and handle how you synchronize clients when they join a network session.
 

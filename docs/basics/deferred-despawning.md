@@ -23,7 +23,7 @@ Deferred despawning allows you to add a tick-based delay to a NetworkObject prio
 
 Deferred despawning allows non-owner instances of an object to complete their interpolation towards the last transform state update before despawning the object. Even though non-owner clients can be visually latent by several network ticks behind the authority, all clients end up with the same visual experience since NetworkTransform deltas are tick synchronized.
 
-## Implementing deferred despawning
+## Implement deferred despawning
 
 Implementing deferred despawning is a three-step process, as described in the diagram below.
 

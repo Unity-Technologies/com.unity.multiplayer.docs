@@ -91,7 +91,7 @@ With Simulator Tools we can't specify if inbound packets and outbound packets wo
 Simulator Tools window settings won't be committed to version control and need to be set up manually on different editor instances.
 :::
 
-### Debug Builds
+### Debug builds
 
 Debug builds do allow for the possibility of applying artificial network conditions to the Unity Transport driver, but the Simulator Tools window itself only sets these values in the Editor.
 
@@ -215,6 +215,7 @@ sudo pfctl -f /etc/pf.conf
 After you start dummynet, testing the builds is as easy as launching several instances of your game.
 
 #### Settings quickstart
+
  - `bw` -  this parameter controls bandwidth.
   - `dnctl pipe 1 config bw 40Kbit/s` will set our bandwidth to 40 Kbit per second.
  - `delay` - this parameter is our artificial latency.

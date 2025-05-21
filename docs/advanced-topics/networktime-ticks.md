@@ -4,7 +4,7 @@ title: NetworkTime and ticks
 sidebar_label: NetworkTime and ticks
 ---
 
-## LocalTime and ServerTime
+## `LocalTime` and `ServerTime`
 
 Why are there two different time values and which one should be used?
 
@@ -145,7 +145,7 @@ sequenceDiagram
 Some components such as `NetworkTransform` add additional buffering. When trying to align an RPC event like in this example, an additional delay would need to be added.
 :::
 
-## Network Ticks
+## Network ticks
 
 Network ticks are run at a fixed rate. The 'Tick Rate' field on the `NetworkManager` can be used to set the tick rate.
 
@@ -173,7 +173,7 @@ public override void OnNetworkDespawn() // don't forget to unsubscribe
 When using `FixedUpdate` or physics in your game, set the network tick rate to the same rate as the fixed update rate. The `FixedUpdate` rate can be changed in `Edit > Project Settings > Time > Fixed Timestep`
 :::
 
-## Network FixedTime
+## Network `FixedTime`
 
 `Network FixedTime` can be used to get a time value representing the time during a network tick. This works similar to `FixedUpdate` where `Time.fixedTime` represents the time during the `FixedUpdate`.
 
@@ -185,13 +185,13 @@ public void Update()
 }
 ```
 
-## NetworkTime Precision
+## `NetworkTime` precision
 
 Network time values are calculated using double precisions. This allows time to stay accurate on long running servers. For game servers which run sessions for a long time (multiple hours or days) don't convert this value in a float and always use doubles for time related calculations.
 
 For games with short play sessions casting the time to float is safe or `TimeAsFloat` can be used.
 
-## NetworkTimeSystem Configuration
+## `NetworkTimeSystem` configuration
 
 :::caution
 The properties of the `NetworkTimeSystem` should be left untouched on the server/host. Changing the values on the client is sufficient to change the behavior of the time system.

@@ -3,7 +3,7 @@ id: fastbufferwriter-fastbufferreader
 title: FastBufferWriter and FastBufferReader
 sidebar_label: FastBufferWriter and FastBufferReader
 ---
-The serialization and deserialization is done via `FastBufferWriter` and `FastBufferReader`. These have methods for serializing individual types and methods for serializing packed numbers, but in particular provide a high-performance method called `WriteValue()/ReadValue()` (for Writers and Readers, respectively) that can extremely quickly write an entire unmanaged struct to a buffer. 
+The serialization and deserialization is done via `FastBufferWriter` and `FastBufferReader`. These have methods for serializing individual types and methods for serializing packed numbers, but in particular provide a high-performance method called `WriteValue()/ReadValue()` (for Writers and Readers, respectively) that can extremely quickly write an entire unmanaged struct to a buffer.
 
 There's a trade-off of CPU usage vs bandwidth in using this: Writing individual fields is slower (especially when it includes operations on unaligned memory), but allows the buffer to be filled more efficiently, both because it avoids padding for alignment in structs, and because it allows you to use `BytePacker.WriteValuePacked()`/`ByteUnpacker.ReadValuePacked()` and `BytePacker.WriteValueBitPacked()`/`ByteUnpacker.ReadValueBitPacked()`. The difference between these two is that the BitPacked variants pack more efficiently, but they reduce the valid range of values. See the section below for details on packing.
 
@@ -47,7 +47,7 @@ void Serialize(FastBufferWriter writer)
 }
 ```
 This creates efficiently packed data in the message, and can be further optimized by using `BytePacker.WriteValuePacked()` and `BytePacker.WriteValueBitPacked()`, but it has two downsides:
-- First, it involves more method calls and more instructions, making it slower. 
+- First, it involves more method calls and more instructions, making it slower.
 - Second, that it creates a greater opportunity for the serialize and deserialize code to become misaligned, since they must contain the same operations in the same order.
 
 You can also use a hybrid approach if you have a few values that will need to be packed and several that won't:
@@ -78,7 +78,7 @@ struct ExampleStruct
 This allows the four bytes of the embedded struct to be rapidly serialized as a single action, then adds the compacted data at the end, resulting in better bandwidth usage than serializing the whole struct as-is, but better performance than serializing it one byte at a time.
 
 
-## FastBufferWriter and FastBufferReader
+## `FastBufferWriter` and `FastBufferReader`
 
 `FastBufferWriter` and `FastBufferReader` are replacements for the old `NetworkWriter` and `NetworkReader`. For those familiar with the old classes, there are some key differences:
 
@@ -96,9 +96,9 @@ This allows the four bytes of the embedded struct to be rapidly serialized as a 
 
 A core benefit of `NativeArray<byte>` is that it offers access to the allocation scheme of `Allocator.TempJob`. This uses a special type of allocation that is nearly as fast as stack allocation and involves no GC overhead, while being able to persist for a few frames. In general they're rarely if ever needed for more than a frame, but this does provide a efficient option for creating buffers as needed, which avoids the need to use a pool for them. The only downside is that buffers created this way must be manually disposed after use, as they're not garbage collected.
 
-## Creating and Disposing FastBufferWriters and FastBufferReaders
+## Creating and disposing `FastBufferWriters` and `FastBufferReaders`
 
-To create your own `FastBufferWriter`s and `FastBufferReader`s, it's important to note that struct default/parameterless constructors can't be removed or overridden, but `FastBufferWriter` and `FastBufferReader` require constructor behavior to be functional. 
+To create your own `FastBufferWriter`s and `FastBufferReader`s, it's important to note that struct default/parameterless constructors can't be removed or overridden, but `FastBufferWriter` and `FastBufferReader` require constructor behavior to be functional.
 
 `FastBufferWriter` always owns its internal buffer and must be constructed with an initial size, an allocator, and a maximum size. If the maximum size isn't provided or is less than or equal to the initial size, the `FastBufferWriter` can't expand.
 
@@ -116,7 +116,7 @@ It's important to note with `Allocator.None` that the `FastBufferReader` will be
 
 Regardless which allocator you use (including `Allocator.None`), `FastBufferWriter` and `FastBufferReader` must always have `Dispose()` called on them when you're done with them. The best practice is to use them within `using` blocks.
 
-## Bounds Checking
+## Bounds checking
 
 For performance reasons, by default, `FastBufferReader` and `FastBufferWriter` **don't do bounds checking** on each write. Rather, they require the use of specific bounds checking functions - `TryBeginRead(int amount)` and `TryBeginWrite(int amount)`, respectively. This improves performance by allowing you to verify the space exists for the multiple values in a single call, rather than doing that check on every single operation.
 
@@ -126,9 +126,9 @@ For performance reasons, by default, `FastBufferReader` and `FastBufferWriter` *
 
 For convenience, every `WriteValue()` and `ReadValue()` method has an equivalent `WriteValueSafe()` and `ReadValueSafe()` that does bounds checking for you, throwing `OverflowException` if the boundary is exceeded. Additionally, some methods, such as arrays (where the amount of data being read can't be known until the size value is read) and [`INetworkSerializable`](inetworkserializable.md) values (where the size can't be predicted outside the implementation) will always do bounds checking internally.
 
-## Bitwise Reading and Writing
+## Bitwise reading and writing
 
-Writing values in sizes measured in bits rather than bytes comes with a cost 
+Writing values in sizes measured in bits rather than bytes comes with a cost
 - First, it comes with a cost of having to track bitwise lengths and convert them to bytewise lenghts.
 - Second, it comes with a cost of having to remember to add padding after your bitwise writes and reads to ensure the next bytewise write or read functions correctly, and to make sure the buffer length includes any trailing bits.
 
@@ -159,5 +159,3 @@ Packing values is done using the utility classes `BytePacker` and `ByteUnpacker`
   | uint   | 30 bits (0 to 1,073,741,824)                                 |
   | long   | 60 bits + sign bit (-1,152,921,504,606,846,976 to 1,152,921,504,606,846,975) |
   | ulong  | 61 bits (0 to 2,305,843,009,213,693,952)                     |
-
-  

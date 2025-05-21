@@ -1,6 +1,6 @@
 ---
 id: custom-messages
-title: Custom messages 
+title: Custom messages
 description: A brief explanation of Custom Messages use in Netcode for GameObjects (Netcode) covering Named and Unnamed messages.
 ---
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
@@ -11,11 +11,14 @@ There are two types of custom messages:
 - Unnamed
 - Named
 
-## Unnamed Messages
+## Unnamed messages
+
 You can think about unnamed messages as if you are sending information over a single unique channel. There's only one receiver handler per unnamed message, which can help when building a custom messaging system where you can define your own message headers. Netcode for GameObjects handles delivering and receiving custom unnamed messages; you determine what kind of information you want to transmit over the channel.
 
-### Unnamed Message Example
+### Unnamed message example
+
 Below is a basic example of how you might implement your own messaging system using unnamed messages:
+
 ```csharp
 using UnityEngine;
 using Unity.Collections;
@@ -202,14 +205,16 @@ public class CustomUnnamedMessageHandler<T> : NetworkBehaviour
     }
 }
 ```
-## Named Messages
+## Named messages
+
 If you don't want to handle the complexity of creating your own messaging system, Netcode for GameObjects also provides you with the option to use custom named messages. Custom named messages use the message name as the unique identifier (it creates a hash value from the name and links that to a received named message callback).
 
 :::tip
 If you aren't quite sure if you need to incorporate the complexity of message identification and handling like you do with custom unnamed messages, you can always start with custom named messages and then if, later, you find you need sub-message types for a specific custom named message then you can always incorporate a type identifier (like you would with unnamed messages) into the named message payload itself.
 :::
 
-### Name Message Example
+### Named message example
+
 Below is a basic example of implementing a custom named message:
 ```csharp
 using System;

@@ -55,13 +55,13 @@ Nested serial types will be `null` unless you initialize following one of these 
 
 This is by design. You may see the values as null until initialized. The serializer isn't deserializing them, the `null` value is applied before it can be serialized.
 
-## Conditional Serialization
+## Conditional serialization
 
 As you have more control over serialization of a struct, you might implement conditional serialization at runtime.
 
 The following example explores a more advanced use case.
 
-### Example: Move
+### Example: move
 
 ```csharp
 
@@ -79,7 +79,7 @@ public struct MyMoveStruct : INetworkSerializable
         // Position & Rotation
         serializer.SerializeValue(ref Position);
         serializer.SerializeValue(ref Rotation);
-        
+
         // LinearVelocity & AngularVelocity
         serializer.SerializeValue(ref SyncVelocity);
         if (SyncVelocity)
@@ -123,7 +123,7 @@ public struct MyMoveStruct : INetworkSerializable
 
 * When the `SyncVelocity` flag is set to `false`, leave `LinearVelocity` and `AngularVelocity` with default values.
 
-### Recursive Nested Serialization
+### Recursive nested serialization
 
 It's possible to recursively serialize nested members with `INetworkSerializable` interface down in the hierarchy tree.
 
@@ -148,7 +148,7 @@ public struct MyStructB : INetworkSerializable
     public int SomeNumber;
     public string SomeText;
     public MyStructA StructA;
-    
+
     void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref SomeNumber);
@@ -185,7 +185,7 @@ public struct MyStructB : MyStructA
 {
     public int SomeNumber;
     public string SomeText;
-    
+
     void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
     {
         serializer.SerializeValue(ref SomeNumber);

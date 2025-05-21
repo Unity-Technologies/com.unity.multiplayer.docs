@@ -19,7 +19,7 @@ Client anticipation uses `AnticipatedNetworkVariable<T>` and `AnticipatedNetwork
 Games with a server-authoritative architecture often face the problem of making the game feel responsive despite [latency](../learn/ladandpacketloss.md). For example, when a user wants to change the color of an object from green to blue they click a button in the UI, an RPC is sent to the server, and the server changes the object to blue. From the client's perspective, the object doesn't change to blue until the server responds to that message, resulting in a perceived delay for the user.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritative.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritative_Dark.png?text=DarkMode"/>
 </figure>
@@ -27,7 +27,7 @@ darkImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritative_Dark.png?text=
 Client anticipation solves this problem by allowing a separation between the visual value and the authoritative value of an object. In this example, with anticipation, when the button is pressed to change the color from green to blue, the client *anticipates* the result of the command by visually changing the object to green while it waits for an update from the server:
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/Anticipation/ClientAnticipation.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/Anticipation/ClientAnticipation_Dark.png?text=DarkMode"/>
 </figure>
@@ -48,7 +48,7 @@ Anticipation systems need to be able to handle stale data. Stale data refers to 
 Expanding the example above to include a second client that's also trying to change the color of the same object highlights this problem. If client A tries to change the object to blue, and then client B tries to change it to red, client A sees a delayed switch to blue, followed by a switch to red (which is fine because this is actually what happened). Client B, however, clicks the button to change it to red, then sees it change to blue, followed by a change to red.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritativeMultiClient.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritativeMultiClient_Dark.png?text=DarkMode"/>
 </figure>
@@ -56,7 +56,7 @@ darkImageSrc="/sequence_diagrams/Anticipation/ServerAuthoritativeMultiClient_Dar
 With client anticipation, this scenario plays out differently: client A anticipates the change to blue, so it happens immediately, and then later sees the object change to red (which, again, is fine). Client B also sees the object change to red immediately, but because a change to blue is already in progress, that overwrites client B's anticipated value, causing it to flicker briefly to blue from client A's request before changing back to red again from client B's request.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/Anticipation/StaleDataNoPolicy.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/Anticipation/StaleDataNoPolicy_Dark.png?text=DarkMode"/>
 </figure>
@@ -68,20 +68,22 @@ There are two ways you can respond to stale data, which are determined by the `S
 - StaleDataHandling.Ignore
 - StaleDataHandling.Reanticipate
 
-### StaleDataHandling.Ignore
+### `StaleDataHandling.Ignore`
+
 If `StaleDataHandling` is set to `StaleDataHandling.Ignore`, stale data doesn't roll back the value of the variable or transform to the server value and doesn't trigger the [`OnReanticipate` event](#onreanticipate-event). `ShouldReanticipate` remains false in the event something else triggers the callback. The authoritative value is still updated, however, and for `AnticipatedNetworkVariable`, the `OnAuthoritativeValueUpdated` callback is still called. The result for our example is that, for client B, the change to blue is recognized as being sequenced before its change to red, and is thus ignored, eliminating the flickering. This is the default behavior for `AnticipatedNetworkVariable<T>`.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/Anticipation/StaleDataIgnore.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/Anticipation/StaleDataIgnore_Dark.png?text=DarkMode"/>
 </figure>
 
-### StaleDataHandling.Reanticipate
+### `StaleDataHandling.Reanticipate`
+
 If `StaleDataHandling` is set to `StaleDataHandling.Reanticipate`, stale data is treated the same way as any other server data updates. The value is rolled back, `ShouldReanticipate` is set to true, and the [`OnReanticipate` event](#onreanticipate-event) fires. In typical client prediction systems, this generally involves replaying the player's input from the time of the incoming data to now, which results in re-performing the switch to red.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/Anticipation/StaleDataReanticipate.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/Anticipation/StaleDataReanticipate_Dark.png?text=DarkMode"/>
 </figure>

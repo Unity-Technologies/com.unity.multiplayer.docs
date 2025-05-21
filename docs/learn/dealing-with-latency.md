@@ -56,7 +56,7 @@ In summary, you want accuracy, security, and responsiveness for your game.
 The authority is who has the right to make final gameplay decisions over objects. A server authoritative game has all its final gameplay decisions executed by the server.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ServerAuthority_Dark.png?text=DarkMode"/>
 <figcaption>The server gets to make the final gameplay decisions</figcaption>
@@ -86,7 +86,7 @@ Note here an input from a client can be anything, from a user interacting with a
 The rest of the document assumes your game is server authoritative.
 :::
 
-#### Issue: Reactivity
+#### Reactivity
 
 An issue with server authority is you're waiting for your server to tell you to update your world. This means that if you send an input to the server and wait for the server to tell you your position change, you'll need to wait for a full **RTT** before you see the effect. There are [patterns](#patterns-to-solve-these-issues) you can use to solve this issue while still remaining server authoritative.
 
@@ -95,7 +95,7 @@ An issue with server authority is you're waiting for your server to tell you to 
 In a **client authoritative** (or **client driven**) game using Netcode for GameObjects, you still have a server that's used to share world state, but clients will own and impose their reality.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuthority_Dark.png?text=DarkMode"/>
 <figcaption>The client gets to make the final gameplay decisions</figcaption>
@@ -107,18 +107,18 @@ darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CharPos_ClientAuth
 
 You can often use this when you trust your users or their devices. For example, you might have a client tell the server "I killed player X" instead of "I clicked in that direction" and have the server simulate that action to return the result. This way, the client shows the death animation for the enemy as soon as the player clicks (since the death is already confirmed and owned by the client). The server would only relay that information back to other users.
 
-#### Issue: World consistency
+#### World consistency
 
 There are possible synchronizations issues with client authoritative games. If your character moves client-side thinking everything is okay and an enemy has stuns it in the meantime, that enemy will have stunned your character earlier on a different version of the world from the one you're seeing. See [latency page](lagandpacketloss.md). If you let the client make an authoritative decision using outdated information, you'll run into synchronization issues, overlapping physics objects, and similar issues.
 
 :::info
 
-#### Owner authority vs All clients authority
+#### Owner authority vs all clients authority
 
 Mltiple clients with the ability to affect the same shared object can quickly become a mess.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_ClientAuthorityIssue_Dark.png?text=DarkMode"/>
 <figcaption>Multiple clients trying to impose their reality on a shared object.</figcaption>
@@ -127,14 +127,14 @@ darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart1_C
 To avoid this, it's recommended to use client **owner** authority, which allows only the owner of an object to interact with it. Since the server controls ownership in Netcode, there's no possibility of two clients running into a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software). To allow two clients to affect the same object, you must ask the server for ownership, wait for it, then execute the client authoritative logic you want.
 
 <figure>
-<ImageSwitcher 
+<ImageSwitcher
 lightImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix.png?text=LightMode"
 darkImageSrc="/sequence_diagrams/dealing_with_latency/Example_CaptureFlagPart2_ServerAuthorityFix_Dark.png?text=DarkMode"/>
 <figcaption>Multiple clients ASKING to interact with a shared object.</figcaption>
 </figure>
 :::
 
-#### Issue: Security
+#### Security
 
 Client authority is a pretty dangerous door to leave open on your server because any malicious player can forge messages to say "kill player a, b, c, d, e, f, g" and win the game. It's pretty useful though for reactivity. Since the client is making all the important gameplay decisions, it can display the result of user inputs as soon as they happen instead of waiting a few hundred milliseconds.
 
@@ -188,20 +188,20 @@ A pattern we've seen that helped when not sure about using client or server auth
 ```csharp
 // before
 if (isServer)
-{ 
+{
     // take an authoritative decision
     // ...
 }
 if (isClient) // each of these need to be swapped if switching authority
-{ 
-    // ... 
+{
+    // ...
 }
 
 // after
 bool HasAuthority => isServer; // can be set for your whole class or even project
 // ...
 if (HasAuthority)
-{ 
+{
     // take an authoritative decision
     // ...
 }
@@ -215,7 +215,7 @@ if (!HasAuthority)
 
 ## Patterns to solve latency issues in a server authoritative game
 
-Summary | 
+Summary |
 --- | ---
 Client authority | Less secure. More reactive. Possible sync issues.
 Action anticipation | More secure. Somewhat reactive. Possible visual sync issues.
@@ -245,7 +245,7 @@ If a player selects an imp, the selection circle will be client driven, it won't
 The above examples are atomic actions. They happen on click.
 To do continuous client driven actions, there's a few more considerations to take.
 
-- You need to keep a local variable to keep track of your client authoritative data. 
+- You need to keep a local variable to keep track of your client authoritative data.
 - You then need to make sure you don't send RPCs to the server (containing your authoritative state) when no data has changed and do dirty checks.
 - You'd need to send it on tick or at worst on FixedUpdate. Sending on Update() would spam your connection.
 
@@ -256,7 +256,7 @@ A sample for a [ClientNetworkTransform](../components/networktransform.md#client
 A rule of thumb here is to ask yourself: "Can the server correct me on this?". If it can, use server authority.
 :::
 
-### Client Side Prediction
+### Client-side prediction
 
 Predicting what the server will send you.
 
@@ -267,7 +267,7 @@ The world (and especially the internet) is messy. A client can guess wrong. An e
 With the movement example, I can have an enemy come and stun me while I thought I can still move. 200 ms latency is enough time for a stun to happen and create a discrepancy between the move I "predicted" client side and what happened server side. This is where "reconciliation" (or "correction") comes in play. The client keeps a history of the positions it predicted. Being still server authoritative, the client still receives (outdated by x ms of latency) positions coming from the server. The client will validate whether the positions it predicted in the past fits with the old positions coming from the server. The client can then detect discrepancies and "correct" its position according to the server's authoritative position.
 This way, clients can stay server authoritative while still be reactive.
 
-#### Input Prediction vs World Prediction vs Extrapolation
+#### Input prediction vs world prediction vs extrapolation
 
 Local input prediction will predict your state using your local player's inputs.
 
@@ -284,7 +284,7 @@ For Netcode for gameobjects (Netcode), a basic extrapolation implementation has 
 <!-- TODO LATER -->
 <!-- I'm not adding more info on this until we have discussed this further SDK side. -->
 <!-- (NOTE SAM: this is a 1000 feet overview, this will need it's own page) -->
-<!-- TODO Harder to implement, need to take this into account in most of your gameplay code 
+<!-- TODO Harder to implement, need to take this into account in most of your gameplay code
 Advanced games will have most of their world predicted, allowing the client and server to run simulations in parallel with the server correcting clients once in a while. -->
 <!-- TODO prediction isn't just for your movements, you can also predict other items like AIs, physics entities, other players by extrapolating their position from their state coming from the server. Another player's position can be extrapolated from their position and direction for example. -->
 <!-- TODO players are hard to predict. -->
@@ -300,7 +300,7 @@ For more information, refer to the [client anticipation](../advanced-topics/clie
 
 :::
 
-### Controlled Desyncs
+### Controlled desyncs
 
 It can be hard to handle misprediction corrections elegantly and without taking your players out of their immersion. Clients also can't always stay in sync tick by tick, frame by frame. You can adapt your gameplay and animations to allow your clients to desync for a few seconds, as long as they reach a common state and resync again to make corrections seamless. By using controlled desyncs, clients can resolve and reinterpret how they reach a common state independently based on their local context. You can consider this technique as a "smart context-aware interpolation" or an "elegant correction" when predicting. It reuses some of [action anticipation](#action-anticipation)'s technique where you use non-gameplay-important animations to hide discrepancies caused by lag and reinterpret how the client will reach the target authoritative state.
 
@@ -323,7 +323,7 @@ In each situation, you need to ensure the reinterpretation doesn't affect gamepl
 
 There are situations when clients and servers need to be in constant sync. For example, high precision tactical shooters try to ensure the game is fair for both attackers and targets. Outside of those specific situations, controlled desyncs can maintain player immersion while dealing with lag. As long as the clients end in the same state and doesn't accumulate discrepencies, your players will be fooled. The goal is to give your players the _illusion_ they are playing in the same world, when they actually may not.
 
-### Action Anticipation
+### Action anticipation
 
 There's multiple reasons for not having server authoritative gameplay code run both client side (with [prediction](#client-side-prediction)) and server side. For example, your simulation can be not deterministic enough to trust that the same action client side would happen the same server side. If I throw a grenade client side, I want to make sure the grenade's trajectory is the same server side. This often happens with world objects with a longer life duration, with greater chances of desyncing. In this case, the safest approach would be a server authoritative grenade, to make sure everyone has the same trajectory. But how do you make sure the throw feels responsive and that your client doesn't have to wait for a full RTT before seeing anything react to their input?
 
@@ -335,7 +335,7 @@ This is referenced as action casting or action anticipation. You're "casting" yo
 
 For your grenade, a client side "arm throw" animation can run, but the client would wait for the grenade to be spawned by the server. With normal latencies, this usually feels responsive. With higher abnormal latencies, you can run into the arm animating and no grenade appearing yet, but it would still feel responsive to users. It would feel strange, but at least it would feel responsive and less frustrating.
 
-In Boss Room for example, our movements use a small "jump" animation as soon as you click somewhere to make your character move. 
+In Boss Room for example, our movements use a small "jump" animation as soon as you click somewhere to make your character move.
 The client then waits for the server to send position updates. The game still feels reactive, even though the character's movements are server driven.
 
 :::info
@@ -359,7 +359,7 @@ Players don't have to wait for their mouse movements to be synced for AOE. They'
 
 Action anticipation can also be used to set the value of a network variable or network transform on the assumption that an action succeeds while waiting for the server to respond. This is the first building block of client-side prediction mentioned above, with the most simple form being to set a value and let the server overwrite it later. This is done in Netcode for GameObjects using  `AnticipatedNetworkVariable<T>` and   `AnticipatedNetworkTransform`. For more information, refer to the [client anticipation](../advanced-topics/client-anticipation.md) documentation.
 
-### Server Side Rewind (also called Lag Compensation)
+### Server-side rewind (lag compensation)
 
 Server rewind is a security check on a client driven feature to make sure we stay server authoritative. A common usecase is snipers.
 If I aim at an enemy, I'm actually aiming at a ghost representation of that enemy that's RTT/2 ms late. If I click its head, the input sent to the server will take another RTT/2 ms to get to the server. That's a full RTT to miss my shot and is frustrating.
@@ -368,7 +368,7 @@ The solution for this is to use server rewind by "favoring the attacker". Psycho
 **Note**: the server rewind of the game's state is done all in the same frame, this is invisible to players.
 This is a server side check that allows validating a client telling you what to do.
 
-<!-- 
+<!--
 TODO LATER I'm not adding more info on this until we have discussed this further SDK side.
 TODO shot behind a wall issue.  rewind limit to make it less bad
 TODO talk about mixing this with extrapolation to help the "shot behind a wall" issue
@@ -376,7 +376,7 @@ TODO rocket league (https://www.youtube.com/watch?v=ueEmiDM94IE) uses this too, 
 TODO Gif and diagrams to show flow for this.
 This causes a "correction" for the target, since they predicted wrong that they survived.
 TODO server rewind conflict resolution using buffering (see rocket league talk)
-TODO server rewind not necessary with cloud gaming 
+TODO server rewind not necessary with cloud gaming
 -->
 
 :::info

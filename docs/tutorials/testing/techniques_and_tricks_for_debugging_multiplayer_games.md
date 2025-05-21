@@ -12,7 +12,7 @@ Below is a list of practices and techniques that we use daily when working on th
 
 ## Debugging tricks for multiplayer games
 
-### Use ParrelSync clone-based workflow during development.
+### Use ParrelSync clone-based workflow during development
 
 [ParrelSync workflow](testing_locally.md#parrelsync) is faster than creating builds and it allows you to debug the separate editor instances via separate IDE debuggers.
 
@@ -37,7 +37,8 @@ When working on Boss Room we found it valuable to draw debug lines for the follo
  - Movement intention
  - Object interactions
 
-### A Netcode Enabled Line Renderer
+### A Netcode-enabled line renderer
+
 Sometimes it's useful to have visual feedback that shows a specific direction, value, or any other useful debug metric pertinent to your project.  Below is a fully working example of a netcode enabled line renderer that can be used for visual debugging purposes:
 ```csharp
 using UnityEngine;
@@ -150,12 +151,12 @@ public class NetcodeEnabledLineRenderer : NetworkBehaviour
 }
 ```
 
-### Use debug logging for situations where visual debugging isn't appropriate.
+### Use debug logging for situations where visual debugging isn't appropriate
 
 Text-based logging is valuable for tracking down non-visual events (such as RPCs) and information.
 It is a good idea to include network tick and client id in log messages so that it's easier to build a timeline when reading the logs.
 
-### Use the artificial network conditioning tools.
+### Use the artificial network conditioning tools
 
 The options that are currently available to us are covered in the related [article on artificial network conditioning tools](testing_with_artificial_conditions.md).
 
@@ -163,7 +164,7 @@ Of particular interest to us is the application-level network conditioning provi
 
 Artificial network conditions allow the errors and oddities that are hidden by nigh-absence of lag when running your instances locally to show up, and it's a good thing!
 
-### Capturing screen recordings of the game instances.
+### Capturing screen recordings of the game instances
 
 First of all, it's valuable to record both your Client and Server at the same time - it allows you to compare what is happening on either peer in realtime.
 
@@ -175,6 +176,6 @@ Sometimes, despite us using good debug rendering and logging it's still hard to 
 
 The same applies to high latencies (1000ms) - these stress the lag hiding techniques, allowing us to visualize what the different lag hiding techniques are doing.
 
-### Using breakpoints to debug a Client or Server
+### Using breakpoints to debug a client or server
 
 You can use breakpoints to debug a game, but your connection may time out if you stay too long in this mode. Since it pauses your game, you can temporarily increase the timeout value to avoid disconnecting.

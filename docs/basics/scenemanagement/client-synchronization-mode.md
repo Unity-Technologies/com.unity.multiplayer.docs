@@ -5,6 +5,7 @@ sidebar_label: Client synchronization mode
 ---
 
 ## Introduction
+
 Client synchronization occurs when immediately after a client connects to a host or server and the connection is approved. During the client synchronization process, the server will determine everything that a client might need to know about in order to join an in-progress network session (networked game session). Netcode for GameObjects provides you with the ability to select the client synchronization mode that best suits your project's needs.  During client synchronization a client will automatically set its local client synchronization mode to match that of the server or host setting.
 
 The client synchronization mode should be set when the server or host is first provided via the `NetworkSceneManager.SetClientSynchronizationMode` method that takes a [`LoadSceneMode`](https://docs.unity3d.com/ScriptReference/SceneManagement.LoadSceneMode.html) value as a parameter. Each client synchronization mode behaves in a similar way to loading a scene based on the chosen `LoadSceneMode`.
@@ -13,7 +14,8 @@ The client synchronization mode should be set when the server or host is first p
 When using a [distributed authority network topology](../../terms-concepts/distributed-authority.md), any client can set the client synchronization mode when they're promoted to session owner. Late-joining clients are synchronized using whatever setting the current session owner has.
 :::
 
-## Single Client Synchronization Mode
+## Single client synchronization mode
+
 _(Existing Client-Side Scenes Unloaded During Synchronization)_
 
 If you are already familiar with Netcode for GameObjects, then this is most likely the client synchronization mode you are familiar with.  When client synchronization mode is set to `LoadSceneMode.Single`, a client treats the synchronization similar to that of loading a scene using `LoadSceneMode.Single`.  When loading a scene in `LoadSceneMode.Single`, any currently loaded scene will be unloaded and then the new scene is loaded.  From a client synchronization mode perspective, the host or server will always have a default active scene. As such, the default active scene is loaded first in `LoadSceneMode.Single` mode and then any other additional scenes that need to be synchronized are loaded as `LoadSceneMode.Additive`.
@@ -27,7 +29,8 @@ The above image shows a high level overview of single mode client synchronizatio
 
 For some games/projects this type of client synchronization is all that is needed.  However, there are scenarios where you might want to have more control over which scenes are unloaded (if any) during the client synchronization process or you might want to reduce the client synchronization time by having certain commonly shared scenes pre-loaded (and possibly never unloaded) prior to connecting. If your project's needs falls into this realm, then the recommended solution is to use additive client synchronization mode.
 
-## Additive Client Synchronization Mode
+## Additive client synchronization mode
+
 _(Existing Client-Side Scenes Used During Synchronization)_
 
 Additive client synchronization is mode similar to additive scene loading in that any scenes the client has currently loaded, prior to connecting to a server or host, will remain loaded and be taken into consideration as scenes to be used during the synchronization process.
@@ -42,10 +45,12 @@ _If the server was running in client synchronization mode `LoadSceneMode.Single`
 
 While additive client synchronization mode might cover the majority of your project's needs, you could find scenarios where you need to be a bit more selective with the scenes a client should keep loaded and the scenes that should be unloaded. There are two additional settings that you can use (only when client synchronization mode set to `LoadSceneMode.Additive`) to gain further control over this process.
 
-### NetworkSceneManager.PostSynchronizationSceneUnloading
+### `NetworkSceneManager.PostSynchronizationSceneUnloading`
+
 When this flag is set on the client side any scenes that were not synchronized with the server or host will be unloaded. This can be useful if your project primarily uses `LoadSceneMode.Additive` to load the majority of your scenes (i.e. sometimes referred to a "bootstrap scene loading approach").  A client could have additional scenes specific to a portion of your game/project from a previous game network session that are not pertinent in a newly established game network session. Any scenes that are not required to become fully synchronized with the current server or host will get unloaded upon the client completing the synchronization process.  
 
-### NetworkSceneManager.VerifySceneBeforeUnloading
+### `NetworkSceneManager.VerifySceneBeforeUnloading`
+
 When `NetworkSceneManager.PostSynchronizationSceneUnloading` is set to `true` and the client synchronization mode is `LoadSceneMode.Additive`, if this callback is set then for each scene that is about to be unloaded the set callback will be invoked. If it returns `true` the scene will be unloaded and if it returns `false` the scene will remain loaded. This is useful if you have specific scenes you want to persist (menu interfaces etc.) but you also want some of the unused scenes (i.e. not used during synchronization) to be unloaded.
 
 ![image](/img/ClientSynchronizationModeAdditive2.png)

@@ -62,7 +62,7 @@ public static class SerializationExtensions
 
 Additionally, you can also add extensions for `FastBufferReader.ReadValue()`, `FastBufferWriter.WriteValue()`, and `BufferSerializer<TReaderWriter>.SerializeValuePreChecked()` to provide more optimal implementations for manual serialization using `FastBufferReader.TryBeginRead()`, `FastBufferWriter.TryBeginWrite()`, and `BufferSerializer<TReaderWriter>.PreCheck()`, respectively. However, none of these will be used for serializing RPCs - only `ReadValueSafe` and `WriteValueSafe` are used.
 
-### For NetworkVariable
+### For `NetworkVariable`
 
 `NetworkVariable` goes through a slightly different pipeline than `RPC`s and relies on a different process for determining how to serialize its types. As a result, making a custom type available to the `RPC` pipeline doesn't automatically make it available to the `NetworkVariable` pipeline, and vice-versa. The same method can be used for both, but currently, `NetworkVariable` requires an additional runtime step to make it aware of the methods.
 
