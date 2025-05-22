@@ -17,6 +17,7 @@ This example uses the [Network Simulator](https://docs-multiplayer.unity3d.com/t
 ```csharp
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Unity.Multiplayer.Playmode;
 using Unity.Multiplayer.Tools.NetworkSimulator.Runtime;
@@ -29,11 +30,11 @@ public class NetworkSimulation : MonoBehaviour
                                gameObject.AddComponent<NetworkSimulator>();
 
         var connectionPreset = NetworkSimulatorPresets.None;
-        if (CurrentPlayer.ReadOnlyTags() == "FastNetwork")
+        if (CurrentPlayer.ReadOnlyTags().Contains("FastNetwork"))
         {
             connectionPreset = NetworkSimulatorPresets.HomeBroadband;
         }
-        else if (CurrentPlayer.ReadOnlyTags() == "SlowNetwork")
+        else if (CurrentPlayer.ReadOnlyTags().Contains("SlowNetwork"))
         {
             connectionPreset = NetworkSimulatorPresets.Mobile2_5G;
         }
