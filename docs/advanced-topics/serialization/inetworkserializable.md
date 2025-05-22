@@ -197,3 +197,130 @@ public struct MyStructB : MyStructA
 ```
 
 :::
+
+### Using with NetworkVariable
+
+In order to use an `INetworkSerializable` implementation with `NetworkVariable`, you must also implement the `IEquatable<T>` interface in order to determine whether a value has been updated or not. 
+
+```csharp
+public struct NetworkVariableCompatible : INetworkSerializable, IEquatable<NetworkVariableCompatible>
+{
+    public int Value1;
+    public float Value2;
+    public long Value3;
+    public Vector3 Value4;
+
+    public bool Equals(NetworkVariableCompatible other)
+    {
+        return other.Value1 == Value1 && other.Value2 == Value2 && other.Value3 == Value3 && other.Value4 == Value4;
+    }
+
+    public void NetworkSerialize<TT>(BufferSerializer<TT> serializer) where TT : IReaderWriter
+    {
+        serializer.SerializeValue(ref Value1);
+        serializer.SerializeValue(ref Value2);
+        serializer.SerializeValue(ref Value3);
+        serializer.SerializeValue(ref Value4);
+    }
+}
+```
+The `IEquatable<NetworkVariableCompatible>` implementation checks the other `NetworkVariableCompatible` struct against the local values. However, there are some limitations when it comes to implementing the `IEquatable<T>` interface.
+
+#### IEquatable and generics 
+You might think it would be much simpler to have a single class that could handle all of your serialization in order to avoid replicating some of the base script requirements.
+
+This is an example of what will not work:
+
+```csharp
+public class MyBaseSerializer<T> : INetworkSerializable, IEquatable<MyBaseSerializer<T>>
+{
+    public T Value1;
+    public bool Equals(MyBaseSerializer<T> other)
+    {
+        return Value1.Equals(other.Value1);
+    }
+    public void NetworkSerialize<TT>(BufferSerializer<TT> serializer) where TT : IReaderWriter
+    {
+        // Will not compile because T can be null
+        serializer.SerializeValue(ref Value1);
+    }
+}
+
+public class MyBehaviour : NetworkBehaviour
+{
+    // Will cause an ILPP error complaining about MyBaseSerializer<int>
+    // not implementating IEquatable<MyBaseSerializer<int>>
+    public NetworkVariable<MyBaseSerializer<int>> SomeNetVar = new NetworkVariable<MyBaseSerializer<int>>();
+}
+```
+There are two issues with the above approach:
+- The Netcode for GameObjects ILPP script will be looking for the actual `IEquatable<MyBaseSerializer<int>>` and throw an error.
+- The generic `T` is nullable and cannot be nullable.
+
+However, there are some things you can do if you would like to use this kind of design pattern. The alternative is to not try and make the base class implement `IEquatable` but to implement it relative to each derived class.
+
+One example of this would be:
+```csharp
+public class MyBaseClass : INetworkSerializable, IEquatable<MyBaseClass>
+{
+    public int SomeData1;
+    public long SomeData2;
+    public Vector3 SomeData3;
+
+    public bool Equals(MyBaseClass other)
+    {
+        return other.SomeData1 == SomeData1 && other.SomeData2 == SomeData2 && other.SomeData3 == SomeData3;
+    }
+
+    protected virtual void OnNetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref SomeData1);
+        serializer.SerializeValue(ref SomeData2);
+        serializer.SerializeValue(ref SomeData3);
+    }
+
+    /// <summary>
+    /// Serialized first always
+    /// </summary>
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        OnNetworkSerialize(serializer);
+    }
+}
+
+public class MyExtendedData : MyBaseClass, IEquatable<MyExtendedData>
+{
+    public long Data;
+    public bool Equals(MyExtendedData other)
+    {
+        // Compare at the child's level and the base class level
+        return Data.Equals(other.Data) && base.Equals(other);
+    }
+
+    protected override void OnNetworkSerialize<T>(BufferSerializer<T> serializer)
+    {
+        // This serializes in an asscending order (child to root parent)
+        serializer.SerializeValue(ref Data);
+        base.OnNetworkSerialize(serializer);
+
+        // This serializes in a descending order (root parent to last generation child)
+        //base.OnNetworkSerialize(serializer);
+        //serializer.SerializeValue(ref Data);
+    }
+}
+
+public class MyBehaviour : NetworkBehaviour
+{
+    public NetworkVariable<MyExtendedData> SomeNetVar = new NetworkVariable<MyExtendedData>();
+}
+```
+
+Where `MyExtendedData` implements `IEquatable<MyExtendedData>` and overriding the `OnNetworkSerialize` allows one to stack serialization in an ascending or descending order.
+
+::: caution
+
+While the above example is using a class it is recommended to stick with using `struct` when implementing `INetworkSerializable` due to its lower memory footprint and it helps to avoid other serialization related issues when using a class. 
+
+:::
+
+
