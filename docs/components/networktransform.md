@@ -9,7 +9,7 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 The synchronization of a GameObject's Transform is a key netcode task, and usually proceeds in the following order:
 
-1. Determine which Transform axes have changed and need to be synchronized.
+1. Determine which Transform axis have changed and need to be synchronized.
 2. Serialize the changed values.
 3. Send the serialized values as messages to all other connected clients.
 4. Process the messages and deserialize the values.
