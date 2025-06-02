@@ -22,6 +22,94 @@ A transport layer can provide:
 
 Netcode's default transport Unity Transport is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. Refer to the [Transport documentation](https://docs-multiplayer.unity3d.com/transport/current/about/) for more information and how to [install the Transport package](https://docs-multiplayer.unity3d.com/transport/current/install/).
 
+## SinglePlayerTransport
+
+Netcode for GameObjects provides a `SinglePlayerTransport` that can be used to create a local single player network session in order to simplify switching between multiplayer and single player sessions within the same project while still being able to leverage from the existing netcode scripts. The `SinglePlayerTransport` is really a "mock" transport that assures full `NetworkTransport` functionality while having zero transport dependencies.
+
+### Setting up a single player session
+In addition to your default network transport, you will want to add the `SinglePlayerTransport` to the `NetworkManager` `GameObject` (or child of). 
+![image](/img/transport/SinglePlayerTransport_AddComponent.png)
+
+In order to start a single player session you must make sure to assign the `SinglePlayerTransport` to the `NetworkManager.NetworkConfig.NetworkTransport` configuration property using script. 
+As an example:
+
+```csharp
+using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
+using Unity.Netcode.Transports.SinglePlayer;
+using UnityEngine;
+
+public class ExtendedNetworkManager : NetworkManager
+{
+    private UnityTransport m_UnityTransport;
+    private SinglePlayerTransport m_SinglePlayerTransport;
+
+    private void Awake()
+    {
+        m_UnityTransport = GetComponent<UnityTransport>();
+        m_SinglePlayerTransport = GetComponent<SinglePlayerTransport>();
+    }
+
+    public void StartSinglePlayer()
+    {
+        // Use the single player transport when starting a single player session.
+        NetworkConfig.NetworkTransport = m_SinglePlayerTransport;
+        if (!StartHost())
+        {
+            NetworkLog.LogError("Failed to start single player session!");
+        }
+    }
+
+    public void StartHostedSession()
+    {
+        // Use the network transport when starting a multiplayer session.
+        NetworkConfig.NetworkTransport = m_UnityTransport;
+        if (!StartHost())
+        {
+            NetworkLog.LogError("Failed to start hosted session!");
+        }
+    }
+}
+```
+
+From the above script, when starting a single player session the `SinglePlayerTransport` is assigned to the `NetworkConfig.NetworkTransport` and when starting a hosted multiplayer session the `UnityTransport` is assigned. 
+
+### Single player limitations
+
+When running a single player session, you should take any netcode script into consideration that requires an actual multiplayer session to exist.
+
+#### RPC considerations
+You can invoke any RPC that includes:
+
+- The host's client.
+- The host's server.
+- `SendTo` targets that will be invoked locally:
+  - `SendTo.Me`
+  - `SendTo.Server`
+  - `SendTo.Everyone`
+  - `SendTo.Authority`
+  - `SendTo.Owner`
+  - `ClientsAndHost`
+  - `SpecifiedInParams`: As long as it is targeting the `NetworkManager.LocalClientId`.
+- `SendTo` targets that will **not be** invoked locally:
+  - `SendTo.NotOwner`
+  - `SendTo.NotServer`
+  - `SendTo.NotMe`
+  - `SendTo.NotAuthority`
+  - `SpecifiedInParams`: Anything not targeting the `NetworkManager.LocalClientId` will not be invoked locally.
+
+#### NetworkVariable considerations
+
+This should work as expected as the host will always be both the server and the owner of anything spawned. This means write permissions, whether server or owner, should not be an issue.
+
+#### Distributed authority considerations
+
+To start a single player session using the distributed authority network topology you should:
+- Keep your network topology setting set to distributed authority.
+- Set the `NetworkConfig.NetworkTransport` to the `SinglePlayerTransport` component.
+- Start as a host.
+
+
 ## Unity's UNet transport layer API
 
 UNet is a deprecated solution that is no longer supported after Unity 2022.2. Unity Transport Package is the default transport for Netcode for GameObjects. We recommend transitioning to Unity Transport as soon as possible.
