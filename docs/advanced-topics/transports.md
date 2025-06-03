@@ -26,12 +26,15 @@ Netcode's default transport Unity Transport is an entire transport layer that yo
 
 Netcode for GameObjects provides a `SinglePlayerTransport` that you can use to create a local single player network session. This simplifies switching between multiplayer and single player sessions within the same project, while still being able to use existing netcode scripts. The `SinglePlayerTransport` is a effectively a mock transport that ensures full `NetworkTransport` functionality without any transport dependencies.
 
-### Setting up a single player session
-In addition to your default network transport, you will want to add the `SinglePlayerTransport` to the `NetworkManager` `GameObject` (or child of). 
+### Set up a single player session
+
+In addition to your default network transport, you need to add the `SinglePlayerTransport` to the `NetworkManager` `GameObject` (or child of).
+
 ![image](/img/transport/SinglePlayerTransport_AddComponent.png)
 
-In order to start a single player session you must make sure to assign the `SinglePlayerTransport` to the `NetworkManager.NetworkConfig.NetworkTransport` configuration property using script. 
-As an example:
+To start a single player session, assign the `SinglePlayerTransport` to the `NetworkManager.NetworkConfig.NetworkTransport` configuration property using a script. 
+
+For example:
 
 ```csharp
 using Unity.Netcode;
