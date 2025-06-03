@@ -22,9 +22,9 @@ A transport layer can provide:
 
 Netcode's default transport Unity Transport is an entire transport layer that you can use to add multiplayer and network features to your project with or without Netcode. Refer to the [Transport documentation](https://docs-multiplayer.unity3d.com/transport/current/about/) for more information and how to [install the Transport package](https://docs-multiplayer.unity3d.com/transport/current/install/).
 
-## SinglePlayerTransport
+## `SinglePlayerTransport`
 
-Netcode for GameObjects provides a `SinglePlayerTransport` that can be used to create a local single player network session in order to simplify switching between multiplayer and single player sessions within the same project while still being able to leverage from the existing netcode scripts. The `SinglePlayerTransport` is really a "mock" transport that assures full `NetworkTransport` functionality while having zero transport dependencies.
+Netcode for GameObjects provides a `SinglePlayerTransport` that you can use to create a local single player network session. This simplifies switching between multiplayer and single player sessions within the same project, while still being able to use existing netcode scripts. The `SinglePlayerTransport` is a effectively a mock transport that ensures full `NetworkTransport` functionality without any transport dependencies.
 
 ### Setting up a single player session
 In addition to your default network transport, you will want to add the `SinglePlayerTransport` to the `NetworkManager` `GameObject` (or child of). 
