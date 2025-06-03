@@ -103,7 +103,7 @@ You can invoke any RPC that includes:
 
 #### NetworkVariable considerations
 
-This should work as expected as the host will always be both the server and the owner of anything spawned. This means write permissions, whether server or owner, should not be an issue.
+NetworkVariables should work as expected because the host will always be both the server and the owner of anything spawned. This means that write permissions, whether server or owner, should not be an issue.
 
 #### Distributed authority considerations
 
