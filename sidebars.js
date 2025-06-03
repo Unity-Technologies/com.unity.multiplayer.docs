@@ -29,7 +29,7 @@ module.exports = {
         {
             "type": "link",
             "label": "API reference",
-            "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.0/api/index.html",
+            "href": "https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.3/api/index.html",
         },
         {
             "collapsed": true,

@@ -5,24 +5,24 @@ title: Netcode for GameObjects (Netcode) Error Messages
 
 Learn more about Unity error messages, including error collecting, issues that cause them, and how to handle.
 
-## Error Capturing
+## Error capturing
 
-Error messages are captured and returned through Unity Editor Diagnostics (required) and Roslyn Analyzers. 
+Error messages are captured and returned through Unity Editor Diagnostics (required) and Roslyn Analyzers.
 
 * Unity ILPP and Editor errors are the source of truth. ILPP occurs in Unity and returns error messages, which prevents you from building/playing your game (hard compile errors).
 * [Roslyn Analyzers](https://devblogs.microsoft.com/dotnet/write-better-code-faster-with-roslyn-analyzers/) provide immediate feedback within the IDE, without jumping back to Unity to let it compile with your new changes.  
 
 ## NetworkObject errors
 
-**Error:** 
+**Error:**
 * `Can't find pending soft sync object. Is the projects the same? UnityEngine.Debug:LogError(Object)`
 * `ArgumentNullException: Can't spawn null object  Parameter name: netObject`
 
-This exception should only occur if your scenes aren't the same, for example if the scene of your server has a NetworkObject which isn't present in the client scene. Verify the scene objects work correctly by entering playmode in both editors. 
+This exception should only occur if your scenes aren't the same, for example if the scene of your server has a NetworkObject which isn't present in the client scene. Verify the scene objects work correctly by entering playmode in both editors.
 
 ## ServerRPC errors
 
-**Error:** 
+**Error:**
 * Server: `[Netcode] Only owner can invoke ServerRPC that is marked to require ownership`
 * Host: `KeyNotFoundException: The given key wasn't present in the dictionary.`
 

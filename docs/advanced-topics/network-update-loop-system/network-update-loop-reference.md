@@ -1,11 +1,11 @@
 ---
 id: network-update-loop-reference
-title: NetworkUpdateLoop reference 
+title: NetworkUpdateLoop reference
 ---
 
 The following diagrams provide insight into the Network Update Loop process and APIs.
 
-## Injecting NetworkUpdateLoop Systems Into PlayerLoop
+## Injecting `NetworkUpdateLoop` systems into `PlayerLoop`
 
 <div class="imgwhite">
 
@@ -13,7 +13,7 @@ The following diagrams provide insight into the Network Update Loop process and 
 
 </div>
 
-## NetworkUpdateLoop Running INetworkUpdateSystem Updates
+## `NetworkUpdateLoop` running `INetworkUpdateSystem` updates
 
 <div class="imgwhite">
 

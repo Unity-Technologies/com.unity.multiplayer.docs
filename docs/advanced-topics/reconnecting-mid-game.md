@@ -7,7 +7,7 @@ updated: 2023-01-24T18:28:58-06:00
 
 In a multiplayer game, clients might get disconnected from the server for a variety of reasons (such as network issues or application/device crashes). For those reasons, you might want to allow your players to reconnect to the game.
 
-# Considerations
+## Considerations
 
 Review the following considerations before allowing clients to reconnect in the middle of an active game:
 

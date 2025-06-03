@@ -5,18 +5,22 @@ title: ServerRpc
 import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 :::warning
-ClientRpc and ServerRpc are legacy features of Netcode for GameObjects and have been replaced with the universal RPC attribute. This documentation is for legacy use. For current projects, use [Rpc](rpc.md) instead.
+`ClientRpc` and `ServerRpc` are legacy features of Netcode for GameObjects and have been replaced with the universal RPC attribute. This documentation is for legacy use. For current projects, use [RPCs](rpc.md) instead.
 :::
 
 ## Introduction
+
 A `ServerRpc` provides you with the ability to send information from a client to a server just like you would invoke a method from within a class. A `ServerRpc` is a remote procedure call (RPC) that can be only invoked by a client and will always be received and executed on the server/host.
 
-## Declaring a ServerRpc
+## Declaring a `ServerRpc`
+
 You can declare a `ServerRpc` by:
+
 1. Creating a method that ends with the `ServerRpc` suffix within a `NetworkBehaviour` derived class.
 2. Adding the `[ServerRpc]` attribute above the method
 
-### Example of declaring a ServerRpc:
+### Example of declaring a `ServerRpc`
+
 ```csharp
 public class SomeNetworkBehaviour : NetworkBehaviour
 {
@@ -29,8 +33,10 @@ public class SomeNetworkBehaviour : NetworkBehaviour
 ```
 The above example uses the default [ServerRpc] attribute settings which only allows a client owner (client that owns NetworkObject associated with the `NetworkBehaviour` containing the `ServerRpc` method) invocation rights.  Any client that isn't the owner won't be allowed to invoke the `ServerRpc`.
 
-## ServerRpc Ownership And ServerRpcParams
+## `ServerRpc` ownership and `ServerRpcParams`
+
 There are times where you might want any client to have `ServerRpc` invocation rights.  You can easily accomplish this by setting the `ServerRpc` attribute's `RequireOwnership` parameter to false like in the example below:
+
 ```csharp
 [ServerRpc(RequireOwnership = false)]
 public void MyGlobalServerRpc(ServerRpcParams serverRpcParams = default)
@@ -48,7 +54,9 @@ public override void OnNetworkSpawn()
     MyGlobalServerRpc(); // serverRpcParams will be filled in automatically
 }
 ```
+
 In the above example, you will also notice that `MyGlobalServerRpc` takes a single parameter of type [`ServerRpcParams`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.ServerRpcParams.html). This parameter type is optional, but it can be useful to identify **which client** was requesting the server invoke the RPC.  The `ServerRpcParams.Receive.SenderClientId` property is automatically set upon the server receiving the `ServerRpc` request and used to get the server-side `NetworkClient` instance of the client (sender).  
+
 :::important Best Practice
 Using the `ServerRpcParams.Receive.SenderClientId` property is considered the best practice to identify which client was invoking the `ServerRpc`. It isn't recommended to send the client identifier via an additional `ulong` parameter added to the `ServerRpc`:<br/>
 ```csharp
@@ -85,7 +93,7 @@ public void PlayerShootGunServerRpc(Vector3 lookWorldPosition, ServerRpcParams s
 ```
 Looking at the above example, we can see the client invoking the `PlayerShootGunServerRpc` method passes in a world position based on perhaps a screen space crosshair position to world space position, the `ServerRpcParams`, and the `ServerRpc` doesn't require ownership.  
 
-:::tip Alternate Owner Example
+:::tip Alternate owner example
 Of course, if your project's design was such that a weapon changes ownership when it's picked up by a player, then you would only allow owners to invoke the method and would only need the one `Vector3` parameter like in the example below:
 ```csharp
 [ServerRpc]
@@ -105,7 +113,8 @@ public void PlayerOwnerShootGunServerRpc(Vector3 lookWorldPosition)
 ```
 :::
 
-## Invoking a ServerRpc
+## Invoking a `ServerRpc`
+
 From the example below that uses the `PlayerOwnerShootGunServerRpc` method, you can see that you would invoke it just like any other method:
 
 ```csharp
@@ -135,7 +144,8 @@ private void Update()
 }
 ```
 
-### ServerRpc Timing
+### `ServerRpc` timing
+
 The following are a few timing diagrams to help provide additional visual context when invoking a `ServerRpc`.
 
 <figure>
@@ -163,8 +173,7 @@ darkImageSrc="/sequence_diagrams/RPCs/ServerRPCs_ClientHosts_CalledByClientHost_
 When running as a host, RPCs are invoked immediately within the same stack as the method invoking the RPC. Since a host is both considered a server and a client, you should avoid design patterns where a ClientRpc invokes a ServerRpc that invokes the same ClientRpc as this can end up in a stack overflow (that is, infinite recursion).
 :::
 
-## See Also
+## Additional resources
 
-* [ClientRpc](clientrpc.md)
+* [`ClientRpc`](clientrpc.md)
 * [RPC Params](rpc-params.md)
-* See [examples](../../learn/bossroom/bossroom-actions) of how these were used in Boss Room.

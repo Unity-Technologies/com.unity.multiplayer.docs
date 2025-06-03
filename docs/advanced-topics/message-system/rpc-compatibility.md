@@ -6,7 +6,7 @@ import ImageSwitcher from '@site/src/ImageSwitcher.js';
 
 This section provides information on compatibility and support for Unity Netcode for GameObjects (Netcode) features compared to previous Netcode versions. See the [Release Notes](../../../../releases/introduction) for more information.
 
-## Cross-Compatibility
+## Cross-compatibility
 
 Learn more about standard RPC API's cross-compatibility only, not the framework as a whole. A method decorated with an RPC attribute will be statically registered with its assembly-scoped method signature hash.
 
@@ -30,7 +30,7 @@ where:
 
 An RPC signature will be turned into a 32-bit integer using [xxHash](https://cyan4973.github.io/xxHash/) (XXH32) non-cryptographic hash algorithm.
 
-The RPC signature hash changes when any of the following variables change: 
+The RPC signature hash changes when any of the following variables change:
 * Assembly.
 * Enclosing type.
 * Method name.

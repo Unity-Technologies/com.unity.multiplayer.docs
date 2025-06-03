@@ -5,7 +5,7 @@ title: Migrate from UNet Matchmaker to the Lobby Unity Gaming Service
 
 UNet is deprecated and no longer supported. Follow this guide to migrate from UNet to the [Lobby service](https://docs.unity.com/ugs/manual/lobby/manual/unity-lobby-service). If you need help, contact us in the [Unity Multiplayer Networking Discord](https://discord.gg/buMxnnPvTb).
 
-When you migrate a project from UNet Matchmaker to the Unity Gaming Services (UGS), use the Lobby Service to replace the UNet Matchmaker features. 
+When you migrate a project from UNet Matchmaker to the Unity Gaming Services (UGS), use the Lobby Service to replace the UNet Matchmaker features.
 Both systems allow a game client to create a joinable game lobby or match and allow players to join.
 
 There are some differences between UNet Matchmaker and Lobby features. To learn more, refer to the [Feature comparison](#feature-comparison) section and the [UNet and Lobby SDK scripting comparison](#unet-and-lobby-sdk-scripting-comparison). To see the new features the Lobby service includes, refer to [New features in the Lobby service](#new-features-in-the-lobby-service).
@@ -66,9 +66,10 @@ To use the Lobby service imports in your classes, reference the assemblies of th
     4. `Unity.Services.Lobbies`
 
 ### Initialization
+
 Initialize Unity Services before you use the Lobby service.
 
-The UNet Matchmaker initialization method: 
+The UNet Matchmaker initialization method:
 
 ```
 //in a class
@@ -83,7 +84,7 @@ if (networkManager.matchMaker)
 networkManager.StartMatchMaker();
 ```
 
-The Lobby service initialization method: 
+The Lobby service initialization method:
 ```
 await UnityServices.InitializeAsync();
 ```
@@ -105,9 +106,9 @@ While it is not required to create an actual Player object to use the Lobby APIs
 
 ### Method invocation and return types
 
-UNet and the Lobby service use the following invocation and return types: 
+UNet and the Lobby service use the following invocation and return types:
 
-* UNet: Coroutines with callbacks. 
+* UNet: Coroutines with callbacks.
 * The Lobby service: Tasks and `async` or `await`.
 
 API calls to both the UNet matchmaker and the Lobby service are asynchronous, but the patterns used are different in the following ways:
@@ -139,7 +140,7 @@ networkManager.matchMaker.CreateMatch
 
 #### Use the Lobby service to create a lobby
 
-The Lobby service requires more lines of code to create a lobby than UNet does to create a Match. This is because it uses custom data properties that use additional data structures. 
+The Lobby service requires more lines of code to create a lobby than UNet does to create a Match. This is because it uses custom data properties that use additional data structures.
 
 ```
 var lobbyData = new Dictionary<string, DataObject>()
@@ -150,8 +151,8 @@ var lobbyData = new Dictionary<string, DataObject>()
         index: DataObject.IndexOptions.S1),
 
     ["EloScore"] = new DataObject(
-        visibility: DataObject.VisibilityOptions.Public, 
-        value: "123", 
+        visibility: DataObject.VisibilityOptions.Public,
+        value: "123",
         index: DataObject.IndexOptions.N1),
 };
 
@@ -178,6 +179,7 @@ var currentLobby = await Lobbies.Instance.CreateLobbyAsync(
 ```
 
 ### Custom data properties
+
 Custom data properties are one of the most important differences between UNet and Lobby service APIs. This feature allows you to set custom properties at a lobby level, or player level, or both.  You can use lobby-level data when filtering queries of available lobbies. Refer to the [Lobby data and player data](https://docs.unity.com/lobby/lobby-data-and-player-data.html) for more information.
 
 The following code example for the Lobby service re-implements the UNet match fields `Domain` and `EloScore` as custom fields at the Lobby level:
@@ -253,7 +255,8 @@ Unlike UNet APIs which return coroutines, the `Lobbies.Instance.CreateLobbyAsync
 Refer to the [Create a lobby](https://docs.unity.com/ugs/manual/lobby/manual/create-a-lobby) documentation for more information.
 
 ### Connection data
-In UNet, you can share connection information by embedding each client's WAN or LAN IP in the match. This is also possible in the Lobby service through either the per-player [`ConnectionInfo`](https://docs.unity3d.com/Packages/com.unity.services.lobby@1.2/api/Unity.Services.Lobbies.Models.Player.html#Unity_Services_Lobbies_Models_Player_ConnectionInfo) field or using custom properties at the player or lobby level. However, sharing IPs and directly connecting players to each other is highly discouraged in modern practice due to privacy issues, hacking and DDoS concerns. 
+
+In UNet, you can share connection information by embedding each client's WAN or LAN IP in the match. This is also possible in the Lobby service through either the per-player [`ConnectionInfo`](https://docs.unity3d.com/Packages/com.unity.services.lobby@1.2/api/Unity.Services.Lobbies.Models.Player.html#Unity_Services_Lobbies_Models_Player_ConnectionInfo) field or using custom properties at the player or lobby level. However, sharing IPs and directly connecting players to each other is highly discouraged in modern practice due to privacy issues, hacking and DDoS concerns.
 
 Instead, Unity suggests using the [Relay](https://docs.unity.com/relay/introduction.html) service, which replaces the old UNet Relay service. Use the Relay service to connect players together without exposing IPs and without a direct connection to each other. Relay also supports [special integrations with the Lobby service](https://docs.unity.com/ugs/manual/relay/manual/integration).
 
@@ -275,7 +278,7 @@ networkManager.matchMaker.DestroyMatch
     callback: OnMatchDeleted
 );
 ```
-To delete a lobby in the Lobby service: 
+To delete a lobby in the Lobby service:
 ```
 await Lobbies.Instance.DeleteLobbyAsync(lobbyId);
 ```
@@ -284,7 +287,7 @@ Refer to the [Deleting lobbies](https://docs.unity.com/ugs/manual/lobby/manual/d
 
 ### Join a Match or lobby
 
-To join a Match in UNet, use the following code sample: 
+To join a Match in UNet, use the following code sample:
 
 ```
 //note: Refer to the section List a Match or query a lobby to understand how to retrieve MatchInfoSnapshot
@@ -302,7 +305,7 @@ networkManager.matchMaker.JoinMatch
 
 ```
 
-To join a lobby in the Lobby service, use the following code sample: 
+To join a lobby in the Lobby service, use the following code sample:
 
 ```
 Player player = new Player(
@@ -317,7 +320,7 @@ Player player = new Player(
 
 // Using the JoinLobbyByCodeAsync API
 Lobby joinedLobbyByCode = await Lobbies.Instance.JoinLobbyByCodeAsync(
-    lobbyCode: "myLobbyCode", 
+    lobbyCode: "myLobbyCode",
     options: new JoinLobbyByCodeOptions()
     {
         Player = player
@@ -349,7 +352,7 @@ QuickJoinLobbyOptions options = new QuickJoinLobbyOptions()
 
 Lobby joinedLobby = await Lobbies.Instance.QuickJoinLobbyAsync(options);
 ```
-You can use the following Lobby service APIs to join a Lobby: 
+You can use the following Lobby service APIs to join a Lobby:
 * `JoinLobbyByCodeAsync()`
 * `JoinLobbyByIdAsync()`
 * `QuickJoinLobbyAsync()`
@@ -359,7 +362,7 @@ Use `JoinLobbyByCodeAsync()` to join a lobby given a Join Code, which is a share
 
 ```
     Lobby joinedLobbyByCode = await Lobbies.Instance.JoinLobbyByCodeAsync(
-        lobbyCode: "myLobbyCode", 
+        lobbyCode: "myLobbyCode",
         options: new JoinLobbyByCodeOptions()
         {
             Player = player
@@ -399,7 +402,7 @@ Use `JoinLobbyByIdAsync()` to join a lobby with a known ID. This is most commonl
 ```
 
 
-In the UNet API, players that join a match can submit their connection information and EloScore. In the Lobby API, these are handled differently. Refer to the notes on EloScore in the [Create a UNet Match or a UGS lobby](#create-a-unet-match-or-a-ugs-lobby) documentation, and the connection info notes in 
+In the UNet API, players that join a match can submit their connection information and EloScore. In the Lobby API, these are handled differently. Refer to the notes on EloScore in the [Create a UNet Match or a UGS lobby](#create-a-unet-match-or-a-ugs-lobby) documentation, and the connection info notes in
 [Connection data](#connection-data). If you choose to use these, you can set them as player-level properties, and the player object with those properties would be included in the call to the join API.
 
 All three APIs take an optional `Player `object in some form, allowing you to pass in a `Player `object with player data already set. This data is added to the lobby as part of the join process so that you don't need to do a join followed by an update.
@@ -408,7 +411,7 @@ Refer to the [Join a lobby](https://docs.unity.com/ugs/manual/lobby/manual/join-
 
 ### Remove a player or leave a lobby
 
-To remove a player in UNet, use the following code sample: 
+To remove a player in UNet, use the following code sample:
 
 ```
 //prerequisite: you’ll have to store a reference to currentMatch (MatchInfo) upon connecting to a match
@@ -440,7 +443,7 @@ Refer to the on [Leave a lobby](https://docs.unity.com/ugs/manual/lobby/manual/l
 
 ### List a Match or query a lobby
 
-List a match in UNet: 
+List a match in UNet:
 ```
 networkManager.matchMaker.ListMatches
 (
@@ -455,7 +458,7 @@ networkManager.matchMaker.ListMatches
 
 ```
 
-Query a lobby in the Lobby service: 
+Query a lobby in the Lobby service:
 ```
 List<QueryFilter> queryFilters = new List<QueryFilter>
 {
@@ -467,7 +470,7 @@ List<QueryFilter> queryFilters = new List<QueryFilter>
 
     // Search for games with domain = a specific value
     new QueryFilter(
-        field: QueryFilter.FieldOptions.S1, 
+        field: QueryFilter.FieldOptions.S1,
         op: QueryFilter.OpOptions.EQ,
         value: "MyDomain"),
 
@@ -526,7 +529,7 @@ Query filters allow you to specify filter rules against custom lobby data as wel
 
         // Search for games with domain = a specific value
         new QueryFilter(
-            field: QueryFilter.FieldOptions.S1, 
+            field: QueryFilter.FieldOptions.S1,
             op: QueryFilter.OpOptions.EQ,
             value: "MyDomain"),
 
@@ -578,7 +581,7 @@ Refer to the [Query for lobby](https://docs.unity.com/ugs/manual/lobby/manual/qu
 
 ### Update a Match or lobby
 
-To update a Match in UNet, use the following code sample: 
+To update a Match in UNet, use the following code sample:
 ```
 //note: see the section “List/Query for Match/Lobby” to understand how to retrieve MatchInfoSnapshot
 
@@ -591,10 +594,10 @@ networkManager.matchMaker.SetMatchAttributes(
 
 ```
 
-To update a lobby in the Lobby service, use the following code sample: 
+To update a lobby in the Lobby service, use the following code sample:
 ```
 //get an existing lobby reference first
-Lobby m_MatchInfo; 
+Lobby m_MatchInfo;
 
 //then, if you want to edit lobby’s data
 async Task RenameLobby()
@@ -718,4 +721,3 @@ For more information, refer to [Using Lobby.](https://docs.unity.com/ugs/en-us/m
 ### Getting joined lobbies
 
 If a client loses their knowledge of which lobbies they are in, they can call the [`GetJoinedLobbies`](https://docs.unity.com/ugs/manual/lobby/manual/get-joined-lobbies) API to see all the lobbies the logged-in player currently belongs to.
-

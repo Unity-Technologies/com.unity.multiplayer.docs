@@ -5,8 +5,8 @@ title: Distributed authority quickstart for Netcode for GameObjects
 
 Use this guide to learn how to create your first [distributed authority](../terms-concepts/distributed-authority.md) Netcode for GameObjects project. It walks you through the connection setup, including connecting to the distributed authority service, and adding basic gameplay.
 
-:::note Beta feature
-Distributed authority is still in beta. During the beta phase, using the distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) is free. When distributed authority is fully released, [using the service will incur a cost](https://unity.com/products/gaming-services/pricing).
+:::note Pricing
+The distributed authority service provided by the [Multiplayer Services package](https://docs.unity.com/ugs/en-us/manual/mps-sdk/manual) offers a free tier for bandwidth and connectivity hours, allowing you to develop and test without immediate cost. Refer to the [Unity Gaming Services pricing page](https://unity.com/products/gaming-services/pricing) for complete details.
 :::
 
 ## Prerequisites
@@ -39,7 +39,7 @@ Before you begin, you need the following:
 ![set network topology](/img/learn/distributed-authority-quick-start/network-topology.png)
 
 4. Under **Network Transport**, select **UnityTransport** from the list of options to add.
-![use unity transport](/img/learn/distributed-authority-quick-start/unity-transport.png)
+![use unity transport](/img/learn/distributed-authority-quick-start/transport.png)
 
 5. Save any changes to your objects and scene.
 

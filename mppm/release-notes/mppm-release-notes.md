@@ -18,6 +18,47 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 ### Added
 - Added Android mobile support to playmode scenarios.
 
+## [1.4.3] - 2025-05-14
+
+### Fixed
+- Using non authorized characters when creating a new Scenario configuration is now returning a warning rather than an error.
+- Fixed an issue where toggling Simulator mode in the Virtual Player's Game Window fails to show
+- Removed the minimum height restriction on PlayModePopupContentWindow to prevent excessive height when only one or two scenario configs are present
+- Fixed low-resolution icons in various windows
+- Set a minimum width for the scenario config list in the Scenario Config window to prevent resizing it below a usable size
+- Added an info HelpBox that appears when no scenario is selected, preventing the window from appearing blank
+- Updated the Multiplayer role dropdown to display “Client And Server” with proper spacing in the Scenario Config window
+- Fixed an issue where icons did not adapt when switching between dark and light mode in the editor in PlayModePopupContentWindow and PlayModeStatusWindow
+
+## [1.4.2] - 2025-04-07
+
+### Fixed
+- Fixed an issue in Playmode Scenarios where the initially assigned scene was being reloaded a second time in Clone Editors during runtime
+
+## [1.4.1] - 2024-03-27
+
+### Fixed
+- Fixed an issue where a "Center On Children" error would appear after adding a Game Object to the Clone Editor's hierarchy during Play Mode.
+- Added a scenario name length check to prevent error pop-ups and editor issues when the file name exceeds 64-character limit
+
+### Added
+- Added Free Running Instance support for Clone Editors, allowing users to independently run Clone Editors outside of Scenario-based modes
+
+## [1.4.0] - 2025-02-04
+
+### Fixed
+- Fixed launching scenario progress bar transition animation.
+
+## [1.4.0-pre.3] - 2025-01-24
+
+### Fixed
+- Fixed exception when starting a scenario with no instances.
+- Fixed the scenario not exiting play mode when stop is requested during a domain reload
+- Avoid log spamming with errors when the project is renamed.
+- Virtual player audio can now be muted, and mute all players only mutes players at launch
+- Fixed issue where deleting Player Tags from Project Settings also removes them from existing Scenarios.
+- Fixed issue for Clone Editor instances where editor window controls or widgets don't show.
+
 ## [1.4.0-pre.2] - 2025-01-10
 
 ### Added

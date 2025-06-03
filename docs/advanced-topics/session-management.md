@@ -7,7 +7,7 @@ updated: 2023-01-24T18:28:58-06:00
 
 You can use session management to keep data when a player disconnects and accurately reassign it to the player when they reconnect.
 
-# Linking data to players
+## Linking data to players
 
 To reassign data to the correct player when they reconnect, you need to link this data to the player.
 
@@ -22,7 +22,7 @@ With this unique identifier, you can map each player's data (that's needed when 
 
 You can also decide to clear all data when a session completes or add a timeout to purge the data after a specific amount of time.
 
-# Reconnection
+## Reconnection
 
 The best way to reconnect players depends on your game. For example, if you use a [Player Object](../basics/networkobject.md#player-objects), a new `Default Player Prefab` automatically spawns when a player connects to the game (including when they reconnect). You can use the player's earlier saved session data to update that object so that it returns to the same state before disconnecting. In those cases, you would need to keep all the important data that you want to restore and map it to the player using your identification system. You can save this data when a player disconnects or update it periodically. You can then use the `OnNetworkSpawn` event on the Player Object's `NetworkBehavior`(s) to get this data and apply it where needed.
 

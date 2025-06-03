@@ -8,7 +8,7 @@ description: Brief explanation on using NetworkObject and NetworkBehaviour in Ne
 
 There are two convenience wrappers which can be used to send a reference to a NetworkObject or a `NetworkBehaviour` over RPCs or `NetworkVariables`.
 
-## NetworkObjectReference
+## `NetworkObjectReference`
 
 `NetworkObjectReference` can be used to serialize a reference to a NetworkObject. It can only be used on already spawned `NetworkObjects`.
 
@@ -37,7 +37,7 @@ public class Weapon : NetworkBehaviour
 }
 ```
 
-### Implicit Operators
+### Implicit operators
 
 There are also implicit operators which convert from/to `NetworkObject/GameObject` which can be used to simplify code. For instance the above example can also be written in the following way:
 ```csharp
@@ -59,7 +59,7 @@ public class Weapon : NetworkBehaviour
 The implicit conversion to NetworkObject / `GameObject` will result in `Null` if the reference can't be found.
 :::
 
-## NetworkBehaviourReference
+## `NetworkBehaviourReference`
 
 `NetworkBehaviourReference` works similar to `NetworkObjectReference` but is used to reference a specific `NetworkBehaviour` component on a spawned NetworkObject.
 
@@ -88,7 +88,7 @@ public class Weapon : NetworkBehaviour
 }
 ```
 
-## How NetworkObjectReference & NetworkBehaviourReference work
+## How `NetworkObjectReference` and `NetworkBehaviourReference` work
 
 `NetworkObjectReference` and `NetworkBehaviourReference` are convenience wrappers which serialize the id of a NetworkObject when being sent and on the receiving end retrieve the corresponding ` ` with that id. `NetworkBehaviourReference` sends an additional index which is used to find the right `NetworkBehaviour` on the NetworkObject.
 

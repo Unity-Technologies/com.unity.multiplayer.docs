@@ -4,10 +4,7 @@ title:   Real world In-scene NetworkObject parenting of players solution
 description: In-scene NetworkObject parenting of players Solution
 ---
 
-
-We received the following issue in Github.
-
-## Issue:
+## Issue
 
 When a player Prefab has a script that dynamically adds a parent to its transform, the client can't join a game hosted by another client. [You can see orignal issue here](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/issues/1211)
 
@@ -18,8 +15,7 @@ Steps to reproduce the behavior:
 1. Launch one instance of the game as Host.
 1. Launch another instance and try to join as Client.
 
-## Solution:
-
+## Solution
 
 If you want to do this when a player has first connected and all `NetworkObjects` (in-scene placed and already dynamically spawned by the server-host) have been fully synchronized with the client then we would recommend using the `NetworkManager.SceneManager.OnSceneEvent` to trap for the `SynchronizeComplete` event.
 

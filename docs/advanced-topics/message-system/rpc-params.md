@@ -11,7 +11,7 @@ You can configure the `Rpc`,  `ServerRpc` and `ClientRpc` methods in the followi
 Developers can put, `RpcParams`, `ServerRpcParams`, or `ClientRpcParams` as the last parameter (optionally, as appropriate for the type of RPC). The `RpcParams`, `ServerRpcParams`, and `ClientRpcParams` types contain both send and receive properties that are populated relative to the context of usage.
 
 
-## Rpc Params
+## `Rpc` params
 
 See the following for `Rpc` params:
 
@@ -63,10 +63,10 @@ OverridableServerRpc(RpcTarget.Single(someClientId, RpcTargetUse.Temp));
 For various reasons, `BaseRpcTarget` is not intended to be extended by user code. If you have a custom use case that requires a special target, we recommend creating a wrapper method that returns `RpcTarget.Single()` or `RpcTarget.Group()`, which should be able to satisfy most if not all of your needs.
 :::
 
-## ServerRpc Params
+## `ServerRpc` params
 
 :::warning
-ClientRpc and ServerRpc are legacy features of Netcode for GameObjects, and have been supplanted by the universal Rpc attribute. This documentation is provided for legacy use, but we recommend all current projects use [Rpc](rpc.md) instead.
+`ClientRpc` and `ServerRpc` are legacy features of Netcode for GameObjects, and have been supplanted by the universal `Rpc` attribute. This documentation is provided for legacy use, but we recommend all current projects use [RPCs](rpc.md) instead.
 :::
 
 See the following for `ServerRpc` params:
@@ -83,10 +83,10 @@ void XyzwServerRpc(int somenumber, ServerRpcParams serverRpcParams = default) { 
 
 [ServerRpcParams Documentation](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.ServerRpcParams.html)
 
-## ClientRpc Params
+## `ClientRpc` params
 
 :::warning
-ClientRpc and ServerRpc are legacy features of Netcode for GameObjects, and have been supplanted by the universal Rpc attribute. This documentation is provided for legacy use, but we recommend all current projects use [Rpc](rpc.md) instead.
+`ClientRpc` and `ServerRpc` are legacy features of Netcode for GameObjects, and have been supplanted by the universal `Rpc` attribute. This documentation is provided for legacy use, but we recommend all current projects use [RPCs](rpc.md) instead.
 :::
 
 See the following for `ClientRpc` params:

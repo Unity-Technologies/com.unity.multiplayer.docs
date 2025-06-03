@@ -6,7 +6,7 @@ Description: Brief explanation on using Physics in Netcode for GameObjects
 
 There are many different ways to manage physics simulation in multiplayer games. Netcode for GameObjects (Netcode) has a built in approach which allows for server-authoritative physics where the physics simulation only runs on the server. To enable network physics, add a `NetworkRigidbody` component to your object.
 
-## NetworkRigidbody
+## `NetworkRigidbody`
 
 NetworkRigidbody is a component that sets the Rigidbody of the GameObject into kinematic mode on all non-authoritative instances (except the instance that has authority). Authority is determined by the NetworkTransform component (required) attached to the same GameObject as the NetworkRigidbody. Whether the NetworkTransform is server authoritative (default) or owner authoritative, the NetworkRigidBody authority model will mirror it. That way, the physics simulation runs on the authoritative instance, and the resulting positions synchronize on the non-authoritative instances, each with their RigidBody being Kinematic, without any interference.
 
@@ -22,11 +22,11 @@ If there is a need for a gameplay event to happen on a collision, you can listen
 
 :::
 
-## NetworkRigidbody2D
+## `NetworkRigidbody2D`
 
 `NetworkRigidbody2D` works in the same way as NetworkRigidbody but for 2D physics (`Rigidbody2D`) instead.
 
-## NetworkRigidbody and ClientNetworkTransform
+## `NetworkRigidbody` and `ClientNetworkTransform`
 
 You can use NetworkRigidbody with the [`ClientNetworkTransform`](../components/networktransform.md#clientnetworktransform) package sample to allow the owner client of a NetworkObject to move it authoritatively. In this mode, collisions only result in realistic dynamic collisions if the object is colliding with other NetworkObjects (owned by the same client).
 
@@ -59,7 +59,7 @@ When handling the synchronization of changes to certain physics properties, it's
 
 From this list of update stages, the `EarlyUpdate` and `FixedUpdate` stages have the most impact on NetworkVariableDeltaMessage and RpcMessages processing. Inbound messages are processed during the `EarlyUpdate` stage, which means that Rpc methods and NetworkVariable.OnValueChanged callbacks are invoked at that point in time during any given frame. Taking this into consideration, there are certain scenarios where making changes to a Rigidbody could yield undesirable results.
 
-### Rigidbody interpolation example
+### `Rigidbody` interpolation example
 
 While `NetworkTransform` offers interpolation as a way to smooth between delta state updates, it doesn't get applied to the authoritative instance. You can use `Rigidbody.interpolation` for your authoritative instance while maintaining a strict server-authoritative motion model.
 

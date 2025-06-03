@@ -9,15 +9,15 @@ The FAQ provides immediate answers for questions collected from the Community on
 
 <div id="faq">
 
-### Does Netcode have a Public Roadmap?
+### Does Netcode have a public roadmap?
 
 See the [Multiplayer Networking Public Roadmap](https://unity.com/roadmap/unity-platform/multiplayer-networking) to review, suggest, and vote on features for all Multiplayer Networking, Netcode, and documentation.
 
-### Implement a Dedicated Server vs a Listen Server, would I need to make changes to the codebase?
+### Implement a dedicated server vs a listen server, would I need to make changes to the codebase?
 
 Netcode works with both a Listen Server and a Dedicated Server model. You just have to be careful that you're using things like `IsServer` and `IsHost` correctly.
 
-### Does Netcode have any Matchmaking functionality?
+### Does Netcode have any matchmaking functionality?
 
 You would have to implement matchmaking using third party matchmaking services. Netcode has no matchmaking functionality.
 
@@ -36,7 +36,7 @@ The Multiplayer Technology Team recommend the following:
 
    Another option is to use something like the `SteamP2PTransport`, which will work without the need of setting up any servers if you release your game on Steam.
 
-### Is it good for add Spawnable object into NetworkConfig after start host?
+### Is it good for add spawnable object into NetworkConfig after start host?
 
 Yes, but you need to ensure that all your clients add the same object to their configurations as well. You can't only add it on the host.
 

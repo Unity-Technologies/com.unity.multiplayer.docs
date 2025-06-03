@@ -25,11 +25,43 @@ If you aren't completely familiar with transform parenting in Unity, then it's h
   - When `OnNetworkObjectParentChanged` is invoked, on the server side, adjust the child's transform values within the overridden method.
   - Netcode for GameObjects will then synchronize all clients with the child's parenting and transform changes.
 
+### Parenting, distributed authority, and NetworkObject redistribution
+
+Parenting within a [distributed authority](../terms-concepts/distributed-authority.md) network topology follows the same rules as outlined above, with the exception that you can change any references to the server with references to authority.
+
+#### Rule adjustments
+
+  - Whichever client has authority over a NetworkObject can control its parenting.
+  - You can parent under mixed authority. This means that Client-B can parent a NetworkObject it has authority over under another NetworkObject that Client-A has authority over.
+
+#### Distributable permissions and child hierarchies
+
+- **When a client disconnects:**
+  - Any root parent with [distributable permission](../basics/ownership.md#ownership-permission-settings) set that was owned by the disconnected client is redistributed.
+    - If the root parent was locked when the client disconnected, then it's unlocked prior to redistributing.
+    - Children of the root parent change ownership with the root parent only if:
+      - The child was owned by the client that disconnected.
+      - The child has either the distributable or transferable permission set.
+    - If a child's ownership permission is locked, it's unlocked prior to redistributing.
+    - Any child of the root parent that's owned by a different client won't get redistributed.
+- **When a client connects:**
+  - Any root parent with [distributable permission](../basics/ownership.md#ownership-permission-settings) set that doesn't have ownership locked is considered for redistribution.
+    - If a root parent is redistributed to a newly connecting client then:
+      - Any child under the root parent that has the same owner as the root parent changes ownership with the root parent.
+        - Unless the child has ownership locked.
+    - Any child under the root parent that has the distributable or transferrable permission set can be redistributed as well.
+      - Unless the child has ownership locked.
+
+#### Distributable permissions and in-scene placed `NetworkObject` instances
+
+By default, any root in-scnee placed `NetworkObject` instance will have the `Distributable` permissions flag unless it already has the `SessionOwner` permission flag set. This assures in-scene placed `NetworkObject` instances will always distributed amongst clients or a newly promoted session owner.
+
+
 :::tip
 When a NetworkObject is parented, Netcode for GameObjects synchronizes both the parenting information along with the child's transform values. Netcode for GameObjects uses the `WorldPositionStays` setting to decide whether to synchronize the local or world space transform values of the child NetworkObject component. This means that a NetworkObject component doesn't require you to include a NetworkTransform component if it never moves around, rotates, or changes its scale when it isn't parented. This can be beneficial for world items a player might pickup (parent the item under the player) and the item in question needs to adjustment relative to the player when it's parented or the parent is removed (dropped). This helps to reduce the item's over-all bandwidth and processing resources consumption.
 :::
 
-### OnNetworkObjectParentChanged
+### `OnNetworkObjectParentChanged`
 
 [`NetworkBehaviour.OnNetworkObjectParentChanged`](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkBehaviour.html#Unity_Netcode_NetworkBehaviour_OnNetworkObjectParentChanged_Unity_Netcode_NetworkObject_) is a virtual method you can override to be notified when a NetworkObject component's parent has changed. The [`MonoBehaviour.OnTransformParentChanged()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTransformParentChanged.html) method is used by NetworkObject component to catch `transform.parent` changes and notify its associated NetworkBehaviour components.
 
@@ -52,7 +84,7 @@ Similar to [Ownership](../basics/networkobject#ownership), only the server (or h
 If you run into a situation where your client must trigger parenting a NetworkObject component, one solution is for the client to send an RPC to the server. Upon receiving the RPC message, the server then handles parenting the NetworkObject component.
 :::
 
-### Only parent under a NetworkObject Or nothing (root or null)
+### Only parent under a NetworkObject or nothing (root or null)
 
 You can only parent a NetworkObject under another NetworkObject. The only exception is if you don't want the NetworkObject to have a parent. In this case, you can remove the NetworkObject's parent by invoking `NetworkObject.TryRemoveParent`. If this operation succeeds, the parent of the child will be set to `null` (root of the scene hierarchy).
 
@@ -77,7 +109,7 @@ If you plan on parenting in-scene placed NetworkObject components with a player 
 - [In-Scene NetworkObjects](../basics/scenemanagement/inscene-placed-networkobjects.md)
   :::
 
-### WorldPositionStays usage
+### `WorldPositionStays` usage
 
 When using the `NetworkObject.TrySetParent` or `NetworkObject.TryRemoveParent` methods, the `WorldPositionStays` parameter is synchronized with currently connected and late joining clients. When removing a child from its parent, use the same `WorldPositionStays` value that you used to parent the child. More specifically, when `WorldPositionStays` is false, this applies. However, if you're using the default value of `true`, this isn't required (because it's the default).
 
@@ -124,7 +156,7 @@ This is important to understand because the NetworkTransform component initializ
 
 ## Parenting examples
 
-### Simple example:
+### Simple example
 
 For this example, assume you have the following initial scene hierarchy before implementing parenting:
 
@@ -146,7 +178,7 @@ Vehicle (GameObject->NetworkObject)
   └─ Player (GameObject->NetworkObject)
 ```
 
-### Mildly complex invalid example:
+### Mildly complex invalid example
 
 ```
 Sun
@@ -172,7 +204,7 @@ Vehicle (GameObject->NetworkObject)
 
 This is an invalid parenting and will revert.
 
-### Mildly complex valid example:
+### Mildly complex valid example
 
 To resolve the earlier invalid parenting issue, you need to add a NetworkObject component to the seats. This means you need to:
 
@@ -212,7 +244,7 @@ Vehicle (GameObject->NetworkObject)
   └─Seat2 (GameObject->NetworkObject)
 ```
 
-### Parenting & transform synchronization
+### Parenting and transform synchronization
 
 It's important to understand that without the use of a NetworkTransform component clients are only synchronized with the transform values when:
 

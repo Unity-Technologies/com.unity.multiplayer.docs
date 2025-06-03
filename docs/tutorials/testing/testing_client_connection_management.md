@@ -7,6 +7,7 @@ description: Guide covering the test cases to handle when managing client connec
 Managing client connections in a networked game can lead to many unexpected edge-cases which if not properly tested and handled may cause bugs. Here is a non-exhaustive list of test cases that should be handled, depending on what features a game provides, and things to look out for.
 
 ### Clients connecting
+
 - test cases:
   - Client connecting to a new game session
   - Client connecting to a new game session after leaving a previous game session
@@ -23,6 +24,7 @@ Managing client connections in a networked game can lead to many unexpected edge
 
 
 ### Clients disconnecting
+
 - test cases:
   - Client disconnecting gracefully by shutting down NetworkManager
   - Client disconnecting by closing the application
@@ -37,16 +39,17 @@ Managing client connections in a networked game can lead to many unexpected edge
     - Is the server notified of this disconnection and does it handle it properly?
     - If using outside services, are they notified of this? (for example if using a lobby service, is the client removed from the lobby?)
 
-### Host / Server starting the session
+### Host/server starting the session
+
 - test cases:
   - Host/Server starting a new game session
-  - Host/Server starting a new game session after shutting down a previous game session 
+  - Host/Server starting a new game session after shutting down a previous game session
     - in the case of a client-hosted game, after disconnecting from a preivious game as a client
 - things to look out for:
   - Server-side:
     - Does the state of the application before starting a new session have an impact (that is, if starting after shutting down another game or disconnecting from one as a client)
 
-### Host / Server shutting down
+### Host/server shutting down
 - test cases:
   - Host/Server disconnecting gracefully by shutting down NetworkManager
   - Host/Server disconnecting by closing the application

@@ -67,7 +67,7 @@ For more information on the art in Boss Room, see [ART_NOTES.md](https://github.
 
 ### Install the Boss Room project
 
-To install the Boss Room project, download or clone it from the [com.unity.multiplayer.samples.coop](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) repository. 
+To install the Boss Room project, download or clone it from the [com.unity.multiplayer.samples.coop](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop) repository.
 
 **Note**: If you install the project with Git, you must install Git LFS first.
 
@@ -233,6 +233,10 @@ Boss Room includes the following tools and utilities:
 * Scene utils with synced loading screens - [Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement/](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/SceneManagement)
 * RNSM custom config - [Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/com.unity.multiplayer.samples.coop/Utilities/Net/RNSM/CustomNetStatsMonitorConfiguration.asset)
 * NetworkSimulator usage through UI - [Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs ](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Assets/Scripts/Utils/NetworkSimulatorUIMediator.cs)
+<<<<<<< HEAD
+=======
+* ParrelSync - [Packages/manifest.json](https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop/blob/main/Packages/manifest.json)
+>>>>>>> main
 
 ### Troubleshooting
 

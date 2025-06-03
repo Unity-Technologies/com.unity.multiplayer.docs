@@ -42,7 +42,7 @@ You still need to set up matchmaking for your player to join together to play. A
 
 Personal computers are hidden behind NATs (Network Address Translation devices) and routers to protect them from direct access. To connect to a listen server, you may choose an option such as [port forwarding](#port-forwarding), a [relay server](#relay-server), [NAT punch-through](#nat-punchthrough), or a [NAT punch with relay fallback](#nat-punch-and-relay-fallback).
 
-### Port Forwarding
+### Port forwarding
 
 With port forwarding, the host can allow another player to connect to a listen server by forwarding a public port on their router to a machine in their local network.
 
@@ -54,7 +54,7 @@ Considerations:
 
 Port forwarding may not be a viable option for a released game but can be useful for development. For more information about port forwarding, see https://portforward.com/.
 
-### Relay Server
+### Relay server
 
 A dedicated server has ports already forwarded for players to connect anytime. These servers can run in the cloud or a data center. The relay server option uses these servers to send data between players.
 
@@ -71,7 +71,7 @@ A relay server costs money, and the round trip times for packet exchange may be 
 
 Unity provides a relay service. Refer to the [Unity Relay documentation](https://docs.unity.com/ugs/manual/relay/manual/introduction) for more information.
 
-### NAT Punch-through
+### NAT punch-through
 
 Network Address Translation (NAT) punch-through, also known as hole punching, opens a direct connection without port forwarding. When successful, clients are directly connected to each other to exchange packets. However, depending on the NAT types among the clients, NAT punching often fails.
 
@@ -82,7 +82,7 @@ Ways to NAT punch:
 
 Because of its high rate of failure, NAT punch-through is typically only used with a relay fallback.
 
-### NAT Punch and Relay Fallback
+### NAT punch and relay fallback
 
 This option combines NAT punching with a relay fallback. Clients first try to connect to the host by NAT punching and default back to the relay server on failure. This reduces the workload on the relay server while allowing clients to still connect to the host.
 

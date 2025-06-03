@@ -7,7 +7,7 @@ Netcode for GameObjects (Netcode) provides built-in support for Object Pooling, 
 
 See [Introduction to Object Pooling](https://learn.unity.com/tutorial/introduction-to-object-pooling) to learn more about the importance of pooling objects.
 
-## NetworkPrefabInstanceHandler
+## `NetworkPrefabInstanceHandler`
 
 You can register your own spawn handlers by including the `INetworkPrefabInstanceHandler` interface and registering with the `NetworkPrefabHandler`.  
 ```csharp

@@ -169,6 +169,7 @@ Both the client and the server can subscribe to the `NetworkManager.OnClientDisc
 You can also use the `NetworkManager.OnServerStopped` and `NetworkManager.OnClientStopped` callbacks to get local notifications when the server or client stops respectively.
 
 ### Connection notification manager example
+
 Below is one example of how you can provide client connect and disconnect notifications to any type of NetworkBehaviour or MonoBehaviour derived component.
 
 :::important
