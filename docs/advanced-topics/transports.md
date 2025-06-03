@@ -75,7 +75,7 @@ public class ExtendedNetworkManager : NetworkManager
 }
 ```
 
-From the above script, when starting a single player session the `SinglePlayerTransport` is assigned to the `NetworkConfig.NetworkTransport` and when starting a hosted multiplayer session the `UnityTransport` is assigned. 
+As shown in the script above, when starting a single player session the `SinglePlayerTransport` is assigned to the `NetworkConfig.NetworkTransport`, and when starting a hosted multiplayer session the `UnityTransport` is assigned. 
 
 ### Single player limitations
 
