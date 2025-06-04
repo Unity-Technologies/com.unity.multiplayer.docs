@@ -5,6 +5,44 @@ title: Multiplayer Tools 2.0.0+
 description: Release notes for Multiplayer Tools including new features, updates, bug fixes, known issues, and information to help you upgrade.
 ---
 
+## [2.2.4] - 2025-06-02
+
+#### *General*
+- Fixed NGO adapter, Network profiler, and Network Simulator related memory leaks when domain reload is disabled
+- Added analytics to better understand the usage of our tools.
+
+#### *Network Scene Visualization*
+- Improved performance when NetVis is not actively used
+- Added some additional tooltips to the NetVis UI
+- Fixed a NetVis popup bug where it showed no content on Linux
+- Fixed client list not updating when exiting Play Mode
+
+## [2.2.3] - 2024-12-19
+
+### *Network Scene Visualization*
+- Fixed a compatibility issue with the Dedicated Server package.
+
+## [2.2.2] - 2024-09-17
+
+### *Network Scene Visualization*
+- Fixed a bug where NetVis stopped working after the NetworkManager was destroyed and recreated.
+- Fixed an issue where NetVis only assigned colors to a limited subset of Network IDs.
+- Added custom color setting for host and client ownerships. The custom color settings are synchronized between Multiplayer Play Mode instances.
+
+### *Runtime Network Stats Monitor*
+- Added support for entering Play Mode without Domain reload
+
+## [2.2.1] - 2024-09-27
+
+### *Network Scene Visualization*
+- Fixed a bug which showed the wrong number of clients in the SceneView overlay
+- Fixed a bug which caused null reference exception when entering Play Mode without Domain Reload
+- Fixed a bug which showed wrong ownership visuals with Distributed Authority when reconnecting
+
+### *Runtime Network Stats Monitor*
+- Fixed a bug where RNSM showed no metrics in builds with code stripping enabled
+- Fixed a bug where RNSM stopped working with NGO 2.0.0 or above
+
 ## [2.2.0] - 2024-07-24
 
 ### General
