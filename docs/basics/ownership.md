@@ -19,9 +19,9 @@ When another player joins, as in the diagram below, authority over distributable
 
 ![Distributed authority new client](/img/distributed-authority-new-client.jpg)
 
-### Ownership permission settings
+### Ownership permission settings (distributed authority only)
 
-The following ownership permission settings, defined by `NetworkObject.OwnershipStatus`, are only available when running in distributed authority mode:
+The following ownership permission settings, defined by `NetworkObject.OwnershipStatus`, only take effect when using a distributed authority network topology:
 
 * `None`: Ownership of this NetworkObject is considered static and can't be redistributed, requested, or transferred (a Player would have this, for example).
 * `Distributable`: Ownership of this NetworkObject is automatically redistributed when a client joins or leaves, as long as ownership is not locked or a request is pending.
@@ -30,6 +30,13 @@ The following ownership permission settings, defined by `NetworkObject.Ownership
 * `SessionOwner`: This NetworkObject is always owned by the [session owner](../terms-concepts/distributed-authority.md#session-ownership) and can't be transferred or distributed. If the session owner changes, this NetworkObject is automatically transferred to the new session owner.
 
 You can also use `NetworkObject.SetOwnershipLock` to lock and unlock the permission settings of a NetworkObject for a period of time, preventing ownership changes on a temporary basis.
+
+::: warning
+
+The ownership permissions are only visible when the Multiplayer Services SDK package is installed and you're inspecting a `NetworkObject` within the editor. Ownership permissions have no impact when using a client-server network topology, since the server always has authority. For ownership permissions to be used, you must be using a distributed authority network topology.
+
+:::
+
 
 ## Checking for authority
 
