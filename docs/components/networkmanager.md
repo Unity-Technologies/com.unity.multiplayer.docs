@@ -256,6 +256,56 @@ public class ConnectionNotificationManager : MonoBehaviour
 }
 ```
 
+## NetworkManager start and stop notifications
+
+The Netcode for GameObjects `NetworkManager` component provides several events to provide additional opportunities for configuring and cleaning up depending upon the notification type. The available notifications are:
+
+- **OnInstantiated**: A static event that is invoked each time a new `NetworkManager` instance is created.
+- **OnClientStarted**: An event that is invoked just prior to returning from the `NetworkManager.StartClient` and or `NetworkManager.StartHost` methods.
+- **OnClientStopped**: An event that is invoked shortly before the `NetworkManager` client or host instance is 100% shutdown.
+  - If you plan on joining another session from within a subscribed callback, you should use a `CoRoutine` to delay for the end of the frame or the next frame (at a minimum) to provide the `NetworkManager` time to finalize the shutdown sequence.
+- **OnPreShutdown**: An event that is invoked just before the `NetworkManager` instance shuts down. This is a good place to save any states you want persisted. 
+- **OnServerStarted**: An event that is invoked just prior to returning from the `NetworkManager.StartServer` or `NetworkManager.StartHost` method.
+- **OnServerStopped**: An event that is invoked shortly before the `NetworkManager` server or host instance is 100% shutdown.
+  - If you plan on starting another session from within a subscribed callback, you should use a `CoRoutine` to delay for the end of the frame or the next frame (at a minimum) to provide the `NetworkManager` time to finalize the shutdown sequence.
+- OnDestroying: A static event that is invoked just prior to destroying `NetworkManager` instance.
+
+### Host start and stop
+
+As you might have noticed, when running a `NetworkManager` as a host you can receive `OnClientStarted`, `OnServerStarted`, `OnClientStopped`, and `OnServerStopped` notifications since a host is both a server and a client. Both the `OnServerStopped` and `OnClientStopped` notifications provide a `bool` as a parameter that reflects whether you were running as a host (`true` if running as a host and `false` if not) to provide you with context in the event you are using the same callback for clients too.
+
+### Restarting a NetworkManager Session
+
+As mentioned earlier, if you plan on integrating a logical flow where upon an `OnClientStopped` or `OnServerStopped` event notification being triggered you want to immediately join or start a new session, then it is highly recommended to use a `CoRoutine` within the subscribed callback that waits until the end of the frame or the next frame (at a minimum) before starting the `NetworkManager` again. This provides the `NetworkManager` time to finalize the shutdown sequence.
+
+#### As an example:
+
+```csharp
+private void OnServerStopped(bool isHost)
+{
+    NetworkManager.Singleton.OnServerStopped -= OnServerStopped;
+    // Defer starting the server until the next update loop/frame
+    StartCoroutine(DelayedServerStart());
+}
+
+private IEnumerator DelayedServerStart()
+{
+    // Wait for the next fixed update (or any specified period of time)
+    yield return new WaitForFixedUpdate();
+    // Start the server again
+    if (!NetworkManager.Singleton.StartHost())
+    {
+        Debug.LogError("[DelayedServerStart] Failed to start host!");
+    }
+    else
+    {
+        NetworkManager.Singleton.OnServerStopped += OnServerStopped;
+    }
+    yield break;
+}
+```
+
+
 ## Additional resources
 
 - [`NetworkManager` API documentation](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@latest?subfolder=/api/Unity.Netcode.NetworkManager.html)
