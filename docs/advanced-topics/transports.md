@@ -24,7 +24,7 @@ Netcode's default transport Unity Transport is an entire transport layer that yo
 
 ## `SinglePlayerTransport`
 
-Netcode for GameObjects provides a `SinglePlayerTransport` that you can use to create a local single player network session. This simplifies switching between multiplayer and single player sessions within the same project, while still being able to use existing netcode scripts. The `SinglePlayerTransport` is a effectively a mock transport that ensures full `NetworkTransport` functionality without any transport dependencies.
+Netcode for GameObjects provides a `SinglePlayerTransport` that you can use to create a local single player network session. This simplifies switching between multiplayer and single player sessions within the same project, while still being able to use existing netcode scripts. The `SinglePlayerTransport` is a effectively a mock transport that ensures full `NetworkTransport` functionality without any transport dependencies. The `SinglePlayerTransport` is unique in that it **requires that you** only start as a host. This is because in reality you are starting a local server and a local client which will still run as if it was a network session but it never actually opens any network ports or communicates outside of the local system.
 
 ### Set up a single player session
 
@@ -75,7 +75,11 @@ public class ExtendedNetworkManager : NetworkManager
 }
 ```
 
-As shown in the script above, when starting a single player session the `SinglePlayerTransport` is assigned to the `NetworkConfig.NetworkTransport`, and when starting a hosted multiplayer session the `UnityTransport` is assigned. 
+As shown in the script above, when starting a single player session the `SinglePlayerTransport` is assigned to the `NetworkConfig.NetworkTransport`, and when starting a hosted multiplayer session the `UnityTransport` is assigned.
+
+:::info
+In order to use `SinglePlayerTransport` you must set the `NetworkConfig.NetworkTransport` to the `SinglePlayerTransport` component and you must start a local single player session using `NetworkManager.StartHost`.
+:::
 
 ### Single player limitations
 
