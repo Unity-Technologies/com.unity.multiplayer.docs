@@ -25,7 +25,7 @@ There are other considerations when synchronizing Transform values, however, suc
 
 ## Add a NetworkTransform component to a GameObject
 
-Because a NetworkTransform component is derived from the NetworkBehaviour class, it has many of the [same requirements](../basics/networkbehaviour.md#networkbehaviour-requirements). For example, when adding a NetworkTransform component to a GameObject, it should be added to the same or any parent generation of the GameObject.
+Because a NetworkTransform component is derived from the NetworkBehaviour class, it has many of the [same requirements](../basics/networkbehaviour.md#networkbehaviour-requirements). For example, when adding a NetworkTransform component to a GameObject, it should be added to the same or any hierarchy generation relative to the `NetworkObject` component.
 
 In the following image both NetworkTransform and NetworkObject components are on the same GameObject:
 
@@ -151,15 +151,15 @@ Threshold values are not synchronized, but they can be updated on the [authorita
 
 When __Tick Sync Children__ is enabled, the top-most parent NetworkTransform automatically forces any nested NetworkTransform components under it to synchronize at the same time as the top-most parent does. This ensures that all nested NetworkTransform components are synchronized with the top-most parent on the exact same network tick and that they are synchronized in order.
 
-::: info
-__Tick Sync Children__ does not apply to parented NetworkObjects with NetworkTransforms.
+:::info
+__Tick Sync Children__ does not apply to parented NetworkObjects with NetworkTransforms but does apply to any nested NetworkTransforms.
 :::
 
 #### Network conditions to consider
 
-Sometimes network conditions are poor, with packets experiencing latency and potentially packet loss. When NetworkTransform [interpolation](#interpolation) is enabled, packet loss can mean undesirable visual artifacts such as stutter. To try and mitigate these issues, NetworkTransform defaults to sending delta state updates (such as position, rotation, or scale changes) as unreliable sequenced network-delivered messages. This ensures that if one state is lost then the `BufferedLinearInterpolator` can recover easily, because it doesn't have to wait precisely for the next state update and can just lose a small portion of the overall interpolated path. For example, with a `TickRate` setting of 30, you could lose 5 to 10% of the overall state updates over one second and still have a relatively similar interpolated path to that of a perfectly delivered 30 delta state updates generated path. The [__UseUnreliableDeltas__](#use-unreliable-deltas) NetworkTransform property, which defaults to enabled, controls whether you send your delta state updates unreliably or reliably.
+Sometimes network conditions are poor, with packets experiencing latency and potentially packet loss. When NetworkTransform [interpolation](#interpolation) is enabled, packet loss can mean undesirable visual artifacts such as stutter. To try and mitigate these issues, NetworkTransform defaults to sending delta state updates (such as position, rotation, or scale changes) as unreliable sequenced network-delivered messages. This ensures that if one state is lost then the `BufferedLinearInterpolator` can recover easily, because it doesn't have to wait precisely for the next state update and can just lose a small portion of the overall interpolated path. For example, with a `TickRate` setting of 30, you could lose 5 to 10% of the overall state updates over one second and still have a relatively similar interpolated path to that of a perfectly delivered 30 delta state updates generated path. The [__UseUnreliableDeltas__](#use-unreliable-deltas) NetworkTransform property, which defaults to disabled, controls whether you send your delta state updates unreliably or reliably.
 
-Of course, you might wonder what would happen if 5% of a jumping motion, towards the end of the jumping motion, were dropped how NetworkTransform might recover since each state update sent is only based on axial deltas defined by each axis threshold settings. The answer is that there is a small bandwidth penalty for sending standard delta state updates unreliably: Axial Frame Synchronization.
+Of course, you might wonder what would happen if 5% of the end of a jumping motion were dropped and how NetworkTransform might recover since each state update sent is only based on axial deltas defined by each axis threshold setting. The answer is that there is a small bandwidth penalty for sending standard delta state updates unreliably,  full axial frame synchronization, which assures that in the event there is loss each NetworkTransform will be "auto-corrected" once per second.
 
 ::: info
 When using a NetworkRigidbody or NetworkRigidbody2D component with the __Use Rigidbody for Motion__ property enabled, you should avoid using the __UseUnreliableDeltas____ NetworkTransform property because it can impact the overall interpolation result when you have multiple Rigidbody-based objects that need to keep relatively synchronized with each other.
@@ -179,9 +179,9 @@ If bandwidth consumption becomes a concern and you have tested your project unde
 
 #### In Local Space
 
-By default, NetworkTransform synchronizes the Transform of an object in world space. The __In Local Space__ configuration option allows you to change to synchronizing the transform in local space instead. A child's local space axis values (position and rotation primarily) are always relative offsets from the parent transform, where a child's world space axis values include the parent's axis values.
+By default, NetworkTransform synchronizes the Transform of an object in world space. The __In Local Space__ configuration option allows you to change to synchronizing the transform in local space instead. A child's local space axis values (position and rotation primarily) are always relative offsets from the parent transform, where a child's world space axis values include the parent's axis values. Where a transform with no parent really is "parented" to the root of the scene hierarchy which results in its world and local space positions to always be the same.
 
-Enabling the __In Local Space__ property on a parented NetworkTransform can improve the synchronization of the transform when the object gets re-parented because the re-parenting won't change the local space Transform of the object, but does change the world space position.
+Enabling the __In Local Space__ property on a parented NetworkTransform can improve the synchronization of the transform when the object gets re-parented because the re-parenting won't change the local space Transform of the object (but does change the world space position) and you only need to update motion of the parented `NetworkTransform` relative to its parent (if the parent is moving and the child has no motion then there are no delta states to detect for the child but the child moves with the parent).
 
 :::info
 The authority instance does synchronize changes to the __In Local Space__ property. As such, you can make adjustments to this property on the authoritative side during runtime and the non-authoritative instances will automatically be updated.
@@ -199,9 +199,9 @@ To resolve this issue, you can enable the __Switch Transform Space When Parented
 
 ![image](/img/networktransform/Interpolation.png)
 
-Interpolation is enabled by default and is recommended if you desire smooth transitions between Transform updates on non-authoritative instances. Interpolation buffers incoming state updates that can introduce a slight delay between the authority and non-authority instances. When the __Interpolate__ property is disabled, changes to the transform are immediately applied on non-authoritative instances, which can result in visual jitter and/or objects jumping to newly applied state updates when latency is high. Changes to the __Interpolation__ property during runtime on the authoritative instance will be synchronized with all non-authoritative instances.
+Interpolation is enabled by default and is recommended if you desire smooth transitions between Transform updates on non-authoritative instances. Interpolation buffers incoming state updates that can introduce a slight delay between the authority and non-authority instances. When the __Interpolate__ property is disabled, changes to the transform are immediately applied on non-authoritative instances, which can result in visual jitter and/or objects jumping to newly applied state updates when latency is high. Changes to the __Interpolation__ property during runtime on the authoritative instance will be synchronized with all non-authoritative instances. Of course, you can increase the network tick to a higher value in order to get more samples per second, but that still will not yield an over-all smooth motion on the non-authoritative instances and will only consume more bandwidth.
 
-There are three types of interpolation to chose from when the __Interpolate__ property is enabled:
+There are three types of interpolation types to chose from when the __Interpolate__ property is enabled:
 
 - [__Legacy lerp__](#legacy-lerp-interpolator-type): The original (now legacy) lerping approach. Selected by default.
 - [__Lerp__](#lerp-and-smooth-dampening-interpolator-types): An improved lerping approach that ensures the interpolator gets much closer to its destination (compared to the legacy lerp).
