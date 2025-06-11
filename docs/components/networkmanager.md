@@ -278,7 +278,7 @@ When running a `NetworkManager` as a host you can receive `OnClientStarted`, `On
 
 If you plan to use a logic flow where, when an `OnClientStopped` or `OnServerStopped` event notification is triggered, you want to immediately join or start a new session, then it's highly recommended to use a `CoRoutine` within the subscribed callback that waits until the end of the frame or the next frame (at a minimum) before starting the `NetworkManager` again. This provides the `NetworkManager` time to finalize the shutdown sequence.
 
-#### As an example:
+#### Example
 
 ```csharp
 private void OnServerStopped(bool isHost)
