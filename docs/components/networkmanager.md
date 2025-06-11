@@ -260,15 +260,15 @@ public class ConnectionNotificationManager : MonoBehaviour
 
 The Netcode for GameObjects `NetworkManager` component has several events that provide additional opportunities for configuring and cleaning up depending on the notification type. The available notifications are:
 
-- **OnInstantiated**: A static event that is invoked each time a new `NetworkManager` instance is created.
-- **OnClientStarted**: An event that is invoked just prior to returning from the `NetworkManager.StartClient` and or `NetworkManager.StartHost` methods.
-- **OnClientStopped**: An event that is invoked shortly before the `NetworkManager` client or host instance is 100% shutdown.
-  - If you plan on joining another session from within a subscribed callback, you should use a `CoRoutine` to delay for the end of the frame or the next frame (at a minimum) to provide the `NetworkManager` time to finalize the shutdown sequence.
-- **OnPreShutdown**: An event that is invoked just before the `NetworkManager` instance shuts down. This is a good place to save any states you want persisted. 
-- **OnServerStarted**: An event that is invoked just prior to returning from the `NetworkManager.StartServer` or `NetworkManager.StartHost` method.
-- **OnServerStopped**: An event that is invoked shortly before the `NetworkManager` server or host instance is 100% shutdown.
-  - If you plan on starting another session from within a subscribed callback, you should use a `CoRoutine` to delay for the end of the frame or the next frame (at a minimum) to provide the `NetworkManager` time to finalize the shutdown sequence.
-- OnDestroying: A static event that is invoked just prior to destroying `NetworkManager` instance.
+- `OnInstantiated`: A static event that's invoked each time a new `NetworkManager` instance is created.
+- `OnClientStarted`: An event that's invoked before returning from the `NetworkManager.StartClient` or `NetworkManager.StartHost` methods.
+- `OnClientStopped`: An event that's invoked before the `NetworkManager` client or host instance is 100% shutdown.
+    - If you plan on joining another session from within a subscribed callback, you should use a `CoRoutine` to delay for the end of the frame or the next frame (at a minimum) to provide the `NetworkManager` time to finalize the shutdown sequence.
+- `OnPreShutdown`: An event that's invoked just before the `NetworkManager` instance shuts down. This is a good place to save any states you want persisted. 
+- `OnServerStarted`: An event that's invoked before returning from the `NetworkManager.StartServer` or `NetworkManager.StartHost` method.
+- `OnServerStopped`: An event that's invoked before the `NetworkManager` server or host instance is 100% shutdown.
+    - If you plan on starting another session from within a subscribed callback, you should use a `CoRoutine` to delay for the end of the frame or the next frame (at a minimum) to provide the `NetworkManager` time to finalize the shutdown sequence.
+- `OnDestroying`: A static event that's invoked just before destroying `NetworkManager` instance.
 
 ### Host start and stop
 
