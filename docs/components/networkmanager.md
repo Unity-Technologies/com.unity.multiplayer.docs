@@ -272,7 +272,7 @@ The Netcode for GameObjects `NetworkManager` component has several events that p
 
 ### Host start and stop
 
-As you might have noticed, when running a `NetworkManager` as a host you can receive `OnClientStarted`, `OnServerStarted`, `OnClientStopped`, and `OnServerStopped` notifications since a host is both a server and a client. Both the `OnServerStopped` and `OnClientStopped` notifications provide a `bool` as a parameter that reflects whether you were running as a host (`true` if running as a host and `false` if not) to provide you with context in the event you are using the same callback for clients too.
+When running a `NetworkManager` as a host you can receive `OnClientStarted`, `OnServerStarted`, `OnClientStopped`, and `OnServerStopped` notifications since a host is both a server and a client. Both the `OnServerStopped` and `OnClientStopped` notifications provide a `bool` as a parameter that reflects whether you were running as a host (`true` if running as a host and `false` if not) to provide you with context in the event you are using the same callback for clients too.
 
 ### Restarting a NetworkManager Session
 
