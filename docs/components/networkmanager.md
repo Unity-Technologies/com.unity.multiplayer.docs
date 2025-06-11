@@ -258,7 +258,7 @@ public class ConnectionNotificationManager : MonoBehaviour
 
 ## NetworkManager start and stop notifications
 
-The Netcode for GameObjects `NetworkManager` component provides several events to provide additional opportunities for configuring and cleaning up depending upon the notification type. The available notifications are:
+The Netcode for GameObjects `NetworkManager` component has several events that provide additional opportunities for configuring and cleaning up depending on the notification type. The available notifications are:
 
 - **OnInstantiated**: A static event that is invoked each time a new `NetworkManager` instance is created.
 - **OnClientStarted**: An event that is invoked just prior to returning from the `NetworkManager.StartClient` and or `NetworkManager.StartHost` methods.
