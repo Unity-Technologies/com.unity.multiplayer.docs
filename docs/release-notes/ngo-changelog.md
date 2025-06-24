@@ -8,7 +8,7 @@ The following content tracks features, updates, bug fixes, and refactoring for t
 
 | Release | Date | Changelog |
 |---|---|---|
-| 2.4.0 | 2025-06-02 | [2.4.0](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F2.4.0) |
+| 2.4.2 | 2025-06-13 | [2.4.2](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/v2.4.2) |
 | 2.3.2 | 2025-04-22 | [2.3.2](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F2.3.2) |
 | 2.2.0 | 2024-12-12 | [2.2.0](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F2.2.0) |
 | 2.1.1 | 2024-10-21 | [2.1.1](https://github.com/Unity-Technologies/com.unity.netcode.gameobjects/releases/tag/ngo%2F2.1.1) |
