@@ -4,9 +4,62 @@ title: Release notes
 description: Release notes for Multiplayer Play Mode including new features, updates, bug fixes, and known issues.
 ---
 
+## [1.5.0] - 2025-06-03
+
+### Fixed
+- Fixed pause and step buttons disabled on default play mode configuration.
+- Fix step button disabled when scene reload is enabled
+- Fixed an issue where entering play mode can result in a visual de-sync of play mode buttons.
+
+## [1.5.0-exp.4] - 2025-05-14
+
+### Added
+
+- Implemented support for Free Running Clone Editor Instances, enabling users using Play Mode Scenarios to launch editor instances that are independent of scenario definitions, thereby enabling more flexible work flows and faster iteration speeds.
+    - Toggle an Instance's Manual Mode via the Play Mode Status window (Window > Multiplayer > Play Mode Status)
+    - Activate or deactivate a Manual mode Instance prior to starting a Scenario to streamline development iteration.
+    - Activated or deactivated instances will remain unaffected by Scenario operations - For example, Activated Instances stay launched regardless of Scenario execution.
+
+### Fixed
+
+- Using non authorized characters when creating a new Scenario configuration is now returning a warning rather than an error.
+- Ensured warnings are shown and that the Run Device options are hidden when an incorrect Android Build Target is chosen for Server Instances.
+- Fixed an issue where exiting and re-entiring play mode during the EditorApplication.playModeStateChanged callback was causing unexpected behavior in the play mode scenarios.
+- Removed the minimum height restriction on PlayModePopupContentWindow to prevent excessive height when only one or two scenario configs are present
+- Fixed low-resolution icons in various windows
+- Set a minimum width for the scenario config list in the Scenario Config window to prevent resizing it below a usable size
+- Added an info HelpBox that appears when no scenario is selected, preventing the window from appearing blank
+- Updated the Multiplayer role dropdown to display “Client And Server” with proper spacing in the Scenario Config window
+- Fixed an issue where icons did not adapt when switching between dark and light mode in the editor in PlayModePopupContentWindow and PlayModeStatusWindow
+- Fixed an issue where the Play Mode Status not update when switching scenario configs from play mode popup content window
+- Fixed performance issues related to APK process monitoring on play mode scenarios with Android instances.
+- Fixed an issue where launching local instances on Android numerous times consecutively fails with an 'illegal characters in path' error.
+
+## [1.5.0-exp.3] - 2025-04-23
+
+### Added
+
+- Added a refresh button to the device selection dropdown for the android platform support of the playmode scenarios configuration window.
+
+### Fixed
+
+- Fixed an issue where toggling Simulator mode in the Virtual Player's Game Window fails to show.
+
+## [1.5.0-exp.2] - 2025-04-02
+
+### Fixed
+
+- Fixed an issue where a "Center On Children" error would appear after adding a Game Object to the Clone Editor's hierarchy during Play Mode.
+- Added a scenario name length check to prevent error pop-ups and editor issues when the file name exceeds 64-character limit
+- Fixed an issue in Playmode Scenarios where the initially assigned scene was being reloaded a second time in Clone Editors during runtime
+
+### Added
+- Added log streaming for the android instances
+
 ## [1.5.0-exp.1] - 2025-03-06
 
 ### Fixed
+
 - Fixed and exception that was thrown when you start a scenario with no instances.
 - When a stop is requested during a domain reload, the scenario now exits Play Mode.
 - The launching scenario progress bar transition animation now appears correctly.
@@ -16,6 +69,7 @@ description: Release notes for Multiplayer Play Mode including new features, upd
 - The launching scenario window UI is now ready during the build process.
 
 ### Added
+
 - Added Android mobile support to playmode scenarios.
 
 ## [1.4.3] - 2025-05-14
