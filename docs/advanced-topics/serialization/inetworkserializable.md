@@ -200,7 +200,7 @@ public struct MyStructB : MyStructA
 
 ### Using with NetworkVariable
 
-In order to use an `INetworkSerializable` implementation with `NetworkVariable`, you must also implement the `IEquatable<T>` interface in order to determine whether a value has been updated or not. 
+To use an `INetworkSerializable` implementation with `NetworkVariable`, you must also implement the `IEquatable<T>` interface to determine whether a value has been updated or not. 
 
 ```csharp
 public struct NetworkVariableCompatible : INetworkSerializable, IEquatable<NetworkVariableCompatible>
