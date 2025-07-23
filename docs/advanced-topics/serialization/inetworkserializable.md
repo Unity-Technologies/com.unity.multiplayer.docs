@@ -226,10 +226,11 @@ public struct NetworkVariableCompatible : INetworkSerializable, IEquatable<Netwo
 ```
 The `IEquatable<NetworkVariableCompatible>` implementation checks the other `NetworkVariableCompatible` struct against the local values. However, there are some limitations when it comes to implementing the `IEquatable<T>` interface.
 
-#### IEquatable and generics 
-You might think it would be much simpler to have a single class that could handle all of your serialization in order to avoid replicating some of the base script requirements.
+#### `IEquatable` and generics 
 
-This is an example of what will not work:
+It might seem simpler to have a single class that handles all of your serialization to avoid replicating some of the base script requirements, however there are some issues with this implementation.
+
+The following is an example of what won't work:
 
 ```csharp
 public class MyBaseSerializer<T> : INetworkSerializable, IEquatable<MyBaseSerializer<T>>
