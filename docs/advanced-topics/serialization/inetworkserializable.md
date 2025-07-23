@@ -321,7 +321,7 @@ Where `MyExtendedData` implements `IEquatable<MyExtendedData>` and overriding th
 
 ::: caution
 
-While the above example is using a class it is recommended to stick with using `struct` when implementing `INetworkSerializable` due to its lower memory footprint and it helps to avoid other serialization related issues when using a class. 
+The example above uses a class, but it's generally recommended to use a `struct` when implementing `INetworkSerializable` due to its lower memory footprint. It also helps to avoid other serialization-related issues when using a class. 
 
 :::
 
