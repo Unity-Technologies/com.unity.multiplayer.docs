@@ -254,13 +254,14 @@ public class MyBehaviour : NetworkBehaviour
     public NetworkVariable<MyBaseSerializer<int>> SomeNetVar = new NetworkVariable<MyBaseSerializer<int>>();
 }
 ```
-There are two issues with the above approach:
+There are two issues with the approach above:
+
 - The Netcode for GameObjects ILPP script will be looking for the actual `IEquatable<MyBaseSerializer<int>>` and throw an error.
 - The generic `T` is nullable and cannot be nullable.
 
-However, there are some things you can do if you would like to use this kind of design pattern. The alternative is to not try and make the base class implement `IEquatable` but to implement it relative to each derived class.
+However, there are some things you can do if you want to use this kind of design pattern. The alternative is to not try and make the base class implement `IEquatable` but to implement it relative to each derived class.
 
-One example of this would be:
+For example:
 ```csharp
 public class MyBaseClass : INetworkSerializable, IEquatable<MyBaseClass>
 {
