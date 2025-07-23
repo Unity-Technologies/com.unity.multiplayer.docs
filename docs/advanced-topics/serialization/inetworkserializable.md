@@ -317,7 +317,7 @@ public class MyBehaviour : NetworkBehaviour
 }
 ```
 
-Where `MyExtendedData` implements `IEquatable<MyExtendedData>` and overriding the `OnNetworkSerialize` allows one to stack serialization in an ascending or descending order.
+Where `MyExtendedData` implements `IEquatable<MyExtendedData>` and overriding the `OnNetworkSerialize` allows you to stack serialization in an ascending or descending order.
 
 ::: caution
 
